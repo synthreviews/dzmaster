@@ -244,6 +244,8 @@
 
   footer{border-top:1px solid var(--line-soft);padding:30px 0;text-align:center;color:var(--text-2);font-size:12.5px;}
   footer a{color:var(--text-2);text-decoration:underline;}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;}
+  footer .fitem{white-space:nowrap;}
 
   .privacy-note{display:flex;gap:10px;align-items:flex-start;background:rgba(75,227,164,.08);border:1px solid rgba(75,227,164,.25);padding:12px 14px;border-radius:12px;font-size:13px;color:var(--text-1);margin-top:16px;}
   .privacy-note svg{width:18px;height:18px;flex:none;color:var(--ok);margin-top:1px;}
@@ -470,10 +472,10 @@
 
 <footer>
   <div class="wrap">
-    <span data-i18n="footer_text">DZMASTER je součástí rodiny nástrojů SYNTHLUCIDA.</span>
-    · <a href="https://synthreviews.github.io/dzmaster/dzmaster-landing.html" data-i18n="footer_more">O nástroji</a>
-    · <a href="https://synthreviews.github.io/dzmaster/dzmaster-privacy.html" id="footer-privacy" data-i18n="footer_privacy">Ochrana soukromí</a>
-    · <a href="https://synthlucida.com/index.html">SYNTHLUCIDA</a>
+    <span class="fitem"><span data-i18n="footer_text">DZMASTER je součástí rodiny nástrojů SYNTHLUCIDA.</span></span>
+    <span class="fitem">· <a href="https://synthreviews.github.io/dzmaster/dzmaster-landing.html" data-i18n="footer_more">O nástroji</a></span>
+    <span class="fitem">· <a href="https://synthreviews.github.io/dzmaster/dzmaster-privacy.html" id="footer-privacy" data-i18n="footer_privacy">Ochrana soukromí</a></span>
+    <span class="fitem">· <a href="https://synthlucida.com/index.html">SYNTHLUCIDA</a></span>
   </div>
 </footer>
 
