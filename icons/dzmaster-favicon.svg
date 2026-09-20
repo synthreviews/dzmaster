@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="dzmaster-mark-grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7c6cff"/>
+      <stop offset="1" stop-color="#34e0d6"/>
+    </linearGradient>
+  </defs>
+  <rect width="100" height="100" rx="22" fill="#0b0d17"/>
+  <path d="M28 66 L50 30 L72 66 Z" fill="none" stroke="url(#dzmaster-mark-grad)" stroke-width="7" stroke-linejoin="round"/>
+</svg>
