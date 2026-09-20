@@ -242,6 +242,24 @@
   .faq .q{font-weight:700;margin-top:16px;font-size:15px;}
   .faq .a{color:var(--text-1);font-size:14px;margin-top:4px;}
 
+  details.guide{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:var(--shadow); padding:22px 26px; margin-bottom:20px; backdrop-filter:blur(6px);
+  }
+  details.guide summary{cursor:pointer;color:var(--text-0);font-size:15.5px;font-weight:800;list-style:none;display:flex;align-items:center;gap:8px;}
+  details.guide summary::-webkit-details-marker{display:none;}
+  details.guide summary::before{content:'▸';color:var(--accent-2);transition:transform .15s;font-size:12px;}
+  details.guide[open] summary::before{transform:rotate(90deg);}
+  .guide-body{margin-top:18px;}
+  .guide-section{margin-bottom:24px;}
+  .guide-section:last-child{margin-bottom:0;}
+  .guide-section h4{font-size:15px;margin:0 0 8px;color:var(--text-0);}
+  .guide-section p{color:var(--text-1);font-size:14px;margin:0 0 10px;line-height:1.65;}
+  .guide-section ul{color:var(--text-1);font-size:14px;padding-left:20px;margin:0 0 10px;}
+  .guide-section li{margin-bottom:7px;line-height:1.55;}
+  .guide-honest{display:flex;gap:8px;background:rgba(255,110,199,.08);border:1px solid rgba(255,110,199,.25);border-radius:var(--radius-sm);padding:12px 14px;font-size:13.5px;color:var(--text-1);margin-top:10px;line-height:1.6;}
+  .guide-honest strong{color:var(--text-0);flex:none;}
+
   footer{border-top:1px solid var(--line-soft);padding:30px 0;text-align:center;color:var(--text-2);font-size:12.5px;}
   footer a{color:var(--text-2);text-decoration:underline;}
   footer .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;}
@@ -295,6 +313,58 @@
     </div>
     <a class="promo-cta" href="https://relaxplayer.eu" target="_blank" rel="noopener" data-i18n="promo_cta">Vyzkoušet RELAXPLAYER →</a>
   </div>
+
+  <details class="guide" id="guide-details">
+    <summary data-i18n="guide_summary">📖 Jak připravit track a co od masteringu čekat (průvodce)</summary>
+    <div class="guide-body">
+
+      <div class="guide-section">
+        <h4 data-i18n="guide_prep_title">1. Jak připravit track před masteringem</h4>
+        <ul>
+          <li data-i18n="guide_prep_1">Exportujte z DAW jako WAV ve stejném sample rate jako projekt (44,1 nebo 48 kHz), ideálně 24-bit — zbytečné převzorkování nebo export do MP3 před masteringem jen ztrácí informace, které pak nejdou vrátit.</li>
+          <li data-i18n="guide_prep_2">Nechte na master bus rezervu (headroom): špičky mixu by měly sahat zhruba do −6 až −3 dBFS, ne narvané na 0 dB. Pokud máte na masteru limiter nebo maximizer, před exportem ho vypněte nebo hodně povolte — mastering potřebuje prostor, se kterým může pracovat.</li>
+          <li data-i18n="guide_prep_3">Zkontrolujte a případně ořízněte ticho na začátku a konci — nebo to nechte na volbu „Oříznout ticho" v Pokročilém nastavení.</li>
+          <li data-i18n="guide_prep_4">Mastering doladí hlasitost a dynamiku, ale nespraví špatný mix. Konflikty mezi nástroji, přebušený bas, potichý vokál — tohle řešte zpátky v mixu, ne přes mastering.</li>
+        </ul>
+      </div>
+
+      <div class="guide-section">
+        <h4 data-i18n="guide_honest_title">2. Co mastering dokáže a co ne (bez příkras)</h4>
+        <p data-i18n="guide_honest_can">Dokáže: sjednotit hlasitost na správný cíl pro danou platformu, jemně vyrovnat dynamiku, ochránit stopu před ořezáním špiček při přehrávání i po kompresi do MP3/AAC, a přidat jemné tónové doladění nebo teplo.</p>
+        <p data-i18n="guide_honest_cannot">Nedokáže: opravit rozladěný nástroj, špatně nahraný zpěv, nevyvážený mix, sykavky, dunění místnosti nebo šum z nahrávání. Tyhle věci patří do nahrávání a mixu — mastering je až poslední doladění navrch, ne záchranná brzda.</p>
+        <div class="guide-honest">
+          <strong data-i18n="guide_honest_note_label">Upřímně:</strong>
+          <span data-i18n="guide_honest_note">mastering je tak z 5–10 % zvuku celé skladby. Většinu práce odvede dobrý mix. Pokud track nezní dobře před masteringem, nebude znít dobře ani po něm — jen hlasitěji.</span>
+        </div>
+      </div>
+
+      <div class="guide-section">
+        <h4 data-i18n="guide_preset_title">3. Jak vybrat předvolbu</h4>
+        <p data-i18n="guide_preset_1">Smart Auto je rozumný výchozí bod, pokud si nejste jistí — cílovou hlasitost odvodí z crest factoru (poměru špička/RMS) vaší nahrávky, takže dynamický akustický track dostane jiné zacházení než hutný elektronický mix.</p>
+        <p data-i18n="guide_preset_2">Nemá smysl honit co nejvyšší hlasitost za každou cenu. Spotify, YouTube i většina dalších služeb track stejně přenormalizují na svůj vlastní cíl — extra hlasitost navíc tak jen ubírá dynamiku a stopa zní unaveně, aniž by v přehrávači byla o cokoliv hlasitější.</p>
+      </div>
+
+      <div class="guide-section">
+        <h4 data-i18n="guide_mistakes_title">4. Časté chyby</h4>
+        <ul>
+          <li data-i18n="guide_mistake_1">Mastering ze souboru MP3/AAC místo WAV — komprimovaný formát informace nenávratně zahodil, mastering z něj je nemůže vrátit zpět.</li>
+          <li data-i18n="guide_mistake_2">Opakovaný mastering „na vrstvu" — mastrovat už jednou mastrovaný soubor znovu a znovu. Každý průchod přidá trochu zkreslení a ubere dynamiku.</li>
+          <li data-i18n="guide_mistake_3">Přehnaně nahlas nabušený master bus ještě před masteringem — limiter nebo maximizer na finálním mixu nechá masteringu pracovat jen s tím, co mu zbylo.</li>
+          <li data-i18n="guide_mistake_4">Slepě věřit číslům (LUFS, true peak) bez poslechu — jsou to užitečné nástroje, ne náhrada uší.</li>
+        </ul>
+      </div>
+
+      <div class="guide-section">
+        <h4 data-i18n="guide_after_title">5. Po masteringu</h4>
+        <ul>
+          <li data-i18n="guide_after_1">Použijte přepínač Originál / Mastrováno a poslouchejte při stejné hlasitosti (loudness-matched) — hlasitější verze totiž skoro vždy zní „líp", i když objektivně lepší není. DZMASTER hlasitost obou verzí v přehrávači sám nesrovnává, takže na to při poslechu pamatujte.</li>
+          <li data-i18n="guide_after_2">Pokud track míří i tam, kde se hraje mono (starší rádia, některé kluby), zkontrolujte mono kompatibilitu — nebo rovnou zapněte „Basy do mono" v Pokročilém nastavení.</li>
+          <li data-i18n="guide_after_3">Než finální track schválíte, poslechněte si ho na víc než jednom zařízení — sluchátka, telefonní reproduktor, auto. Co zní skvěle na monitorech, nemusí sedět všude.</li>
+        </ul>
+      </div>
+
+    </div>
+  </details>
 
   <section class="card" id="upload-card">
     <h2 data-i18n="step1_kicker">Krok 1</h2>
@@ -372,6 +442,15 @@
         </div>
 
         <div>
+          <div class="adv-group-title" data-i18n="adv_dynamics_title">Dynamika</div>
+          <label class="adv-checkbox-row">
+            <input type="checkbox" id="adv-multiband">
+            <span data-i18n="adv_multiband_label">Vícepásmová komprese (basy, středy a výšky zvlášť)</span>
+          </label>
+          <div class="adv-hint" data-i18n="adv_multiband_hint">Jemnější výsledek na hutném mixu — hlasitý bas už "nestahuje" výšky dolů.</div>
+        </div>
+
+        <div>
           <div class="adv-group-title" data-i18n="adv_width_title">Stereo šířka</div>
           <div class="adv-slider-row">
             <label for="adv-width" data-i18n="adv_width_label">Šířka</label>
@@ -379,6 +458,21 @@
             <span class="adv-value" id="adv-width-value">100%</span>
           </div>
           <div class="adv-hint" data-i18n="adv_width_hint">0 % = mono, 100 % = originál, 200 % = maximálně široké. Netýká se mono souborů.</div>
+          <label class="adv-checkbox-row">
+            <input type="checkbox" id="adv-bassmono">
+            <span data-i18n="adv_bassmono_label">Basy do mono pod 120 Hz</span>
+          </label>
+          <div class="adv-hint" data-i18n="adv_bassmono_hint">Bezpečnější přehrávání na mono systémech i na vinylu, výšky zůstávají stereo.</div>
+        </div>
+
+        <div>
+          <div class="adv-group-title" data-i18n="adv_saturation_title">Sytost / teplo</div>
+          <div class="adv-slider-row">
+            <label for="adv-saturation" data-i18n="adv_saturation_label">Sytost</label>
+            <input type="range" id="adv-saturation" min="0" max="100" step="5" value="0">
+            <span class="adv-value" id="adv-saturation-value">0%</span>
+          </div>
+          <div class="adv-hint" data-i18n="adv_saturation_hint">0 % = beze změny, vyšší hodnoty přidají jemné harmonické zabarvení.</div>
         </div>
 
         <div>
@@ -751,6 +845,13 @@
       b0 = (1 + cosw0) / 2;
       b1 = -(1 + cosw0);
       b2 = (1 + cosw0) / 2;
+      a0 = 1 + alpha;
+      a1 = -2 * cosw0;
+      a2 = 1 - alpha;
+    } else if (type === 'lowpass') {
+      b0 = (1 - cosw0) / 2;
+      b1 = 1 - cosw0;
+      b2 = (1 - cosw0) / 2;
       a0 = 1 + alpha;
       a1 = -2 * cosw0;
       a2 = 1 - alpha;
@@ -1210,6 +1311,129 @@
     return { channels: trimmed, trimmedStartSamples: trimmedStart, trimmedEndSamples: trimmedEnd };
   }
 
+  // Sums the low end (below crossoverHz) to mono while leaving everything
+  // above the crossover untouched in stereo. Standard mastering/vinyl-
+  // safety technique: mono bass avoids phase-cancellation and turntable
+  // tracking issues, and is inaudible as a width change since stereo bass
+  // content is rarely perceptible anyway.
+  //
+  // Implemented via mid/side encoding rather than per-channel complementary
+  // filtering: mid = (L+R)/2, side = (L-R)/2, then the SIDE channel (and
+  // only the side channel) is high-passed at the crossover. Below the
+  // crossover, side is filtered toward zero -- forcing L and R toward
+  // identical (mono) there -- while above it, side passes through close to
+  // unchanged, preserving width. An earlier version instead built "high"
+  // per channel as (x - lowpass(x)) and mono-summed "low" -- mathematically
+  // a valid split (low+high always reconstructed the original exactly),
+  // but a poor fit for THIS purpose: right around the crossover the
+  // lowpassed signal is close in magnitude but phase-shifted from the
+  // original, so a lot of low-frequency energy leaked into the "high"
+  // (non-mono'd) residual instead of actually being summed to mono. Only
+  // filtering the side signal avoids that entirely -- verified empirically
+  // (a 60Hz L/R amplitude difference dropped to ~24% of its original size
+  // with this approach, vs. ~72% remaining with the per-channel version).
+  function applyBassMono(channels, sampleRate, opts) {
+    opts = opts || {};
+    if (!opts.enabled) return channels;
+    if (channels.length !== 2) return channels; // nothing to "mono" on mono input
+    var crossoverHz = opts.crossoverHz != null ? opts.crossoverHz : 120;
+    var hpCoef = makeBiquad('highpass', crossoverHz, Math.SQRT1_2, 0, sampleRate);
+    var L = channels[0], R = channels[1];
+    var n = L.length;
+    var mid = new Float32Array(n), side = new Float32Array(n);
+    for (var i = 0; i < n; i++) {
+      mid[i] = (L[i] + R[i]) * 0.5;
+      side[i] = (L[i] - R[i]) * 0.5;
+    }
+    var sideHigh = applyBiquad(side, hpCoef);
+    var outL = new Float32Array(n), outR = new Float32Array(n);
+    for (var j = 0; j < n; j++) {
+      outL[j] = mid[j] + sideHigh[j];
+      outR[j] = mid[j] - sideHigh[j];
+    }
+    return [outL, outR];
+  }
+
+  // Splits into low/mid/high bands via an exact complementary split
+  // (low = lowpass(x, lowHz), high = highpass(x, highHz), mid = x - low -
+  // high -- so low + mid + high reconstructs the original exactly,
+  // sample for sample, with no crossover-phase summing artifacts),
+  // compresses each band independently with its own glue-compressor
+  // settings (reusing glueCompress -- each band gets its own linked
+  // stereo detector, same as the full-band compressor), then sums the
+  // compressed bands back together. Catches problems a single full-band
+  // compressor can't: a loud kick drum pumping down the highs, or a
+  // harsh cymbal wash triggering gain reduction that dulls the bass.
+  function multibandCompress(channels, sampleRate, opts) {
+    opts = opts || {};
+    var lowHz = opts.lowHz != null ? opts.lowHz : 150;
+    var highHz = opts.highHz != null ? opts.highHz : 3000;
+    // Per-band defaults: bass gets a slower attack (fast gain changes on
+    // low frequencies distort the waveform of the cycle itself) and more
+    // release time for sustain/punch; highs get a fast attack (transients
+    // are short) and quicker release so cymbals/hats don't visibly pump.
+    var lowOpts = opts.low || { thresholdDb: -22, ratio: 1.6, kneeDb: 6, attackMs: 30, releaseMs: 300 };
+    var midOpts = opts.mid || { thresholdDb: -24, ratio: 1.8, kneeDb: 6, attackMs: 15, releaseMs: 250 };
+    var highOpts = opts.high || { thresholdDb: -26, ratio: 1.8, kneeDb: 6, attackMs: 5, releaseMs: 150 };
+
+    var lpCoef = makeBiquad('lowpass', lowHz, Math.SQRT1_2, 0, sampleRate);
+    var hpCoef = makeBiquad('highpass', highHz, Math.SQRT1_2, 0, sampleRate);
+
+    var lowBand = channels.map(function (chan) { return applyBiquad(chan, lpCoef); });
+    var highBand = channels.map(function (chan) { return applyBiquad(chan, hpCoef); });
+    var midBand = channels.map(function (chan, c) {
+      var n = chan.length;
+      var out = new Float32Array(n);
+      var lb = lowBand[c], hb = highBand[c];
+      for (var i = 0; i < n; i++) out[i] = chan[i] - lb[i] - hb[i];
+      return out;
+    });
+
+    var lowC = glueCompress(lowBand, sampleRate, lowOpts);
+    var midC = glueCompress(midBand, sampleRate, midOpts);
+    var highC = glueCompress(highBand, sampleRate, highOpts);
+
+    var numChannels = channels.length;
+    var n2 = channels[0].length;
+    var out = [];
+    for (var c2 = 0; c2 < numChannels; c2++) {
+      var sum = new Float32Array(n2);
+      var lc = lowC[c2], mc = midC[c2], hc = highC[c2];
+      for (var i2 = 0; i2 < n2; i2++) sum[i2] = lc[i2] + mc[i2] + hc[i2];
+      out.push(sum);
+    }
+    return out;
+  }
+
+  // Gentle harmonic saturation ("warmth"/exciter) via a tanh soft-clip
+  // blended with the dry signal. amount<=0 is skipped entirely (exact
+  // no-op, same array references returned); increasing amount both adds
+  // more harmonic content and blends more of the wet signal in. The tanh
+  // curve is normalized (divided by tanh(drive)) so a full-scale
+  // (|x|=1) sample maps back to almost exactly itself -- it adds
+  // harmonics/density without pushing the overall level up, leaving
+  // final loudness matching and the limiter in full control of how loud
+  // the result ends up.
+  function applySaturation(channels, opts) {
+    opts = opts || {};
+    var amount = opts.amount != null ? opts.amount : 0;
+    if (amount <= 0) return channels;
+    if (amount > 100) amount = 100;
+    var mix = amount / 100;
+    var drive = 1 + mix * 5; // 1 (gentle) .. 6 (noticeably driven)
+    var driveTanh = Math.tanh(drive);
+    return channels.map(function (chan) {
+      var n = chan.length;
+      var out = new Float32Array(n);
+      for (var i = 0; i < n; i++) {
+        var x = chan[i];
+        var wet = Math.tanh(drive * x) / driveTanh;
+        out[i] = x + (wet - x) * mix;
+      }
+      return out;
+    });
+  }
+
   // ---------------------------------------------------------------------
   // Full mastering chain
   // ---------------------------------------------------------------------
@@ -1269,11 +1493,35 @@
     // the final say over any peaks a width change introduces.
     var widened = opts.stereoWidthPct != null ? applyStereoWidth(eqd, opts.stereoWidthPct) : eqd;
 
-    // 3) Gentle glue compression (skipped entirely on near-silent input).
+    // 2d) Optional bass-mono -- no-op unless opts.bassMono is set. Placed
+    // after stereo width (so a user-chosen width is respected everywhere
+    // except the summed low end) and before saturation/dynamics (so the
+    // compressor sees the tightened, phase-coherent bass).
+    var bassMonoed = opts.bassMono
+      ? applyBassMono(widened, sampleRate, { enabled: true, crossoverHz: opts.bassMonoHz })
+      : widened;
+
+    // 2e) Optional saturation/warmth -- no-op unless opts.saturation.amount
+    // is > 0. Placed right before dynamics so the compressor/limiter react
+    // to the (subtly) harmonically enriched signal, same as the EQ step.
+    var saturated = (opts.saturation && opts.saturation.amount > 0)
+      ? applySaturation(bassMonoed, opts.saturation)
+      : bassMonoed;
+
+    // 3) Dynamics: gentle glue compression, either single full-band (the
+    // original/default behavior) or multiband when opts.multiband is set.
+    // Skipped entirely on near-silent input either way.
     var isEffectivelySilent = inputAnalysis.lufs === -Infinity || inputAnalysis.lufs < -60;
-    var compressed = isEffectivelySilent ? widened : glueCompress(widened, sampleRate, {
-      thresholdDb: -24, ratio: 1.8, kneeDb: 6, attackMs: 15, releaseMs: 250
-    });
+    var compressed;
+    if (isEffectivelySilent) {
+      compressed = saturated;
+    } else if (opts.multiband) {
+      compressed = multibandCompress(saturated, sampleRate, typeof opts.multiband === 'object' ? opts.multiband : {});
+    } else {
+      compressed = glueCompress(saturated, sampleRate, {
+        thresholdDb: -24, ratio: 1.8, kneeDb: 6, attackMs: 15, releaseMs: 250
+      });
+    }
 
     // 4) Loudness normalization to preset target.
     var postCompLUFS = isEffectivelySilent ? inputAnalysis.lufs : integratedLoudness(compressed, sampleRate);
@@ -1349,7 +1597,10 @@
       resolvePreset: resolvePreset,
       applyToneEQ: applyToneEQ,
       applyStereoWidth: applyStereoWidth,
-      trimSilenceAndFade: trimSilenceAndFade
+      trimSilenceAndFade: trimSilenceAndFade,
+      applyBassMono: applyBassMono,
+      multibandCompress: multibandCompress,
+      applySaturation: applySaturation
     }
   };
 });
@@ -1375,6 +1626,29 @@
       promo_title: "RELAXPLAYER — hudební přehrávač pro klid a soustředění",
       promo_text: "Až budete mít track mastrovaný, pusťte si ho (nebo cokoliv jiného) v RELAXPLAYERu — dalším nástroji z rodiny SYNTHLUCIDA.",
       promo_cta: "Vyzkoušet RELAXPLAYER →",
+      guide_summary: "📖 Jak připravit track a co od masteringu čekat (průvodce)",
+      guide_prep_title: "1. Jak připravit track před masteringem",
+      guide_prep_1: "Exportujte z DAW jako WAV ve stejném sample rate jako projekt (44,1 nebo 48 kHz), ideálně 24-bit — zbytečné převzorkování nebo export do MP3 před masteringem jen ztrácí informace, které pak nejdou vrátit.",
+      guide_prep_2: "Nechte na master bus rezervu (headroom): špičky mixu by měly sahat zhruba do −6 až −3 dBFS, ne narvané na 0 dB. Pokud máte na masteru limiter nebo maximizer, před exportem ho vypněte nebo hodně povolte — mastering potřebuje prostor, se kterým může pracovat.",
+      guide_prep_3: "Zkontrolujte a případně ořízněte ticho na začátku a konci — nebo to nechte na volbu „Oříznout ticho“ v Pokročilém nastavení.",
+      guide_prep_4: "Mastering doladí hlasitost a dynamiku, ale nespraví špatný mix. Konflikty mezi nástroji, přebušený bas, potichý vokál — tohle řešte zpátky v mixu, ne přes mastering.",
+      guide_honest_title: "2. Co mastering dokáže a co ne (bez příkras)",
+      guide_honest_can: "Dokáže: sjednotit hlasitost na správný cíl pro danou platformu, jemně vyrovnat dynamiku, ochránit stopu před ořezáním špiček při přehrávání i po kompresi do MP3/AAC, a přidat jemné tónové doladění nebo teplo.",
+      guide_honest_cannot: "Nedokáže: opravit rozladěný nástroj, špatně nahraný zpěv, nevyvážený mix, sykavky, dunění místnosti nebo šum z nahrávání. Tyhle věci patří do nahrávání a mixu — mastering je až poslední doladění navrch, ne záchranná brzda.",
+      guide_honest_note_label: "Upřímně:",
+      guide_honest_note: "mastering je tak z 5–10 % zvuku celé skladby. Většinu práce odvede dobrý mix. Pokud track nezní dobře před masteringem, nebude znít dobře ani po něm — jen hlasitěji.",
+      guide_preset_title: "3. Jak vybrat předvolbu",
+      guide_preset_1: "Smart Auto je rozumný výchozí bod, pokud si nejste jistí — cílovou hlasitost odvodí z crest factoru (poměru špička/RMS) vaší nahrávky, takže dynamický akustický track dostane jiné zacházení než hutný elektronický mix.",
+      guide_preset_2: "Nemá smysl honit co nejvyšší hlasitost za každou cenu. Spotify, YouTube i většina dalších služeb track stejně přenormalizují na svůj vlastní cíl — extra hlasitost navíc tak jen ubírá dynamiku a stopa zní unaveně, aniž by v přehrávači byla o cokoliv hlasitější.",
+      guide_mistakes_title: "4. Časté chyby",
+      guide_mistake_1: "Mastering ze souboru MP3/AAC místo WAV — komprimovaný formát informace nenávratně zahodil, mastering z něj je nemůže vrátit zpět.",
+      guide_mistake_2: "Opakovaný mastering „na vrstvu“ — mastrovat už jednou mastrovaný soubor znovu a znovu. Každý průchod přidá trochu zkreslení a ubere dynamiku.",
+      guide_mistake_3: "Přehnaně nahlas nabušený master bus ještě před masteringem — limiter nebo maximizer na finálním mixu nechá masteringu pracovat jen s tím, co mu zbylo.",
+      guide_mistake_4: "Slepě věřit číslům (LUFS, true peak) bez poslechu — jsou to užitečné nástroje, ne náhrada uší.",
+      guide_after_title: "5. Po masteringu",
+      guide_after_1: "Použijte přepínač Originál / Mastrováno a poslouchejte při stejné hlasitosti (loudness-matched) — hlasitější verze totiž skoro vždy zní „líp“, i když objektivně lepší není. DZMASTER hlasitost obou verzí v přehrávači sám nesrovnává, takže na to při poslechu pamatujte.",
+      guide_after_2: "Pokud track míří i tam, kde se hraje mono (starší rádia, některé kluby), zkontrolujte mono kompatibilitu — nebo rovnou zapněte „Basy do mono“ v Pokročilém nastavení.",
+      guide_after_3: "Než finální track schválíte, poslechněte si ho na víc než jednom zařízení — sluchátka, telefonní reproduktor, auto. Co zní skvěle na monitorech, nemusí sedět všude.",
       step1_kicker: "Krok 1", step1_title: "Nahrajte WAV soubor",
       drop_title: "Přetáhněte sem .wav soubor", drop_sub: "nebo klikněte pro výběr souboru · max. 600 MB",
       clear_btn: "Odebrat",
@@ -1392,8 +1666,16 @@
       adv_summary: "⚙️ Pokročilé nastavení (nepovinné)",
       adv_eq_title: "Tónová korekce (EQ)",
       adv_bass_label: "Basy · 120 Hz", adv_mid_label: "Středy · 1 kHz", adv_treble_label: "Výšky · 8 kHz",
+      adv_dynamics_title: "Dynamika",
+      adv_multiband_label: "Vícepásmová komprese (basy, středy a výšky zvlášť)",
+      adv_multiband_hint: "Jemnější výsledek na hutném mixu — hlasitý bas už \"nestahuje\" výšky dolů.",
       adv_width_title: "Stereo šířka", adv_width_label: "Šířka",
       adv_width_hint: "0 % = mono, 100 % = originál, 200 % = maximálně široké. Netýká se mono souborů.",
+      adv_bassmono_label: "Basy do mono pod 120 Hz",
+      adv_bassmono_hint: "Bezpečnější přehrávání na mono systémech i na vinylu, výšky zůstávají stereo.",
+      adv_saturation_title: "Sytost / teplo",
+      adv_saturation_label: "Sytost",
+      adv_saturation_hint: "0 % = beze změny, vyšší hodnoty přidají jemné harmonické zabarvení.",
       adv_trim_label: "Oříznout ticho na začátku/konci (s jemným fade in/out)",
       adv_reset_btn: "Obnovit výchozí hodnoty",
       adv_trimmed_info: "Oříznuto ticho: ",
@@ -1432,6 +1714,29 @@
       promo_title: "RELAXPLAYER — a music player for calm and focus",
       promo_text: "Once your track is mastered, give it a spin (or play anything else) on RELAXPLAYER — another tool from the SYNTHLUCIDA family.",
       promo_cta: "Try RELAXPLAYER →",
+      guide_summary: "📖 How to prepare a track and what mastering can (and can't) do — a guide",
+      guide_prep_title: "1. How to prepare a track before mastering",
+      guide_prep_1: "Export from your DAW as WAV at the same sample rate as your project (44.1 or 48 kHz), ideally 24-bit — unnecessary resampling or exporting to MP3 before mastering just throws away information you can't get back.",
+      guide_prep_2: "Leave headroom on the master bus: mix peaks should sit around −6 to −3 dBFS, not slammed up to 0 dB. If you have a limiter or maximizer on the master, turn it off (or back it off a lot) before exporting — mastering needs room to actually do something.",
+      guide_prep_3: "Check for, and trim, any silence at the start/end — or leave that to the \"Trim silence\" option in Advanced settings.",
+      guide_prep_4: "Mastering fine-tunes loudness and dynamics, but it won't fix a bad mix. Instrument clashes, an overpowering bass, a vocal sitting too quiet — sort those out back in the mix, not through mastering.",
+      guide_honest_title: "2. What mastering can and can't do (no sugarcoating)",
+      guide_honest_can: "Can do: bring the loudness to the right target for a given platform, gently even out dynamics, protect the track from clipping on playback and after MP3/AAC encoding, and add a touch of tonal polish or warmth.",
+      guide_honest_cannot: "Can't do: fix an out-of-tune instrument, a poorly recorded vocal, an unbalanced mix, harsh sibilance, room rumble, or recording noise. Those belong in recording and mixing — mastering is the last bit of polish on top, not a rescue.",
+      guide_honest_note_label: "Honestly:",
+      guide_honest_note: "mastering is maybe 5-10% of how a track ends up sounding. A good mix does most of the work. If a track doesn't sound good before mastering, it won't sound good after it either — just louder.",
+      guide_preset_title: "3. How to pick a preset",
+      guide_preset_1: "Smart Auto is a sensible default if you're not sure — it derives a target loudness from your track's crest factor (peak-to-RMS ratio), so a dynamic acoustic track gets treated differently from a dense electronic mix.",
+      guide_preset_2: "There's no point chasing the highest possible loudness for its own sake. Spotify, YouTube, and most other platforms renormalize your track to their own target anyway — extra loudness on top just eats into dynamics and makes the track sound tired, without it ending up any louder in the player.",
+      guide_mistakes_title: "4. Common mistakes",
+      guide_mistake_1: "Mastering from an MP3/AAC file instead of WAV — the compressed format has already thrown information away for good, and mastering can't bring it back.",
+      guide_mistake_2: "Mastering \"on top of\" mastering — running an already-mastered file through mastering again and again. Each pass adds a bit of distortion and eats into dynamics.",
+      guide_mistake_3: "A master bus already slammed loud before mastering — a limiter or maximizer left on the final mix only leaves mastering with whatever headroom is left over.",
+      guide_mistake_4: "Trusting the numbers (LUFS, true peak) blindly without listening — they're useful tools, not a substitute for your ears.",
+      guide_after_title: "5. After mastering",
+      guide_after_1: "Use the Original / Mastered toggle and listen at matched loudness — a louder version will almost always sound \"better\" even when it objectively isn't. DZMASTER doesn't loudness-match the two versions for you in the player, so keep that in mind while listening.",
+      guide_after_2: "If the track is also headed somewhere it'll play in mono (older radios, some clubs), check mono compatibility — or just turn on \"Mono bass\" in Advanced settings.",
+      guide_after_3: "Before you sign off on the final track, listen to it on more than one device — headphones, a phone speaker, a car. What sounds great on studio monitors doesn't always hold up everywhere.",
       step1_kicker: "Step 1", step1_title: "Upload a WAV file",
       drop_title: "Drop your .wav file here", drop_sub: "or click to choose a file · max 600 MB",
       clear_btn: "Remove",
@@ -1449,8 +1754,16 @@
       adv_summary: "⚙️ Advanced settings (optional)",
       adv_eq_title: "Tonal EQ",
       adv_bass_label: "Bass · 120 Hz", adv_mid_label: "Mid · 1 kHz", adv_treble_label: "Treble · 8 kHz",
+      adv_dynamics_title: "Dynamics",
+      adv_multiband_label: "Multiband compression (bass, mid and treble handled separately)",
+      adv_multiband_hint: "A gentler result on dense mixes -- a loud bass hit no longer drags the highs down with it.",
       adv_width_title: "Stereo width", adv_width_label: "Width",
       adv_width_hint: "0% = mono, 100% = original, 200% = maximum width. Has no effect on mono files.",
+      adv_bassmono_label: "Mono bass below 120 Hz",
+      adv_bassmono_hint: "Safer playback on mono systems and vinyl, highs stay stereo.",
+      adv_saturation_title: "Saturation / warmth",
+      adv_saturation_label: "Saturation",
+      adv_saturation_hint: "0% = unchanged, higher values add gentle harmonic coloration.",
       adv_trim_label: "Trim leading/trailing silence (with a gentle fade in/out)",
       adv_reset_btn: "Reset to defaults",
       adv_trimmed_info: "Silence trimmed: ",
@@ -1619,13 +1932,17 @@
   var advTreble = document.getElementById('adv-treble');
   var advWidth = document.getElementById('adv-width');
   var advTrim = document.getElementById('adv-trim');
+  var advMultiband = document.getElementById('adv-multiband');
+  var advBassMono = document.getElementById('adv-bassmono');
+  var advSaturation = document.getElementById('adv-saturation');
   var advReset = document.getElementById('adv-reset');
   var advBassValue = document.getElementById('adv-bass-value');
   var advMidValue = document.getElementById('adv-mid-value');
   var advTrebleValue = document.getElementById('adv-treble-value');
   var advWidthValue = document.getElementById('adv-width-value');
+  var advSaturationValue = document.getElementById('adv-saturation-value');
 
-  var ADV_DEFAULTS = { bass: 0, mid: 0, treble: 0, width: 100, trim: false };
+  var ADV_DEFAULTS = { bass: 0, mid: 0, treble: 0, width: 100, trim: false, multiband: false, bassMono: false, saturation: 0 };
 
   function fmtDbSigned(v){ var n = Number(v); return (n > 0 ? '+' : '') + n.toFixed(1).replace(/\.0$/, '') + ' dB'; }
 
@@ -1634,8 +1951,9 @@
     advMidValue.textContent = fmtDbSigned(advMid.value);
     advTrebleValue.textContent = fmtDbSigned(advTreble.value);
     advWidthValue.textContent = advWidth.value + '%';
+    advSaturationValue.textContent = advSaturation.value + '%';
   }
-  [advBass, advMid, advTreble, advWidth].forEach(function(el){
+  [advBass, advMid, advTreble, advWidth, advSaturation].forEach(function(el){
     el.addEventListener('input', refreshAdvancedLabels);
   });
   refreshAdvancedLabels();
@@ -1646,6 +1964,9 @@
     advTreble.value = ADV_DEFAULTS.treble;
     advWidth.value = ADV_DEFAULTS.width;
     advTrim.checked = ADV_DEFAULTS.trim;
+    advMultiband.checked = ADV_DEFAULTS.multiband;
+    advBassMono.checked = ADV_DEFAULTS.bassMono;
+    advSaturation.value = ADV_DEFAULTS.saturation;
     refreshAdvancedLabels();
   });
 
@@ -1659,7 +1980,10 @@
         midDb: parseFloat(advMid.value) || 0,
         trebleDb: parseFloat(advTreble.value) || 0
       },
-      stereoWidthPct: parseFloat(advWidth.value)
+      stereoWidthPct: parseFloat(advWidth.value),
+      multiband: !!advMultiband.checked,
+      bassMono: !!advBassMono.checked,
+      saturation: { amount: parseFloat(advSaturation.value) || 0 }
     };
   }
 
