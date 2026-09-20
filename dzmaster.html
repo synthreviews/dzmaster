@@ -988,14 +988,29 @@
         envDb = releaseCoef * envDb + (1 - releaseCoef) * inDb;
       }
 
-      // Soft-knee gain computer.
+      // Soft-knee gain computer. Standard soft-knee formula (Giannoulis/
+      // Massberg/Reiss): within the knee, gain reduction is
+      // (1 - 1/ratio) * (over + knee/2)^2 / (2*knee) -- note (1 - 1/ratio),
+      // NOT (1/ratio - 1). The sign matters: with ratio > 1, (1 - 1/ratio)
+      // is positive (an actual gain *reduction*, matching the "above knee"
+      // branch just past the boundary) while (1/ratio - 1) is negative (a
+      // gain *increase*). Using the wrong sign here used to make this
+      // branch disagree with the linear branch right at over === kneeDb/2
+      // -- e.g. for ratio 1.8 / kneeDb 6, the two branches landed on
+      // +1.33dB and -1.33dB at the same point, a ~2.7dB gain snap on a
+      // single sample. Since real program material spends a lot of time
+      // hovering right around the knee, that discontinuity fired
+      // constantly and was audible as clicking/crackling throughout a
+      // track, not just on hard peaks. Fixed sign restores continuity
+      // with both neighboring regions (0dB below the knee, the linear
+      // formula above it) -- verified by the regression test below.
       var over = envDb - thresholdDb;
       var gainReductionDb = 0;
       if (over > kneeDb / 2) {
         gainReductionDb = over - over / ratio;
       } else if (over > -kneeDb / 2) {
         var kneeX = over + kneeDb / 2;
-        gainReductionDb = (1 / ratio - 1) * (kneeX * kneeX) / (2 * kneeDb);
+        gainReductionDb = (1 - 1 / ratio) * (kneeX * kneeX) / (2 * kneeDb);
       }
       var gainLin = dbToLinear(-gainReductionDb) * makeupLin;
 
