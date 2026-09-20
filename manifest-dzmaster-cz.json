@@ -1,0 +1,25 @@
+{
+  "name": "DZMASTER — Automatický online mastering hudby",
+  "short_name": "DZMASTER",
+  "description": "Bezplatný online nástroj pro automatický mastering hudby přímo v prohlížeči — bez uploadu, bez registrace.",
+  "start_url": "/dzmaster/dzmaster.html",
+  "scope": "/dzmaster/",
+  "id": "/dzmaster/dzmaster.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#090a12",
+  "theme_color": "#0b0d17",
+  "lang": "cs",
+  "dir": "ltr",
+  "icons": [
+    { "src": "/dzmaster/icons/dzmaster-icon-96.png", "sizes": "96x96", "type": "image/png" },
+    { "src": "/dzmaster/icons/dzmaster-icon-128.png", "sizes": "128x128", "type": "image/png" },
+    { "src": "/dzmaster/icons/dzmaster-icon-144.png", "sizes": "144x144", "type": "image/png" },
+    { "src": "/dzmaster/icons/dzmaster-icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/dzmaster/icons/dzmaster-icon-192-maskable.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/dzmaster/icons/dzmaster-icon-256.png", "sizes": "256x256", "type": "image/png" },
+    { "src": "/dzmaster/icons/dzmaster-icon-384.png", "sizes": "384x384", "type": "image/png" },
+    { "src": "/dzmaster/icons/dzmaster-icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/dzmaster/icons/dzmaster-icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DZMASTER — Free Automatic Online Music Mastering | SYNTHLUCIDA</title>
+<meta name="description" content="DZMASTER is a free online mastering tool: upload a WAV, pick a preset (Spotify, Apple Music, Club) and get a track with safe loudness and peaks in seconds. Runs entirely in your browser, nothing is uploaded to a server.">
+<meta name="keywords" content="online mastering, free mastering, LUFS, mastering for Spotify, automatic mastering, browser mastering, WAV mastering, loudness normalization">
+<meta name="author" content="DZMASTER">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://synthreviews.github.io/dzmaster/dzmaster-landing-en.html">
+<link rel="alternate" hreflang="cs" href="https://synthreviews.github.io/dzmaster/dzmaster-landing.html">
+<link rel="alternate" hreflang="en" href="https://synthreviews.github.io/dzmaster/dzmaster-landing-en.html">
+<link rel="alternate" hreflang="x-default" href="https://synthreviews.github.io/dzmaster/dzmaster-landing.html">
+
+<!-- ===== Open Graph ===== -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SYNTHLUCIDA">
+<meta property="og:title" content="DZMASTER — Free Automatic Online Music Mastering">
+<meta property="og:description" content="Upload a WAV, pick a preset, download your mastered track. Runs entirely in your browser, free, no sign-up.">
+<meta property="og:url" content="https://synthreviews.github.io/dzmaster/dzmaster-landing-en.html">
+<meta property="og:image" content="https://synthreviews.github.io/dzmaster/dzmaster-og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="cs_CZ">
+
+<!-- ===== Twitter / X card ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DZMASTER — Free Automatic Online Music Mastering">
+<meta name="twitter:description" content="Upload a WAV, pick a preset, download your mastered track. Runs entirely in your browser, free, no sign-up.">
+<meta name="twitter:image" content="https://synthreviews.github.io/dzmaster/dzmaster-og-en.png">
+
+<meta name="theme-color" content="#0b0d17">
+
+<!-- ===== Favicon ===== -->
+<link rel="icon" href="/dzmaster/icons/dzmaster-favicon.ico" sizes="any">
+<link rel="icon" href="/dzmaster/icons/dzmaster-favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/dzmaster/icons/dzmaster-apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "DZMASTER",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any (web browser)",
+  "url": "https://synthreviews.github.io/dzmaster/dzmaster.html",
+  "description": "A free online tool for automatic music mastering, right in your browser. Analyzes a WAV file and adjusts loudness and peaks to match your target platform (Spotify, YouTube, Apple Music).",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": [
+    "Integrated loudness (LUFS) measurement per ITU-R BS.1770",
+    "Automatic loudness matching to Streaming / Apple / Club / Smart Auto presets",
+    "Look-ahead limiter protecting against exceeding -1 dBTP",
+    "Mastered WAV export (16 or 24-bit)",
+    "All processing runs locally in the browser, nothing is uploaded"
+  ],
+  "publisher": { "@type": "Organization", "name": "SYNTHLUCIDA", "url": "https://synthlucida.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Is DZMASTER really free?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Yes. DZMASTER is free, requires no sign-up, and has no track limit. Processing runs in your browser, so there's no server cost per track."}},
+    {"@type": "Question", "name": "Is my track uploaded to a server?",
+     "acceptedAnswer": {"@type": "Answer", "text": "No. The entire mastering chain runs locally in your browser via JavaScript. Your file is never uploaded anywhere and leaves no trace once you close the page."}},
+    {"@type": "Question", "name": "What file format does DZMASTER support?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Input is WAV (16, 24 or 32-bit, mono or stereo). Output is a mastered WAV at 16 or 24-bit quality, ready to upload to Spotify for Artists, YouTube, Bandcamp or any player."}},
+    {"@type": "Question", "name": "Does DZMASTER replace a professional mastering engineer?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Not entirely — DZMASTER performs basic but technically correct mastering (loudness, safe peaks, gentle dynamics evening) without creative EQ shaping of your mix. For a major release a human mastering engineer is still the better choice, but for demos, singles, podcasts or quick reference masters, DZMASTER is a fast and reliable solution."}},
+    {"@type": "Question", "name": "How long does processing take?",
+     "acceptedAnswer": {"@type": "Answer", "text": "A typical track (3-5 minutes) processes in a few seconds to under a minute right in your browser, depending on your device's performance."}}
+  ]
+}
+</script>
+<style>
+  :root{
+    --bg-0:#090a12; --bg-1:#0f1120; --bg-2:#161933; --card:#151830cc;
+    --line:#2a2f57; --line-soft:#20244a;
+    --text-0:#f3f4fb; --text-1:#b7bce0; --text-2:#7d82ab;
+    --accent-1:#7c6cff; --accent-2:#34e0d6; --accent-3:#ff6ec7;
+    --ok:#4be3a4;
+    --radius:16px; --radius-sm:10px;
+    --shadow: 0 20px 60px -25px rgba(0,0,0,.6);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;
+    color:var(--text-0);
+    background:
+      radial-gradient(1200px 700px at 15% -10%, #2a2470 0%, transparent 60%),
+      radial-gradient(1000px 700px at 110% 10%, #113a3a 0%, transparent 55%),
+      linear-gradient(180deg, var(--bg-0), var(--bg-1) 40%, var(--bg-0));
+    min-height:100vh; line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent-2);}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px;}
+  header.top{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:linear-gradient(180deg, rgba(9,10,18,.85), rgba(9,10,18,.55));border-bottom:1px solid var(--line-soft);}
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;max-width:1000px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;}
+  .brand .logo{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));display:flex;align-items:center;justify-content:center;font-size:15px;}
+  nav.top-links{display:flex;gap:18px;align-items:center;}
+  nav.top-links a{color:var(--text-1);text-decoration:none;font-size:14px;font-weight:600;}
+  nav.top-links a.cta{color:#0a0b14;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));padding:9px 18px;border-radius:999px;font-weight:800;}
+
+  main{padding:0 0 90px;}
+  .hero{text-align:center;padding:70px 0 30px;}
+  .hero .eyebrow{display:inline-block;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2);font-weight:800;background:rgba(52,224,214,.1);border:1px solid rgba(52,224,214,.3);padding:6px 14px;border-radius:999px;margin-bottom:18px;}
+  .hero h1{font-size:clamp(30px,5.5vw,50px);margin:0 0 18px;font-weight:800;letter-spacing:-.01em;}
+  .hero h1 .grad{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero p.lead{color:var(--text-1);max-width:620px;margin:0 auto;font-size:18px;}
+  .hero-ctas{display:flex;gap:12px;justify-content:center;margin-top:30px;flex-wrap:wrap;}
+  .btn-primary{background:linear-gradient(135deg,var(--accent-1),var(--accent-2));color:#0a0b14;font-weight:800;font-size:15.5px;padding:15px 30px;border-radius:12px;text-decoration:none;box-shadow:0 14px 34px -12px rgba(124,108,255,.55);display:inline-block;}
+  .btn-secondary{color:var(--text-0);font-weight:700;font-size:15.5px;padding:15px 24px;border-radius:12px;text-decoration:none;border:1px solid var(--line);display:inline-block;}
+  .trust-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:22px;}
+  .pill{font-size:12.5px;color:var(--text-1);background:var(--bg-2);border:1px solid var(--line-soft);padding:6px 12px;border-radius:999px;}
+
+  section{padding:56px 0;}
+  section.tight{padding:30px 0;}
+  h2.section-title{font-size:clamp(24px,3.6vw,32px);font-weight:800;text-align:center;margin:0 0 10px;}
+  p.section-sub{text-align:center;color:var(--text-1);max-width:600px;margin:0 auto 38px;font-size:15.5px;}
+
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  @media (max-width:820px){ .steps{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:480px){ .steps{grid-template-columns:1fr;} }
+  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);}
+  .step .num{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));color:#0a0b14;display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:14px;}
+  .step h3{margin:0 0 8px;font-size:16px;}
+  .step p{margin:0;color:var(--text-2);font-size:13.5px;}
+
+  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  @media (max-width:820px){ .features{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .features{grid-template-columns:1fr;} }
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);}
+  .feature .emoji{font-size:26px;margin-bottom:10px;display:block;}
+  .feature h3{margin:0 0 8px;font-size:16px;}
+  .feature p{margin:0;color:var(--text-2);font-size:13.5px;}
+
+  .presets-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+  .presets-table th,.presets-table td{padding:14px 16px;text-align:left;font-size:14px;border-bottom:1px solid var(--line-soft);}
+  .presets-table th{color:var(--text-2);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;background:var(--bg-2);}
+  .presets-table tr:last-child td{border-bottom:none;}
+  .table-scroll{overflow-x:auto;}
+
+  .faq .item{border-bottom:1px solid var(--line-soft);padding:18px 0;}
+  .faq .q{font-weight:700;font-size:16px;}
+  .faq .a{color:var(--text-1);margin-top:8px;font-size:14.5px;}
+
+  .final-cta{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:50px 24px;box-shadow:var(--shadow);}
+  .final-cta h2{margin:0 0 12px;font-size:26px;font-weight:800;}
+  .final-cta p{color:var(--text-1);margin:0 0 24px;}
+
+  footer{border-top:1px solid var(--line-soft);padding:30px 0;text-align:center;color:var(--text-2);font-size:12.5px;}
+  footer a{color:var(--text-2);text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="topbar">
+    <div class="brand"><span class="logo">🎚️</span><span>DZMASTER</span></div>
+    <nav class="top-links">
+      <a href="#faq">FAQ</a>
+      <a href="dzmaster-landing.html">CZ</a>
+      <a href="dzmaster.html?lang=en" class="cta">Launch the tool</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <span class="eyebrow">Free · No sign-up · Nothing uploaded</span>
+    <h1>Mastering for your music, <span class="grad">done in seconds</span></h1>
+    <p class="lead">DZMASTER is an online tool that analyzes your WAV file right in your browser and automatically masters it to the correct loudness and safe peak level for Spotify, YouTube, Apple Music and everyday players.</p>
+    <div class="hero-ctas">
+      <a href="dzmaster.html?lang=en" class="btn-primary">Upload a track and master it →</a>
+      <a href="#how" class="btn-secondary">See how it works</a>
+    </div>
+    <div class="trust-row">
+      <span class="pill">🔒 Your track is never uploaded</span>
+      <span class="pill">⚡ Processed in your browser</span>
+      <span class="pill">🎚️ 4 presets incl. Smart Auto</span>
+      <span class="pill">🆓 100% free</span>
+    </div>
+  </section>
+
+  <section id="how" class="wrap">
+    <h2 class="section-title">How DZMASTER works</h2>
+    <p class="section-sub">No parameters, no tweaking. Pick the platform you're releasing to and the tool handles the rest.</p>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>Upload a WAV</h3><p>Drop your file into the browser — it stays on your device and is never uploaded.</p></div>
+      <div class="step"><div class="num">2</div><h3>Pick a preset</h3><p>Streaming, Apple/Podcast, Club/EDM, or Smart Auto, which picks a target for you based on the track's analysis.</p></div>
+      <div class="step"><div class="num">3</div><h3>The tool masters it</h3><p>Loudness is matched to the target LUFS and a safe limiter protects the peaks from clipping.</p></div>
+      <div class="step"><div class="num">4</div><h3>Download the result</h3><p>Grab the finished WAV and upload it straight to Spotify for Artists, YouTube or Bandcamp.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2 class="section-title">A preset for every platform</h2>
+    <p class="section-sub">Target values follow each streaming service's 2026 loudness recommendations.</p>
+    <div class="table-scroll">
+      <table class="presets-table">
+        <thead><tr><th>Preset</th><th>Target loudness</th><th>Peak</th><th>Good for</th></tr></thead>
+        <tbody>
+          <tr><td>🧠 Smart Auto</td><td>tool decides</td><td>−1 dBTP</td><td>Not sure / mixed genres</td></tr>
+          <tr><td>🎧 Streaming</td><td>−14 LUFS</td><td>−1 dBTP</td><td>Spotify, YouTube, general release</td></tr>
+          <tr><td>🍎 Apple / Podcast</td><td>−16 LUFS</td><td>−1 dBTP</td><td>Apple Music, spoken word, acoustic</td></tr>
+          <tr><td>🔊 Club / EDM</td><td>−9 LUFS</td><td>−1 dBTP</td><td>Electronic music, DJ sets</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2 class="section-title">Why DZMASTER</h2>
+    <div class="features">
+      <div class="feature"><span class="emoji">🔒</span><h3>Privacy first</h3><p>No upload, no server, no account. Your track is processed exclusively on your own device.</p></div>
+      <div class="feature"><span class="emoji">⚡</span><h3>Fast</h3><p>A typical song is done in a few seconds — no server queue to wait in.</p></div>
+      <div class="feature"><span class="emoji">🎚️</span><h3>Safe limiting</h3><p>A look-ahead limiter guards against inter-sample peaks so your track won't clip after MP3/AAC encoding.</p></div>
+      <div class="feature"><span class="emoji">🧠</span><h3>Smart Auto</h3><p>Not sure which preset to pick? The tool recommends one based on your track's dynamics.</p></div>
+      <div class="feature"><span class="emoji">🆓</span><h3>Free, no limits</h3><p>No credits, no subscription, no watermark. Master as many tracks as you like.</p></div>
+      <div class="feature"><span class="emoji">📱</span><h3>Works everywhere</h3><p>Responsive design — master a track from your phone or tablet just as easily.</p></div>
+    </div>
+  </section>
+
+  <section id="faq" class="wrap">
+    <h2 class="section-title">Frequently asked questions</h2>
+    <div class="faq">
+      <div class="item"><div class="q">Is DZMASTER really free?</div><div class="a">Yes. It's free, requires no sign-up, and has no track limit — processing runs in your browser, so there's no server cost per track.</div></div>
+      <div class="item"><div class="q">Is my track uploaded to a server?</div><div class="a">No. The entire mastering chain runs locally in your browser. Your file is never uploaded anywhere and leaves no trace once you close the page.</div></div>
+      <div class="item"><div class="q">What file format does DZMASTER support?</div><div class="a">Input is WAV (16, 24 or 32-bit, mono or stereo). Output is a mastered WAV at 16 or 24-bit quality.</div></div>
+      <div class="item"><div class="q">Does DZMASTER replace a professional mastering engineer?</div><div class="a">Not entirely — it performs basic but technically correct mastering (loudness, safe peaks, gentle dynamics evening) without creative EQ shaping of your mix. For a major release a human mastering engineer is still the better choice; for demos, singles or podcasts, DZMASTER is a fast, reliable solution.</div></div>
+      <div class="item"><div class="q">How long does processing take?</div><div class="a">A typical track (3-5 minutes) processes in a few seconds to under a minute, depending on your device's performance.</div></div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="final-cta">
+      <h2>Try DZMASTER on your own track</h2>
+      <p>No sign-up. No upload. No waiting.</p>
+      <a href="dzmaster.html?lang=en" class="btn-primary">Open DZMASTER →</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    DZMASTER is part of the SYNTHLUCIDA tools family.
+    · <a href="dzmaster.html?lang=en">Launch the tool</a>
+    · <a href="https://synthlucida.com/index.html">SYNTHLUCIDA</a>
+  </div>
+</footer>
+
+</body>
+</html>

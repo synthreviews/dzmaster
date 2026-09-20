@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DZMASTER — Automatický online mastering hudby zdarma | SYNTHLUCIDA</title>
+<meta name="description" content="DZMASTER je bezplatný online mastering nástroj: nahrajete WAV, vyberete předvolbu (Spotify, Apple Music, Club) a během vteřin získáte track s bezpečnou hlasitostí a špičkami. Vše přímo v prohlížeči, bez uploadu na server.">
+<meta name="keywords" content="online mastering, mastering zdarma, LUFS, mastering pro Spotify, automatický mastering, mastering v prohlížeči, WAV mastering, loudness normalization">
+<meta name="author" content="DZMASTER">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://synthreviews.github.io/dzmaster/dzmaster-landing.html">
+<link rel="alternate" hreflang="cs" href="https://synthreviews.github.io/dzmaster/dzmaster-landing.html">
+<link rel="alternate" hreflang="en" href="https://synthreviews.github.io/dzmaster/dzmaster-landing-en.html">
+<link rel="alternate" hreflang="x-default" href="https://synthreviews.github.io/dzmaster/dzmaster-landing.html">
+
+<!-- ===== Open Graph ===== -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SYNTHLUCIDA">
+<meta property="og:title" content="DZMASTER — Automatický online mastering hudby zdarma">
+<meta property="og:description" content="Nahrajte WAV, vyberte předvolbu, stáhněte mastrovanou stopu. Vše přímo v prohlížeči, zdarma, bez registrace.">
+<meta property="og:url" content="https://synthreviews.github.io/dzmaster/dzmaster-landing.html">
+<meta property="og:image" content="https://synthreviews.github.io/dzmaster/dzmaster-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:locale:alternate" content="en_US">
+
+<!-- ===== Twitter / X card ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DZMASTER — Automatický online mastering hudby zdarma">
+<meta name="twitter:description" content="Nahrajte WAV, vyberte předvolbu, stáhněte mastrovanou stopu. Vše přímo v prohlížeči, zdarma, bez registrace.">
+<meta name="twitter:image" content="https://synthreviews.github.io/dzmaster/dzmaster-og.png">
+
+<meta name="theme-color" content="#0b0d17">
+
+<!-- ===== Favicon ===== -->
+<link rel="icon" href="/dzmaster/icons/dzmaster-favicon.ico" sizes="any">
+<link rel="icon" href="/dzmaster/icons/dzmaster-favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/dzmaster/icons/dzmaster-apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "DZMASTER",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any (web browser)",
+  "url": "https://synthreviews.github.io/dzmaster/dzmaster.html",
+  "description": "Bezplatný online nástroj pro automatický mastering hudby přímo v prohlížeči. Analyzuje WAV soubor a upraví hlasitost a špičky podle cílové platformy (Spotify, YouTube, Apple Music).",
+  "inLanguage": "cs",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CZK" },
+  "featureList": [
+    "Měření integrované hlasitosti (LUFS) podle ITU-R BS.1770",
+    "Automatické vyrovnání hlasitosti na předvolbu Streaming / Apple / Club / Smart Auto",
+    "Look-ahead limiter s ochranou proti překročení −1 dBTP",
+    "Export mastrovaného WAV (16 nebo 24-bit)",
+    "Veškeré zpracování běží lokálně v prohlížeči, bez uploadu na server"
+  ],
+  "publisher": { "@type": "Organization", "name": "SYNTHLUCIDA", "url": "https://synthlucida.com" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Je DZMASTER opravdu zdarma?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Ano. DZMASTER je zdarma, bez registrace a bez omezení počtu tracků. Zpracování běží ve vašem prohlížeči, takže nevznikají žádné serverové náklady na track."}},
+    {"@type": "Question", "name": "Nahrává se můj track na server?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Ne. Celý mastering probíhá lokálně ve vašem prohlížeči pomocí JavaScriptu. Soubor se nikam neodesílá a po zavření stránky po něm nezůstává žádná stopa."}},
+    {"@type": "Question", "name": "Jaký formát souboru DZMASTER podporuje?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Na vstupu WAV (16, 24 nebo 32-bit, mono i stereo). Výstupem je mastrovaný WAV v 16 nebo 24-bit kvalitě, připravený k nahrání na Spotify for Artists, YouTube, Bandcamp nebo do jakéhokoliv přehrávače."}},
+    {"@type": "Question", "name": "Nahradí DZMASTER profesionálního mastering inženýra?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Ne úplně — DZMASTER dělá základní, ale technicky správný mastering (hlasitost, bezpečné špičky, jemné vyrovnání dynamiky) bez kreativního EQ zásahu do vašeho mixu. Pro finální vydání velkého releasu je lidský mastering engineer stále lepší volba, ale pro dema, singly, podcasty nebo rychlé demo nahrávky je DZMASTER rychlé a spolehlivé řešení."}},
+    {"@type": "Question", "name": "Jak dlouho zpracování trvá?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Typická skladba (3–5 minut) se zpracuje za pár vteřin až necelou minutu přímo ve vašem prohlížeči, v závislosti na výkonu vašeho zařízení."}}
+  ]
+}
+</script>
+<style>
+  :root{
+    --bg-0:#090a12; --bg-1:#0f1120; --bg-2:#161933; --card:#151830cc;
+    --line:#2a2f57; --line-soft:#20244a;
+    --text-0:#f3f4fb; --text-1:#b7bce0; --text-2:#7d82ab;
+    --accent-1:#7c6cff; --accent-2:#34e0d6; --accent-3:#ff6ec7;
+    --ok:#4be3a4;
+    --radius:16px; --radius-sm:10px;
+    --shadow: 0 20px 60px -25px rgba(0,0,0,.6);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;
+    color:var(--text-0);
+    background:
+      radial-gradient(1200px 700px at 15% -10%, #2a2470 0%, transparent 60%),
+      radial-gradient(1000px 700px at 110% 10%, #113a3a 0%, transparent 55%),
+      linear-gradient(180deg, var(--bg-0), var(--bg-1) 40%, var(--bg-0));
+    min-height:100vh; line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent-2);}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px;}
+  header.top{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:linear-gradient(180deg, rgba(9,10,18,.85), rgba(9,10,18,.55));border-bottom:1px solid var(--line-soft);}
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;max-width:1000px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;}
+  .brand .logo{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));display:flex;align-items:center;justify-content:center;font-size:15px;}
+  nav.top-links{display:flex;gap:18px;align-items:center;}
+  nav.top-links a{color:var(--text-1);text-decoration:none;font-size:14px;font-weight:600;}
+  nav.top-links a.cta{color:#0a0b14;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));padding:9px 18px;border-radius:999px;font-weight:800;}
+
+  main{padding:0 0 90px;}
+  .hero{text-align:center;padding:70px 0 30px;}
+  .hero .eyebrow{display:inline-block;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2);font-weight:800;background:rgba(52,224,214,.1);border:1px solid rgba(52,224,214,.3);padding:6px 14px;border-radius:999px;margin-bottom:18px;}
+  .hero h1{font-size:clamp(30px,5.5vw,50px);margin:0 0 18px;font-weight:800;letter-spacing:-.01em;}
+  .hero h1 .grad{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;}
+  .hero p.lead{color:var(--text-1);max-width:620px;margin:0 auto;font-size:18px;}
+  .hero-ctas{display:flex;gap:12px;justify-content:center;margin-top:30px;flex-wrap:wrap;}
+  .btn-primary{background:linear-gradient(135deg,var(--accent-1),var(--accent-2));color:#0a0b14;font-weight:800;font-size:15.5px;padding:15px 30px;border-radius:12px;text-decoration:none;box-shadow:0 14px 34px -12px rgba(124,108,255,.55);display:inline-block;}
+  .btn-secondary{color:var(--text-0);font-weight:700;font-size:15.5px;padding:15px 24px;border-radius:12px;text-decoration:none;border:1px solid var(--line);display:inline-block;}
+  .trust-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:22px;}
+  .pill{font-size:12.5px;color:var(--text-1);background:var(--bg-2);border:1px solid var(--line-soft);padding:6px 12px;border-radius:999px;}
+
+  section{padding:56px 0;}
+  section.tight{padding:30px 0;}
+  h2.section-title{font-size:clamp(24px,3.6vw,32px);font-weight:800;text-align:center;margin:0 0 10px;}
+  p.section-sub{text-align:center;color:var(--text-1);max-width:600px;margin:0 auto 38px;font-size:15.5px;}
+
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  @media (max-width:820px){ .steps{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:480px){ .steps{grid-template-columns:1fr;} }
+  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);}
+  .step .num{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));color:#0a0b14;display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:14px;}
+  .step h3{margin:0 0 8px;font-size:16px;}
+  .step p{margin:0;color:var(--text-2);font-size:13.5px;}
+
+  .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  @media (max-width:820px){ .features{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .features{grid-template-columns:1fr;} }
+  .feature{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);}
+  .feature .emoji{font-size:26px;margin-bottom:10px;display:block;}
+  .feature h3{margin:0 0 8px;font-size:16px;}
+  .feature p{margin:0;color:var(--text-2);font-size:13.5px;}
+
+  .presets-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);}
+  .presets-table th,.presets-table td{padding:14px 16px;text-align:left;font-size:14px;border-bottom:1px solid var(--line-soft);}
+  .presets-table th{color:var(--text-2);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;background:var(--bg-2);}
+  .presets-table tr:last-child td{border-bottom:none;}
+  .table-scroll{overflow-x:auto;}
+
+  .faq .item{border-bottom:1px solid var(--line-soft);padding:18px 0;}
+  .faq .q{font-weight:700;font-size:16px;}
+  .faq .a{color:var(--text-1);margin-top:8px;font-size:14.5px;}
+
+  .final-cta{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:50px 24px;box-shadow:var(--shadow);}
+  .final-cta h2{margin:0 0 12px;font-size:26px;font-weight:800;}
+  .final-cta p{color:var(--text-1);margin:0 0 24px;}
+
+  footer{border-top:1px solid var(--line-soft);padding:30px 0;text-align:center;color:var(--text-2);font-size:12.5px;}
+  footer a{color:var(--text-2);text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="topbar">
+    <div class="brand"><span class="logo">🎚️</span><span>DZMASTER</span></div>
+    <nav class="top-links">
+      <a href="#faq">FAQ</a>
+      <a href="dzmaster-landing-en.html">EN</a>
+      <a href="dzmaster.html" class="cta">Spustit nástroj</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <span class="eyebrow">Zdarma · bez registrace · bez uploadu</span>
+    <h1>Mastering vaší hudby, <span class="grad">hotový za pár vteřin</span></h1>
+    <p class="lead">DZMASTER je online nástroj, který WAV soubor přímo ve vašem prohlížeči analyzuje a automaticky doladí jeho hlasitost a špičky tak, aby dobře zněl na Spotify, YouTube, Apple Music i v běžných přehrávačích.</p>
+    <div class="hero-ctas">
+      <a href="dzmaster.html" class="btn-primary">Nahrát track a mastrovat →</a>
+      <a href="#how" class="btn-secondary">Jak to funguje</a>
+    </div>
+    <div class="trust-row">
+      <span class="pill">🔒 Track se nikam neodesílá</span>
+      <span class="pill">⚡ Zpracování přímo v prohlížeči</span>
+      <span class="pill">🎚️ 4 předvolby vč. Smart Auto</span>
+      <span class="pill">🆓 100 % zdarma</span>
+    </div>
+  </section>
+
+  <section id="how" class="wrap">
+    <h2 class="section-title">Jak DZMASTER funguje</h2>
+    <p class="section-sub">Žádné parametry, žádné ladění. Vyberte platformu, na kterou chcete track vydat, a zbytek udělá nástroj sám.</p>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>Nahrajete WAV</h3><p>Přetáhnete soubor do prohlížeče — zůstává jen u vás, nikam se neodesílá.</p></div>
+      <div class="step"><div class="num">2</div><h3>Vyberete předvolbu</h3><p>Streaming, Apple/Podcast, Club/EDM nebo Smart Auto, který vybere cíl sám podle analýzy tracku.</p></div>
+      <div class="step"><div class="num">3</div><h3>Nástroj track zpracuje</h3><p>Vyrovná hlasitost na cílovou hodnotu LUFS a bezpečným limiterem ochrání špičky proti ořezání.</p></div>
+      <div class="step"><div class="num">4</div><h3>Stáhnete výsledek</h3><p>Hotový WAV si rovnou stáhnete a nahrajete na Spotify for Artists, YouTube nebo Bandcamp.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2 class="section-title">Předvolby pro každou platformu</h2>
+    <p class="section-sub">Cílové hodnoty vycházejí z doporučení jednotlivých streamovacích služeb pro rok 2026.</p>
+    <div class="table-scroll">
+      <table class="presets-table">
+        <thead><tr><th>Předvolba</th><th>Cílová hlasitost</th><th>Špička</th><th>Vhodné pro</th></tr></thead>
+        <tbody>
+          <tr><td>🧠 Smart Auto</td><td>vybere nástroj</td><td>−1 dBTP</td><td>Když si nejste jistí / mix žánrů</td></tr>
+          <tr><td>🎧 Streaming</td><td>−14 LUFS</td><td>−1 dBTP</td><td>Spotify, YouTube, obecné vydání</td></tr>
+          <tr><td>🍎 Apple / Podcast</td><td>−16 LUFS</td><td>−1 dBTP</td><td>Apple Music, mluvené slovo, akustika</td></tr>
+          <tr><td>🔊 Club / EDM</td><td>−9 LUFS</td><td>−1 dBTP</td><td>Elektronická hudba, DJ sety</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2 class="section-title">Proč DZMASTER</h2>
+    <div class="features">
+      <div class="feature"><span class="emoji">🔒</span><h3>Soukromí na prvním místě</h3><p>Žádný upload, žádný server, žádné účty. Track se zpracuje výhradně ve vašem zařízení.</p></div>
+      <div class="feature"><span class="emoji">⚡</span><h3>Rychlé</h3><p>Běžná skladba je hotová během několika vteřin — bez čekání ve frontě na server.</p></div>
+      <div class="feature"><span class="emoji">🎚️</span><h3>Bezpečný limiter</h3><p>Look-ahead limiter s ochranou proti inter-sample špičkám, aby se track neořezal po kompresi do MP3/AAC.</p></div>
+      <div class="feature"><span class="emoji">🧠</span><h3>Smart Auto</h3><p>Nevíte, jakou předvolbu zvolit? Nástroj podle dynamiky skladby doporučí tu nejvhodnější.</p></div>
+      <div class="feature"><span class="emoji">🆓</span><h3>Zdarma bez limitu</h3><p>Žádné kredity, žádné předplatné, žádný vodoznak. Zpracujte si tolik tracků, kolik chcete.</p></div>
+      <div class="feature"><span class="emoji">📱</span><h3>Funguje všude</h3><p>Responzivní design — nástroj klidně použijte i z mobilu nebo tabletu.</p></div>
+    </div>
+  </section>
+
+  <section id="faq" class="wrap">
+    <h2 class="section-title">Časté dotazy</h2>
+    <div class="faq">
+      <div class="item"><div class="q">Je DZMASTER opravdu zdarma?</div><div class="a">Ano. Je zdarma, bez registrace a bez omezení počtu tracků — zpracování běží ve vašem prohlížeči, takže na track nevznikají žádné serverové náklady.</div></div>
+      <div class="item"><div class="q">Nahrává se můj track na server?</div><div class="a">Ne. Celý mastering probíhá lokálně ve vašem prohlížeči. Soubor se nikam neodesílá a po zavření stránky po něm nezůstává žádná stopa.</div></div>
+      <div class="item"><div class="q">Jaký formát souboru DZMASTER podporuje?</div><div class="a">Na vstupu WAV (16, 24 nebo 32-bit, mono i stereo). Výstupem je mastrovaný WAV v 16 nebo 24-bit kvalitě.</div></div>
+      <div class="item"><div class="q">Nahradí DZMASTER profesionálního mastering inženýra?</div><div class="a">Ne úplně — dělá základní, ale technicky správný mastering (hlasitost, bezpečné špičky, jemné vyrovnání dynamiky) bez kreativního EQ zásahu do mixu. Pro velký release je lidský mastering engineer stále lepší volba, pro dema, singly či podcasty je DZMASTER rychlé a spolehlivé řešení.</div></div>
+      <div class="item"><div class="q">Jak dlouho zpracování trvá?</div><div class="a">Typická skladba (3–5 minut) se zpracuje za pár vteřin až necelou minutu, v závislosti na výkonu vašeho zařízení.</div></div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="final-cta">
+      <h2>Vyzkoušejte DZMASTER na vlastním tracku</h2>
+      <p>Bez registrace. Bez uploadu. Bez čekání.</p>
+      <a href="dzmaster.html" class="btn-primary">Otevřít DZMASTER →</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    DZMASTER je součástí rodiny nástrojů SYNTHLUCIDA.
+    · <a href="dzmaster.html">Spustit nástroj</a>
+    · <a href="https://synthlucida.com/index.html">SYNTHLUCIDA</a>
+  </div>
+</footer>
+
+</body>
+</html>
