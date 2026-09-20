@@ -1,7 +1,7 @@
 {
   "name": "DZMASTER — Automatický online mastering hudby",
   "short_name": "DZMASTER",
-  "description": "Bezplatný online nástroj pro automatický mastering hudby přímo v prohlížeči — bez uploadu, bez registrace.",
+  "description": "Bezplatný online nástroj pro automatický mastering hudby přímo v prohlížeči — bez serveru, bez registrace.",
   "start_url": "/dzmaster/dzmaster.html",
   "scope": "/dzmaster/",
   "id": "/dzmaster/dzmaster.html",

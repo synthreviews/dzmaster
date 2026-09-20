@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ochrana soukromí | DZMASTER</title>
+<meta name="description" content="Zásady ochrany soukromí DZMASTER: jasně a konkrétně popisujeme, co se skutečně děje s vaším zvukovým souborem, jaká data se (ne)shromažďují a proč.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://synthreviews.github.io/dzmaster/dzmaster-privacy.html">
+<link rel="alternate" hreflang="cs" href="https://synthreviews.github.io/dzmaster/dzmaster-privacy.html">
+<link rel="alternate" hreflang="en" href="https://synthreviews.github.io/dzmaster/dzmaster-privacy-en.html">
+<link rel="alternate" hreflang="x-default" href="https://synthreviews.github.io/dzmaster/dzmaster-privacy.html">
+<meta name="theme-color" content="#0b0d17">
+<link rel="icon" href="/dzmaster/icons/dzmaster-favicon.ico" sizes="any">
+<link rel="icon" href="/dzmaster/icons/dzmaster-favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/dzmaster/icons/dzmaster-apple-touch-icon.png">
+<style>
+  :root{
+    --bg-0:#090a12; --bg-1:#0f1120; --bg-2:#161933; --card:#151830cc;
+    --line:#2a2f57; --line-soft:#20244a;
+    --text-0:#f3f4fb; --text-1:#b7bce0; --text-2:#7d82ab;
+    --accent-1:#7c6cff; --accent-2:#34e0d6; --accent-3:#ff6ec7;
+    --ok:#4be3a4;
+    --radius:16px; --radius-sm:10px;
+    --shadow: 0 20px 60px -25px rgba(0,0,0,.6);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;
+    color:var(--text-0);
+    background:
+      radial-gradient(1200px 700px at 15% -10%, #2a2470 0%, transparent 60%),
+      radial-gradient(1000px 700px at 110% 10%, #113a3a 0%, transparent 55%),
+      linear-gradient(180deg, var(--bg-0), var(--bg-1) 40%, var(--bg-0));
+    min-height:100vh; line-height:1.6; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent-2);}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px;}
+  header.top{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:linear-gradient(180deg, rgba(9,10,18,.85), rgba(9,10,18,.55));border-bottom:1px solid var(--line-soft);}
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;max-width:1000px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;}
+  .brand .logo{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));display:flex;align-items:center;justify-content:center;font-size:15px;}
+  nav.top-links{display:flex;gap:18px;align-items:center;}
+  nav.top-links a{color:var(--text-1);text-decoration:none;font-size:14px;font-weight:600;}
+  nav.top-links a.cta{color:#0a0b14;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));padding:9px 18px;border-radius:999px;font-weight:800;}
+
+  main.legal{padding:56px 0 90px;}
+  .eyebrow{display:inline-block;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-2);font-weight:800;background:rgba(52,224,214,.1);border:1px solid rgba(52,224,214,.3);padding:6px 14px;border-radius:999px;margin-bottom:18px;}
+  h1{font-size:clamp(28px,4.5vw,40px);margin:0 0 8px;font-weight:800;letter-spacing:-.01em;}
+  .updated{color:var(--text-2);font-size:13px;margin-bottom:10px;}
+  .intro{color:var(--text-1);font-size:16px;margin:18px 0 40px;}
+
+  section.block{margin-bottom:32px;}
+  section.block h2{font-size:19px;margin:0 0 10px;}
+  section.block p{color:var(--text-1);font-size:15px;margin:0 0 12px;}
+  section.block ul{color:var(--text-1);font-size:15px;padding-left:20px;margin:0 0 12px;}
+  section.block li{margin-bottom:7px;}
+
+  .callout{background:var(--card);border:1px solid var(--line-soft);border-radius:var(--radius-sm);padding:16px 18px;font-size:14.5px;color:var(--text-1);box-shadow:var(--shadow);}
+  .callout strong{color:var(--text-0);}
+
+  footer{border-top:1px solid var(--line-soft);padding:30px 0;text-align:center;color:var(--text-2);font-size:12.5px;}
+  footer a{color:var(--text-2);text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="topbar">
+    <div class="brand"><span class="logo">🎚️</span><span>DZMASTER</span></div>
+    <nav class="top-links">
+      <a href="dzmaster-landing.html">O nástroji</a>
+      <a href="dzmaster-privacy-en.html">EN</a>
+      <a href="dzmaster.html" class="cta">Spustit nástroj</a>
+    </nav>
+  </div>
+</header>
+
+<main class="legal">
+  <div class="wrap">
+    <span class="eyebrow">Zásady ochrany soukromí</span>
+    <h1>Co se skutečně děje s vaším souborem</h1>
+    <div class="updated">Poslední aktualizace: 20. září 2026</div>
+    <p class="intro">Tahle stránka nemá být právnický text plný obecných frází — má vám dát konkrétní a pravdivou odpověď na otázku „co DZMASTER dělá s mým hudebním souborem a jaká data o mně sbírá". Krátká verze: prakticky žádná. Delší verze je níže.</p>
+
+    <section class="block">
+      <h2>1. Kdo stránku provozuje</h2>
+      <p>DZMASTER je nástroj z rodiny <a href="https://synthlucida.com/index.html">SYNTHLUCIDA</a>, provozovaný jako nezávislý bezplatný web bez firemní registrace, hostovaný na GitHub Pages.</p>
+    </section>
+
+    <section class="block">
+      <h2>2. Co se děje s vaším zvukovým souborem</h2>
+      <p>Když v DZMASTERu vyberete nebo přetáhnete WAV soubor, ten se <strong>nikdy neodesílá na žádný server</strong> — ani náš, ani žádné třetí strany. Veškerá analýza (hlasitost, špičky, dynamika) i samotné zpracování (EQ, kompresor, limiter, export) probíhá výhradně ve vašem prohlížeči pomocí JavaScriptu (Web Worker), na vašem vlastním zařízení.</p>
+      <p>Soubor žije jen dočasně v paměti vašeho prohlížeče po dobu, kdy máte stránku otevřenou. Jakmile stránku zavřete nebo znovu načtete, zpracovaná data i dočasné odkazy na ně (tzv. blob URL) zaniknou. Nikde je neukládáme, nezálohujeme ani k nim nemáme přístup — technicky ani je vidět nemůžeme, protože k nám nikdy nedorazí.</p>
+      <div class="callout">Jinými slovy: DZMASTER nemá žádný backend, který by soubory přijímal. Není databáze, není úložiště, není co prolomit ani zneužít, protože vaše hudba nikam neodchází z vašeho počítače nebo telefonu.</div>
+    </section>
+
+    <section class="block">
+      <h2>3. Jaká osobní data neshromažďujeme</h2>
+      <ul>
+        <li>Žádnou registraci ani uživatelský účet</li>
+        <li>Žádné jméno, e-mail ani jiné kontaktní údaje</li>
+        <li>Žádné sledovací nebo reklamní cookies</li>
+        <li>Žádnou analytiku návštěvnosti (Google Analytics ani obdobu)</li>
+        <li>Žádné sdílení dat s třetími stranami — protože žádná data od vás nezískáváme</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>4. Co se ukládá lokálně ve vašem prohlížeči</h2>
+      <p>Jediná věc, kterou si DZMASTER pamatuje, je vaše jazyková volba (čeština/angličtina) — uloží se do <em>localStorage</em> přímo ve vašem prohlížeči, nikam se neodesílá a slouží jen k tomu, aby vám stránka příště naskočila ve stejném jazyce. Kdykoliv ji můžete smazat v nastavení prohlížeče (vymazání dat webu).</p>
+    </section>
+
+    <section class="block">
+      <h2>5. Hosting a technická data</h2>
+      <p>Web běží na GitHub Pages (GitHub, Inc., součást Microsoftu). Jako u úplně každého webu na internetu tak GitHub jako poskytovatel hostingu může ze své strany zaznamenávat standardní provozní logy nutné k chodu serveru — typicky IP adresu, typ prohlížeče a čas požadavku. DZMASTER k těmto datům nemá přístup a sám žádné podobné logování neprovádí. Podrobnosti najdete přímo v <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">zásadách ochrany soukromí GitHubu</a>.</p>
+    </section>
+
+    <section class="block">
+      <h2>6. Cookies</h2>
+      <p>DZMASTER sám žádné cookies nenastavuje. Jedinou lokální stopou je výše zmíněný záznam jazykové preference v localStorage, což technicky cookie není a na server se neposílá.</p>
+    </section>
+
+    <section class="block">
+      <h2>7. Vaše práva</h2>
+      <p>Protože o vás v souvislosti s používáním DZMASTERu prakticky nezpracováváme žádné osobní údaje, není zde v praxi co žádat opravit, vymazat nebo exportovat. Pokud přesto máte jakýkoliv dotaz ohledně soukromí nebo vám něco nesedí, ozvěte se přes kontakt níže.</p>
+    </section>
+
+    <section class="block">
+      <h2>8. Změny těchto zásad</h2>
+      <p>Pokud se něco na fungování nástroje změní způsobem, který ovlivní zpracování dat, tato stránka bude aktualizována a datum nahoře se změní. Doporučujeme ji čas od času zkontrolovat, pokud vás to zajímá do detailu.</p>
+    </section>
+
+    <section class="block">
+      <h2>9. Kontakt</h2>
+      <p>S dotazy ohledně DZMASTERu nebo těchto zásad se můžete obrátit přes <a href="https://synthlucida.com/index.html">SYNTHLUCIDA</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    DZMASTER je součástí rodiny nástrojů SYNTHLUCIDA.
+    · <a href="dzmaster-landing.html">O nástroji</a>
+    · <a href="https://synthlucida.com/index.html">SYNTHLUCIDA</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,7 +1,7 @@
 {
   "name": "DZMASTER — Free Automatic Online Music Mastering",
   "short_name": "DZMASTER",
-  "description": "A free online tool for automatic music mastering, right in your browser — nothing uploaded, no sign-up.",
+  "description": "A free online tool for automatic music mastering, right in your browser — no server, no sign-up.",
   "start_url": "/dzmaster/dzmaster.html?lang=en",
   "scope": "/dzmaster/",
   "id": "/dzmaster/dzmaster.html",

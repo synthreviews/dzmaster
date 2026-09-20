@@ -32,4 +32,24 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://synthreviews.github.io/dzmaster/dzmaster-landing.html"/>
   </url>
 
+  <url>
+    <loc>https://synthreviews.github.io/dzmaster/dzmaster-privacy.html</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://synthreviews.github.io/dzmaster/dzmaster-privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://synthreviews.github.io/dzmaster/dzmaster-privacy-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://synthreviews.github.io/dzmaster/dzmaster-privacy.html"/>
+  </url>
+
+  <url>
+    <loc>https://synthreviews.github.io/dzmaster/dzmaster-privacy-en.html</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://synthreviews.github.io/dzmaster/dzmaster-privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://synthreviews.github.io/dzmaster/dzmaster-privacy-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://synthreviews.github.io/dzmaster/dzmaster-privacy.html"/>
+  </url>
+
 </urlset>
