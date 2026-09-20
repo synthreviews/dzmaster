@@ -871,21 +871,48 @@
     return peak;
   }
 
-  // 4x oversample via linear interpolation and take the max abs value.
-  // This is an approximation of ITU-R BS.1770 Annex 2 true-peak metering
-  // (which specifies a proper bandlimited interpolation filter) -- good
-  // enough to catch the vast majority of inter-sample overs for a
-  // consumer mastering tool, at negligible CPU cost.
+  // Catmull-Rom cubic interpolation through 4 consecutive samples
+  // (y1 at t=0, y2 at t=1). Unlike linear interpolation, a cubic spline
+  // CAN overshoot beyond the surrounding sample values -- which matters
+  // here because a real bandlimited reconstruction filter (what an actual
+  // DAC or a streaming service's decoder does) can genuinely produce an
+  // inter-sample peak higher than either neighboring sample, especially
+  // on steep, high-frequency-rich transients (a piano hammer attack, a
+  // drum hit, anything percussive). Linear interpolation can never
+  // exceed max(y1, y2), so it silently misses exactly that case -- it
+  // will always under-read the true peak on sharp attacks, sometimes by
+  // more than a dB, letting the limiter/safety-trim think there is more
+  // headroom than there really is and ship a file that clips on
+  // playback despite every raw sample being <= full scale. Cubic
+  // interpolation is a much closer (if still approximate) stand-in for
+  // that ringing/overshoot behavior, at the same negligible CPU cost.
+  function cubicInterp(y0, y1, y2, y3, t) {
+    var a0 = -0.5 * y0 + 1.5 * y1 - 1.5 * y2 + 0.5 * y3;
+    var a1 = y0 - 2.5 * y1 + 2 * y2 - 0.5 * y3;
+    var a2 = -0.5 * y0 + 0.5 * y2;
+    var a3 = y1;
+    return ((a0 * t + a1) * t + a2) * t + a3;
+  }
+
+  // 8x oversampled true-peak estimate (see cubicInterp above for why
+  // cubic, not linear). Still an approximation of full ITU-R BS.1770
+  // Annex 2 metering (which specifies a particular bandlimited FIR
+  // filter), but catches the sharp-transient inter-sample overs that a
+  // linear-interpolation estimate structurally cannot.
   function estimateTruePeakLinear(channels) {
     var peak = samplePeak(channels); // real samples are always included
-    var OS = 4;
+    var OS = 8;
     for (var c = 0; c < channels.length; c++) {
       var chan = channels[c];
-      for (var i = 0; i < chan.length - 1; i++) {
-        var a = chan[i], b = chan[i + 1];
+      var len = chan.length;
+      for (var i = 0; i < len - 1; i++) {
+        var y0 = i > 0 ? chan[i - 1] : chan[i];
+        var y1 = chan[i];
+        var y2 = chan[i + 1];
+        var y3 = (i + 2 < len) ? chan[i + 2] : chan[i + 1];
         for (var k = 1; k < OS; k++) {
           var t = k / OS;
-          var interp = a + (b - a) * t;
+          var interp = cubicInterp(y0, y1, y2, y3, t);
           var av = Math.abs(interp);
           if (av > peak) peak = av;
         }
