@@ -2290,7 +2290,7 @@
   // exercise this code path against a mocked endpoint) -- it is never set
   // in production, so real visitors always get the URL setup.sh writes in.
   var USAGE_API_URL = (typeof window !== 'undefined' && window.DZMASTER_USAGE_API_URL_OVERRIDE)
-    || 'https://REGION-PROJECT_ID.cloudfunctions.net/checkMasteringUsage';
+    || 'https://europe-west3-seovip.cloudfunctions.net/checkMasteringUsage';
   var usageLimitBox = document.getElementById('usage-limit-box');
   var usageLimitUnlockBtn = document.getElementById('usage-limit-unlock-btn');
 
