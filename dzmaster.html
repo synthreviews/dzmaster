@@ -631,15 +631,15 @@
       <div class="q" data-i18n="how_q1">1. Analýza</div>
       <div class="a" data-i18n="how_a1">Nástroj změří integrovanou hlasitost (LUFS podle ITU‑R BS.1770), špičkovou úroveň a dynamiku skladby.</div>
       <div class="q" data-i18n="how_q2">2. Čištění a jemná komprese</div>
-      <div class="a" data-i18n="how_a2">Odstraní se stejnosměrná složka a neslyšitelný rachot pod 20 Hz, poté jemný "glue" kompresor mírně vyrovná dynamiku.</div>
+      <div class="a" data-i18n="how_a2">Odstraní se stejnosměrná složka a neslyšitelný rachot pod 20 Hz, poté jemný "glue" kompresor (ve výchozím nastavení jednopásmový) mírně vyrovná dynamiku.</div>
       <div class="q" data-i18n="how_q3">3. Vyrovnání hlasitosti</div>
       <div class="a" data-i18n="how_a3">Track se zesílí nebo zeslabí na přesnou cílovou hlasitost zvolené předvolby.</div>
       <div class="q" data-i18n="how_q4">4. Bezpečný limiter</div>
-      <div class="a" data-i18n="how_a4">Look-ahead limiter zajistí, že špičky nikdy nepřekročí bezpečnou hranici (−1 dBTP) — nedojde tak k ořezání ("clippingu") při přehrávání na streamovacích službách ani po kompresi do MP3/AAC.</div>
+      <div class="a" data-i18n="how_a4">Look-ahead limiter zajistí, že špičky nikdy nepřekročí bezpečný strop zvolené předvolby (−1 dBTP u většiny předvoleb, −1.5 dBTP u Vinylu a −3 dBTP u Podcastu/Audioknihy) — nedojde tak k ořezání ("clippingu") při přehrávání na streamovacích službách ani po kompresi do MP3/AAC.</div>
       <div class="q" data-i18n="how_q5">5. Export</div>
       <div class="a" data-i18n="how_a5">Výsledek se rovnou v prohlížeči zabalí do WAV souboru ke stažení. Nic se nikam neposílá ani neukládá.</div>
       <div class="q" data-i18n="how_q6">6. Volitelné pokročilé funkce</div>
-      <div class="a" data-i18n="how_a6">V Pokročilém nastavení si navíc můžete zapnout: vícepásmovou kompresi (basy, středy a výšky se komprimují zvlášť, takže hlasitý bas "nestahuje" výšky dolů), basy do mono pod zvolenou frekvencí (bezpečnější přehrávání na mono systémech a vinylu) a jemnou saturaci pro harmonické zabarvení. Všechny jsou ve výchozím stavu vypnuté a na výsledek nemají žádný vliv, dokud je sami nezapnete.</div>
+      <div class="a" data-i18n="how_a6">V Pokročilém nastavení si navíc můžete zapnout: 3pásmový EQ (basy/středy/výšky), stereo šířku, vícepásmovou kompresi (basy, středy a výšky se komprimují zvlášť, takže hlasitý bas "nestahuje" výšky dolů), basy do mono pod zvolenou frekvencí (bezpečnější přehrávání na mono systémech a vinylu), jemnou saturaci pro harmonické zabarvení a oříznutí ticha na začátku/konci s jemným fade. Všechny jsou ve výchozím stavu vypnuté nebo neutrální a na výsledek nemají žádný vliv, dokud je sami nezapnete. (Při exportu do 16-bit se navíc automaticky použije jemný dithering, který sníží slyšitelné zkreslení od zaokrouhlování.)</div>
     </div>
   </section>
 
@@ -1813,9 +1813,9 @@
       how_q1: "1. Analýza", how_a1: "Nástroj změří integrovanou hlasitost (LUFS podle ITU‑R BS.1770), špičkovou úroveň a dynamiku skladby.",
       how_q2: "2. Čištění a jemná komprese", how_a2: 'Odstraní se stejnosměrná složka a neslyšitelný rachot pod 20 Hz, poté jemný "glue" kompresor (ve výchozím nastavení jednopásmový) mírně vyrovná dynamiku.',
       how_q3: "3. Vyrovnání hlasitosti", how_a3: "Track se zesílí nebo zeslabí na přesnou cílovou hlasitost zvolené předvolby.",
-      how_q4: "4. Bezpečný limiter", how_a4: "Look-ahead limiter zajistí, že špičky nikdy nepřekročí bezpečnou hranici (−1 dBTP) — nedojde tak k ořezání při přehrávání na streamovacích službách ani po kompresi do MP3/AAC.",
+      how_q4: "4. Bezpečný limiter", how_a4: "Look-ahead limiter zajistí, že špičky nikdy nepřekročí bezpečný strop zvolené předvolby (−1 dBTP u většiny předvoleb, −1.5 dBTP u Vinylu a −3 dBTP u Podcastu/Audioknihy) — nedojde tak k ořezání při přehrávání na streamovacích službách ani po kompresi do MP3/AAC.",
       how_q5: "5. Export", how_a5: "Výsledek se rovnou v prohlížeči zabalí do WAV souboru ke stažení. Nic se nikam neposílá ani neukládá.",
-      how_q6: "6. Volitelné pokročilé funkce", how_a6: 'V Pokročilém nastavení si navíc můžete zapnout: vícepásmovou kompresi (basy, středy a výšky se komprimují zvlášť, takže hlasitý bas "nestahuje" výšky dolů), basy do mono pod zvolenou frekvencí (bezpečnější přehrávání na mono systémech a vinylu) a jemnou saturaci pro harmonické zabarvení. Všechny jsou ve výchozím stavu vypnuté a na výsledek nemají žádný vliv, dokud je sami nezapnete.',
+      how_q6: "6. Volitelné pokročilé funkce", how_a6: 'V Pokročilém nastavení si navíc můžete zapnout: 3pásmový EQ (basy/středy/výšky), stereo šířku, vícepásmovou kompresi (basy, středy a výšky se komprimují zvlášť, takže hlasitý bas "nestahuje" výšky dolů), basy do mono pod zvolenou frekvencí (bezpečnější přehrávání na mono systémech a vinylu), jemnou saturaci pro harmonické zabarvení a oříznutí ticha na začátku/konci s jemným fade. Všechny jsou ve výchozím stavu vypnuté nebo neutrální a na výsledek nemají žádný vliv, dokud je sami nezapnete. (Při exportu do 16-bit se navíc automaticky použije jemný dithering, který sníží slyšitelné zkreslení od zaokrouhlování.)',
       footer_text: "DZMASTER je součástí rodiny nástrojů SYNTHLUCIDA.", footer_more: "O nástroji", footer_privacy: "Ochrana soukromí",
       err_not_wav: "Tohle nevypadá jako WAV soubor (chybí RIFF/WAVE hlavička). Nahrajte prosím soubor ve formátu .wav.",
       err_too_big: "Soubor je větší než 600 MB — to už je pro zpracování v prohlížeči příliš mnoho. Zkuste kratší úsek nebo nižší bit depth.",
@@ -1924,9 +1924,9 @@
       how_q1: "1. Analysis", how_a1: "Measures integrated loudness (LUFS per ITU‑R BS.1770), peak level and dynamic range.",
       how_q2: "2. Cleanup & gentle glue compression", how_a2: "Removes DC offset and inaudible sub-20Hz rumble, then a gentle glue compressor (single-band by default) slightly evens out dynamics.",
       how_q3: "3. Loudness matching", how_a3: "The track is turned up or down to hit the exact target loudness of the chosen preset.",
-      how_q4: "4. Safe limiting", how_a4: "A look-ahead limiter guarantees peaks never exceed a safe ceiling (−1 dBTP) — preventing clipping during streaming playback or lossy (MP3/AAC) encoding.",
+      how_q4: "4. Safe limiting", how_a4: "A look-ahead limiter guarantees peaks never exceed the chosen preset's safe ceiling (−1 dBTP for most presets, −1.5 dBTP for Vinyl, and −3 dBTP for Podcast/Audiobook) — preventing clipping during streaming playback or lossy (MP3/AAC) encoding.",
       how_q5: "5. Export", how_a5: "The result is packaged into a downloadable WAV file right in your browser. Nothing is ever uploaded or stored.",
-      how_q6: "6. Optional advanced features", how_a6: "Advanced settings let you additionally turn on: multiband compression (bass, mid and treble compressed separately, so a loud bass hit no longer drags the highs down with it), mono bass below a chosen frequency (safer playback on mono systems and vinyl), and gentle saturation for harmonic coloration. All are off by default and have no effect on the result unless you turn them on.",
+      how_q6: "6. Optional advanced features", how_a6: "Advanced settings also let you turn on: 3-band EQ (bass/mid/treble), stereo width, multiband compression (bass, mid and treble compressed separately, so a loud bass hit no longer drags the highs down with it), mono bass below a chosen frequency (safer playback on mono systems and vinyl), gentle saturation for harmonic coloration, and trimming silence from the start/end with a gentle fade. All are off by default (or neutral) and have no effect on the result unless you turn them on. (16-bit exports also get gentle dithering automatically, reducing audible rounding distortion.)",
       footer_text: "DZMASTER is part of the SYNTHLUCIDA tools family.", footer_more: "About this tool", footer_privacy: "Privacy Policy",
       err_not_wav: "This doesn't look like a WAV file (no RIFF/WAVE header found). Please upload a .wav file.",
       err_too_big: "This file is larger than 600 MB, which is too much to process in-browser. Try a shorter clip or lower bit depth.",
