@@ -46,12 +46,14 @@
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Any (web browser)",
   "url": "https://synthreviews.github.io/dzmaster/dzmaster.html",
-  "description": "Online nástroj pro automatický mastering hudby přímo v prohlížeči. Analyzuje WAV soubor a upraví hlasitost a špičky podle cílové platformy (Spotify, YouTube, Apple Music a dalších). Předvolba Smart Auto je zdarma, ostatní předvolby se odemykají kódem zakoupeným na Gumroad.",
+  "description": "Online nástroj pro automatický mastering hudby přímo v prohlížeči. Analyzuje WAV soubor a upraví hlasitost a špičky podle cílové platformy (Spotify, YouTube, Apple Music a dalších). Předvolba Smart Auto je zdarma, ostatní předvolby se odemykají kódem z Gumroadu.",
   "inLanguage": "cs",
   "featureList": [
-    "Měření integrované hlasitosti (LUFS) podle ITU-R BS.1770",
-    "Automatické vyrovnání hlasitosti na předvolbu Streaming / Apple / Club / Smart Auto",
-    "Look-ahead limiter s ochranou proti překročení −1 dBTP",
+    "Měření integrované hlasitosti (LUFS) podle ITU-R BS.1770 a true peak",
+    "10 předvoleb pro konkrétní platformy (Streaming, Apple/Podcast, Club/EDM, Broadcast EBU R128, Podcast/Audiokniha ACX, Bandcamp, Vinyl, TikTok/Reels/Shorts, Klasika) nebo Smart Auto",
+    "Volitelný 3pásmový EQ, vícepásmová komprese, stereo šířka, basy do mono a sytost/teplo",
+    "Oříznutí ticha s fade in/out a TPDF dithering při 16-bit exportu",
+    "Look-ahead limiter s ochranou proti překročení nastaveného stropu špiček",
     "Export mastrovaného WAV (16 nebo 24-bit)",
     "Veškeré zpracování běží lokálně v prohlížeči, bez uploadu na server"
   ],
@@ -64,7 +66,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     {"@type": "Question", "name": "Je DZMASTER zdarma?",
-     "acceptedAnswer": {"@type": "Answer", "text": "Předvolba Smart Auto je a zůstane zdarma, bez registrace — až 1 mastering měsíčně na IP adresu. Ostatních devět předvoleb (Streaming, Apple/Podcast, Club/EDM, Broadcast, Podcast/Audiokniha, Bandcamp, Vinyl, TikTok/Reels/Shorts a Klasika) se odemyká jednorázovým kódem, který získáte po zakoupení na Gumroad — jde o jednorázovou platbu, ne předplatné, a po odemčení mastrujete natrvalo bez jakéhokoliv limitu."}},
+     "acceptedAnswer": {"@type": "Answer", "text": "Předvolba Smart Auto je a zůstane zdarma, bez registrace — až 1 mastering měsíčně na IP adresu. Ostatních devět předvoleb (Streaming, Apple/Podcast, Club/EDM, Broadcast, Podcast/Audiokniha, Bandcamp, Vinyl, TikTok/Reels/Shorts a Klasika) se odemyká jednorázovým kódem, který získáte na Gumroadu, a po odemčení mastrujete natrvalo bez jakéhokoliv limitu."}},
     {"@type": "Question", "name": "Nahrává se můj track na server?",
      "acceptedAnswer": {"@type": "Answer", "text": "Ne. Celý mastering probíhá lokálně ve vašem prohlížeči pomocí JavaScriptu. Soubor se nikam neodesílá a po zavření stránky po něm nezůstává žádná stopa."}},
     {"@type": "Question", "name": "Jaký formát souboru DZMASTER podporuje?",
@@ -205,7 +207,7 @@
     <p class="section-sub">Žádné parametry, žádné ladění. Vyberte platformu, na kterou chcete track vydat, a zbytek udělá nástroj sám.</p>
     <div class="steps">
       <div class="step"><div class="num">1</div><h3>Nahrajete WAV</h3><p>Přetáhnete soubor do prohlížeče — zůstává jen u vás, nikam se neodesílá.</p></div>
-      <div class="step"><div class="num">2</div><h3>Vyberete předvolbu</h3><p>Streaming, Apple/Podcast, Club/EDM nebo Smart Auto, který vybere cíl sám podle analýzy tracku.</p></div>
+      <div class="step"><div class="num">2</div><h3>Vyberete předvolbu</h3><p>Z 10 předvoleb (Streaming, Apple/Podcast, Club/EDM, Broadcast, Vinyl a dalších) nebo necháte rozhodnout Smart Auto podle analýzy tracku.</p></div>
       <div class="step"><div class="num">3</div><h3>Nástroj track zpracuje</h3><p>Vyrovná hlasitost na cílovou hodnotu LUFS a bezpečným limiterem ochrání špičky proti ořezání.</p></div>
       <div class="step"><div class="num">4</div><h3>Stáhnete výsledek</h3><p>Hotový WAV si rovnou stáhnete a nahrajete na Spotify for Artists, YouTube nebo Bandcamp.</p></div>
     </div>
@@ -222,6 +224,12 @@
           <tr><td>🎧 Streaming</td><td>−14 LUFS</td><td>−1 dBTP</td><td>Spotify, YouTube, obecné vydání</td></tr>
           <tr><td>🍎 Apple / Podcast</td><td>−16 LUFS</td><td>−1 dBTP</td><td>Apple Music, mluvené slovo, akustika</td></tr>
           <tr><td>🔊 Club / EDM</td><td>−9 LUFS</td><td>−1 dBTP</td><td>Elektronická hudba, DJ sety</td></tr>
+          <tr><td>📻 Broadcast (EBU R128)</td><td>−23 LUFS</td><td>−1 dBTP</td><td>TV a rozhlas v EU</td></tr>
+          <tr><td>🎙️ Podcast / Audiokniha (ACX)</td><td>−19 LUFS</td><td>−3 dBTP</td><td>ACX audioknihy, podcastové platformy</td></tr>
+          <tr><td>📀 Bandcamp / Přímé stažení</td><td>−11 LUFS</td><td>−1 dBTP</td><td>Bandcamp, přímý prodej</td></tr>
+          <tr><td>💿 Vinyl / Fyzické vydání</td><td>−14 LUFS</td><td>−1.5 dBTP</td><td>Lisování na vinyl</td></tr>
+          <tr><td>📱 TikTok / Reels / Shorts</td><td>−13 LUFS</td><td>−1 dBTP</td><td>Krátká videa na sítích</td></tr>
+          <tr><td>🎻 Klasika / Akustika</td><td>−18 LUFS</td><td>−1 dBTP</td><td>Nejdynamičtější žánry</td></tr>
         </tbody>
       </table>
     </div>
@@ -234,15 +242,16 @@
       <div class="feature"><span class="emoji">⚡</span><h3>Rychlé</h3><p>Běžná skladba je hotová během několika vteřin — bez čekání ve frontě na server.</p></div>
       <div class="feature"><span class="emoji">🎚️</span><h3>Bezpečný limiter</h3><p>Look-ahead limiter s ochranou proti inter-sample špičkám, aby se track neořezal po kompresi do MP3/AAC.</p></div>
       <div class="feature"><span class="emoji">🧠</span><h3>Smart Auto</h3><p>Nevíte, jakou předvolbu zvolit? Nástroj podle dynamiky skladby doporučí tu nejvhodnější.</p></div>
-      <div class="feature"><span class="emoji">🔓</span><h3>Jednorázové odemčení, ne předplatné</h3><p>Smart Auto je navždy zdarma — až 1 mastering měsíčně na IP adresu. Ostatní předvolby odemknete jednou provždy kódem z Gumroadu — bez časového limitu, bez měsíčního předplatného, bez vodoznaku a bez omezení počtu tracků. Zaplatíte jednou a máte to natrvalo.</p></div>
+      <div class="feature"><span class="emoji">🔓</span><h3>Jednorázové odemčení, ne předplatné</h3><p>Smart Auto je navždy zdarma — až 1 mastering měsíčně na IP adresu. Ostatní předvolby odemknete jednou provždy kódem z Gumroadu — bez časového limitu, bez měsíčního předplatného, bez vodoznaku a bez omezení počtu tracků.</p></div>
       <div class="feature"><span class="emoji">📱</span><h3>Funguje všude</h3><p>Responzivní design — nástroj klidně použijte i z mobilu nebo tabletu.</p></div>
+      <div class="feature"><span class="emoji">🎛️</span><h3>Pokročilé nastavení zdarma</h3><p>3pásmový EQ, vícepásmová komprese, stereo šířka, basy do mono, sytost/teplo a oříznutí ticha — volitelné, defaultně vypnuté, funguje se všemi předvolbami včetně Smart Auto.</p></div>
     </div>
   </section>
 
   <section id="faq" class="wrap">
     <h2 class="section-title">Časté dotazy</h2>
     <div class="faq">
-      <div class="item"><div class="q">Je DZMASTER zdarma?</div><div class="a">Předvolba Smart Auto je a zůstane zdarma, bez registrace — až 1 mastering měsíčně na IP adresu. Ostatních devět předvoleb (Streaming, Apple/Podcast, Club/EDM a dalších šest) se odemyká jednorázovým kódem, který získáte po zakoupení na Gumroad — je to jednorázová platba, ne předplatné, a po odemčení mastrujete natrvalo bez jakéhokoliv limitu.</div></div>
+      <div class="item"><div class="q">Je DZMASTER zdarma?</div><div class="a">Předvolba Smart Auto je a zůstane zdarma, bez registrace — až 1 mastering měsíčně na IP adresu. Ostatních devět předvoleb (Streaming, Apple/Podcast, Club/EDM a dalších šest) se odemyká jednorázovým kódem, který získáte na Gumroadu, a po odemčení mastrujete natrvalo bez jakéhokoliv limitu.</div></div>
       <div class="item"><div class="q">Nahrává se můj track na server?</div><div class="a">Ne. Celý mastering probíhá lokálně ve vašem prohlížeči. Soubor se nikam neodesílá a po zavření stránky po něm nezůstává žádná stopa.</div></div>
       <div class="item"><div class="q">Jaký formát souboru DZMASTER podporuje?</div><div class="a">Na vstupu WAV (16, 24 nebo 32-bit, mono i stereo). Výstupem je mastrovaný WAV v 16 nebo 24-bit kvalitě.</div></div>
       <div class="item"><div class="q">Nahradí DZMASTER profesionálního mastering inženýra?</div><div class="a">Ne úplně — dělá základní, ale technicky správný mastering (hlasitost, bezpečné špičky, jemné vyrovnání dynamiky) bez kreativního EQ zásahu do mixu. Pro velký release je lidský mastering engineer stále lepší volba, pro dema, singly či podcasty je DZMASTER rychlé a spolehlivé řešení.</div></div>
