@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>DZMASTER — Automatický online mastering hudby zdarma | SYNTHLUCIDA</title>
-<meta name="description" content="DZMASTER je bezplatný online mastering nástroj: nahrajete WAV, vyberete předvolbu (Spotify, Apple Music, Club) a během vteřin získáte track s bezpečnou hlasitostí a špičkami. Vše přímo v prohlížeči, bez uploadu na server.">
-<meta name="keywords" content="online mastering, mastering zdarma, LUFS, mastering pro Spotify, automatický mastering, mastering v prohlížeči, WAV mastering, loudness normalization">
+<title>DZMASTER — Automatický online mastering hudby | SYNTHLUCIDA</title>
+<meta name="description" content="DZMASTER je online mastering nástroj: nahrajete WAV, vyberete předvolbu (Spotify, Apple Music, Club a dalších) a během vteřin získáte track s bezpečnou hlasitostí a špičkami. Smart Auto předvolba je zdarma, ostatní se odemykají kódem z Gumroadu. Vše přímo v prohlížeči, bez uploadu na server.">
+<meta name="keywords" content="online mastering, mastering nástroj, LUFS, mastering pro Spotify, automatický mastering, mastering v prohlížeči, WAV mastering, loudness normalization">
 <meta name="author" content="DZMASTER">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://synthreviews.github.io/dzmaster/dzmaster-landing.html">
@@ -16,8 +16,8 @@
 <!-- ===== Open Graph ===== -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SYNTHLUCIDA">
-<meta property="og:title" content="DZMASTER — Automatický online mastering hudby zdarma">
-<meta property="og:description" content="Nahrajte WAV, vyberte předvolbu, stáhněte mastrovanou stopu. Vše přímo v prohlížeči, zdarma, bez registrace.">
+<meta property="og:title" content="DZMASTER — Automatický online mastering hudby">
+<meta property="og:description" content="Nahrajte WAV, vyberte předvolbu, stáhněte mastrovanou stopu. Vše přímo v prohlížeči, bez registrace. Smart Auto zdarma, ostatní předvolby odemknete kódem z Gumroadu.">
 <meta property="og:url" content="https://synthreviews.github.io/dzmaster/dzmaster-landing.html">
 <meta property="og:image" content="https://synthreviews.github.io/dzmaster/dzmaster-og.png">
 <meta property="og:image:width" content="1200">
@@ -27,8 +27,8 @@
 
 <!-- ===== Twitter / X card ===== -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="DZMASTER — Automatický online mastering hudby zdarma">
-<meta name="twitter:description" content="Nahrajte WAV, vyberte předvolbu, stáhněte mastrovanou stopu. Vše přímo v prohlížeči, zdarma, bez registrace.">
+<meta name="twitter:title" content="DZMASTER — Automatický online mastering hudby">
+<meta name="twitter:description" content="Nahrajte WAV, vyberte předvolbu, stáhněte mastrovanou stopu. Vše přímo v prohlížeči, bez registrace. Smart Auto zdarma, ostatní předvolby odemknete kódem z Gumroadu.">
 <meta name="twitter:image" content="https://synthreviews.github.io/dzmaster/dzmaster-og.png">
 
 <meta name="theme-color" content="#0b0d17">
@@ -46,10 +46,8 @@
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Any (web browser)",
   "url": "https://synthreviews.github.io/dzmaster/dzmaster.html",
-  "description": "Bezplatný online nástroj pro automatický mastering hudby přímo v prohlížeči. Analyzuje WAV soubor a upraví hlasitost a špičky podle cílové platformy (Spotify, YouTube, Apple Music).",
+  "description": "Online nástroj pro automatický mastering hudby přímo v prohlížeči. Analyzuje WAV soubor a upraví hlasitost a špičky podle cílové platformy (Spotify, YouTube, Apple Music a dalších). Předvolba Smart Auto je zdarma, ostatní předvolby se odemykají kódem zakoupeným na Gumroad.",
   "inLanguage": "cs",
-  "isAccessibleForFree": true,
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CZK" },
   "featureList": [
     "Měření integrované hlasitosti (LUFS) podle ITU-R BS.1770",
     "Automatické vyrovnání hlasitosti na předvolbu Streaming / Apple / Club / Smart Auto",
@@ -65,8 +63,8 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "Je DZMASTER opravdu zdarma?",
-     "acceptedAnswer": {"@type": "Answer", "text": "Ano. DZMASTER je zdarma, bez registrace a bez omezení počtu tracků. Zpracování běží ve vašem prohlížeči, takže nevznikají žádné serverové náklady na track."}},
+    {"@type": "Question", "name": "Je DZMASTER zdarma?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Předvolba Smart Auto je a zůstane zdarma, bez registrace — až 1 mastering měsíčně na IP adresu. Ostatních devět předvoleb (Streaming, Apple/Podcast, Club/EDM, Broadcast, Podcast/Audiokniha, Bandcamp, Vinyl, TikTok/Reels/Shorts a Klasika) se odemyká jednorázovým kódem, který získáte po zakoupení na Gumroad — jde o jednorázovou platbu, ne předplatné, a po odemčení mastrujete natrvalo bez jakéhokoliv limitu."}},
     {"@type": "Question", "name": "Nahrává se můj track na server?",
      "acceptedAnswer": {"@type": "Answer", "text": "Ne. Celý mastering probíhá lokálně ve vašem prohlížeči pomocí JavaScriptu. Soubor se nikam neodesílá a po zavření stránky po něm nezůstává žádná stopa."}},
     {"@type": "Question", "name": "Jaký formát souboru DZMASTER podporuje?",
@@ -168,7 +166,6 @@
   footer a{color:var(--text-2);text-decoration:underline;}
   footer .wrap{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 10px;}
   footer .fitem{white-space:nowrap;}
-  footer .fitem.donate a{color:#0a0b14;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));padding:4px 12px;border-radius:999px;font-weight:800;text-decoration:none;display:inline-block;}
 </style>
 <script data-goatcounter="https://dzmaster.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
@@ -188,7 +185,7 @@
 
 <main>
   <section class="hero wrap">
-    <span class="eyebrow">Zdarma · bez registrace · žádný server</span>
+    <span class="eyebrow">Smart Auto zdarma · bez registrace · žádný server</span>
     <h1>Mastering vaší hudby, <span class="grad">hotový za pár vteřin</span></h1>
     <p class="lead">DZMASTER je online nástroj, který WAV soubor přímo ve vašem prohlížeči analyzuje a automaticky doladí jeho hlasitost a špičky tak, aby dobře zněl na Spotify, YouTube, Apple Music i v běžných přehrávačích.</p>
     <div class="hero-ctas">
@@ -198,8 +195,8 @@
     <div class="trust-row">
       <span class="pill">🔒 Track se nikam neodesílá</span>
       <span class="pill">⚡ Zpracování přímo v prohlížeči</span>
-      <span class="pill">🎚️ 4 předvolby vč. Smart Auto</span>
-      <span class="pill">🆓 100 % zdarma</span>
+      <span class="pill">🎚️ 10 předvoleb, Smart Auto zdarma</span>
+      <span class="pill">🔓 Ostatní kódem z Gumroadu</span>
     </div>
   </section>
 
@@ -237,7 +234,7 @@
       <div class="feature"><span class="emoji">⚡</span><h3>Rychlé</h3><p>Běžná skladba je hotová během několika vteřin — bez čekání ve frontě na server.</p></div>
       <div class="feature"><span class="emoji">🎚️</span><h3>Bezpečný limiter</h3><p>Look-ahead limiter s ochranou proti inter-sample špičkám, aby se track neořezal po kompresi do MP3/AAC.</p></div>
       <div class="feature"><span class="emoji">🧠</span><h3>Smart Auto</h3><p>Nevíte, jakou předvolbu zvolit? Nástroj podle dynamiky skladby doporučí tu nejvhodnější.</p></div>
-      <div class="feature"><span class="emoji">🆓</span><h3>Zdarma bez limitu</h3><p>Žádné kredity, žádné předplatné, žádný vodoznak. Zpracujte si tolik tracků, kolik chcete.</p></div>
+      <div class="feature"><span class="emoji">🔓</span><h3>Jednorázové odemčení, ne předplatné</h3><p>Smart Auto je navždy zdarma — až 1 mastering měsíčně na IP adresu. Ostatní předvolby odemknete jednou provždy kódem z Gumroadu — bez časového limitu, bez měsíčního předplatného, bez vodoznaku a bez omezení počtu tracků. Zaplatíte jednou a máte to natrvalo.</p></div>
       <div class="feature"><span class="emoji">📱</span><h3>Funguje všude</h3><p>Responzivní design — nástroj klidně použijte i z mobilu nebo tabletu.</p></div>
     </div>
   </section>
@@ -245,7 +242,7 @@
   <section id="faq" class="wrap">
     <h2 class="section-title">Časté dotazy</h2>
     <div class="faq">
-      <div class="item"><div class="q">Je DZMASTER opravdu zdarma?</div><div class="a">Ano. Je zdarma, bez registrace a bez omezení počtu tracků — zpracování běží ve vašem prohlížeči, takže na track nevznikají žádné serverové náklady.</div></div>
+      <div class="item"><div class="q">Je DZMASTER zdarma?</div><div class="a">Předvolba Smart Auto je a zůstane zdarma, bez registrace — až 1 mastering měsíčně na IP adresu. Ostatních devět předvoleb (Streaming, Apple/Podcast, Club/EDM a dalších šest) se odemyká jednorázovým kódem, který získáte po zakoupení na Gumroad — je to jednorázová platba, ne předplatné, a po odemčení mastrujete natrvalo bez jakéhokoliv limitu.</div></div>
       <div class="item"><div class="q">Nahrává se můj track na server?</div><div class="a">Ne. Celý mastering probíhá lokálně ve vašem prohlížeči. Soubor se nikam neodesílá a po zavření stránky po něm nezůstává žádná stopa.</div></div>
       <div class="item"><div class="q">Jaký formát souboru DZMASTER podporuje?</div><div class="a">Na vstupu WAV (16, 24 nebo 32-bit, mono i stereo). Výstupem je mastrovaný WAV v 16 nebo 24-bit kvalitě.</div></div>
       <div class="item"><div class="q">Nahradí DZMASTER profesionálního mastering inženýra?</div><div class="a">Ne úplně — dělá základní, ale technicky správný mastering (hlasitost, bezpečné špičky, jemné vyrovnání dynamiky) bez kreativního EQ zásahu do mixu. Pro velký release je lidský mastering engineer stále lepší volba, pro dema, singly či podcasty je DZMASTER rychlé a spolehlivé řešení.</div></div>
@@ -268,7 +265,6 @@
     <span class="fitem">· <a href="dzmaster.html">Spustit nástroj</a></span>
     <span class="fitem">· <a href="dzmaster-privacy.html">Ochrana soukromí</a></span>
     <span class="fitem">· <a href="https://synthlucida.com/index.html">SYNTHLUCIDA</a></span>
-    <span class="fitem donate">· <a href="https://uklidnito.gumroad.com/coffee" target="_blank" rel="noopener">☕ Podpořit vývoj</a></span>
   </div>
 </footer>
 

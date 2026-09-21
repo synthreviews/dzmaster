@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Privacy Policy | DZMASTER</title>
-<meta name="description" content="DZMASTER's privacy policy: a clear, specific explanation of what actually happens to your audio file, what data is (not) collected, and why.">
+<meta name="description" content="DZMASTER's privacy policy: a clear, specific explanation of what actually happens to your audio file, the minimal data collected (an anonymous visit count and a hashed IP address for the free-tier limit), and why.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://synthreviews.github.io/dzmaster/dzmaster-privacy-en.html">
 <link rel="alternate" hreflang="cs" href="https://synthreviews.github.io/dzmaster/dzmaster-privacy.html">
@@ -72,7 +72,6 @@
   footer a{color:var(--text-2);text-decoration:underline;}
   footer .wrap{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 10px;}
   footer .fitem{white-space:nowrap;}
-  footer .fitem.donate a{color:#0a0b14;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));padding:4px 12px;border-radius:999px;font-weight:800;text-decoration:none;display:inline-block;}
 </style>
 </head>
 <body>
@@ -92,8 +91,8 @@
   <div class="wrap">
     <span class="eyebrow">Privacy Policy</span>
     <h1>What actually happens to your file</h1>
-    <div class="updated">Last updated: September 20, 2026</div>
-    <p class="intro">This page isn't meant to be generic legal boilerplate — it's meant to give you a specific, honest answer to "what does DZMASTER do with my music file, and what data does it collect about me?" Short version: practically none. The longer version is below.</p>
+    <div class="updated">Last updated: September 21, 2026</div>
+    <p class="intro">This page isn't meant to be generic legal boilerplate — it's meant to give you a specific, honest answer to "what does DZMASTER do with my music file, and what data does it collect about me?" Short version: your file never leaves your device, and we collect practically no personal data about you — apart from two narrowly scoped exceptions described below (an anonymous visit counter and a hashed IP address used for the free-tier limit). The longer version is below.</p>
 
     <section class="block">
       <h2>1. Who runs this site</h2>
@@ -104,6 +103,7 @@
       <h2>2. What happens to your audio file</h2>
       <p>When you select or drop a WAV file into DZMASTER, it is <strong>never sent to any server</strong> — not ours, not anyone else's. Every step — analysis (loudness, peaks, dynamics) and processing itself (EQ, compressor, limiter, export) — runs entirely inside your browser via JavaScript (a Web Worker), on your own device.</p>
       <p>The file only lives temporarily in your browser's memory for as long as the page is open. Once you close or reload the page, the processed data and the temporary references to it (so-called blob URLs) are gone. We never store, back up, or have access to it — technically we can't even see it, because it never reaches us in the first place.</p>
+      <p>The one exception where the page contacts a server at all is a short check — "has this IP address already used its one free mastering this calendar month?" — described in section 5 below. That check never includes or sees your file or any part of its content, only an anonymous yes/no answer.</p>
       <div class="callout">In other words: DZMASTER has no backend that receives files. There's no database, no storage, nothing to breach or misuse, because your music never leaves your computer or phone.</div>
     </section>
 
@@ -113,38 +113,56 @@
         <li>No account or sign-up of any kind</li>
         <li>No name, email, or other contact details</li>
         <li>No tracking or advertising cookies</li>
-        <li>No visitor analytics (no Google Analytics or equivalent)</li>
-        <li>No sharing of data with third parties — because we never receive any data from you to share</li>
+        <li>No cross-site tracking and no profile built about you</li>
+        <li>No sharing of data with third parties — because we never receive any data from you worth sharing</li>
       </ul>
+      <p>Two narrow exceptions — an anonymous visit counter and a hashed IP address used for the free-tier limit — are described in sections 5 and 6.</p>
     </section>
 
     <section class="block">
       <h2>4. What is stored locally in your browser</h2>
-      <p>The only thing DZMASTER remembers is your language choice (Czech/English) — saved in your browser's <em>localStorage</em>. It's never sent anywhere and exists only so the page opens in the same language next time. You can clear it any time via your browser's site-data settings.</p>
+      <p>DZMASTER keeps two things in your browser's <em>localStorage</em>, neither ever sent anywhere: your language choice (Czech/English), so the page opens in the same language next time, and whether you've unlocked the tool with a purchased code, so it doesn't ask you for the code again. You can clear either any time via your browser's site-data settings.</p>
     </section>
 
     <section class="block">
-      <h2>5. Hosting and technical data</h2>
-      <p>This site runs on GitHub Pages (GitHub, Inc., part of Microsoft). Like on any website, GitHub as the hosting provider may record standard server operation logs on its end — typically an IP address, browser type, and request timestamp. DZMASTER has no access to this data and does not perform any comparable logging of its own. Details are available in <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's own privacy statement</a>.</p>
+      <h2>5. The free-tier limit and hashed IP address</h2>
+      <p>The free Smart Auto preset is capped at 1 mastering per calendar month per IP address. Before that limit is used up, clicking "Process" first sends a simple check to a small server-side function (Firebase Cloud Functions) asking whether your IP address has already used its limit this calendar month.</p>
+      <ul>
+        <li>Your IP address is converted into a one-way hash (HMAC-SHA256 with a secret key) the instant the request arrives — only that hash, together with the month, is stored (in Firestore), never the IP address itself, and the hash cannot be reversed back into an IP address.</li>
+        <li>The stored record contains nothing else — no file, no track name, no browser or device identifier.</li>
+        <li>The record is deleted automatically roughly 60 days after it's created (a technical "expiry" in the database) — it isn't kept beyond that.</li>
+        <li>Once you unlock DZMASTER with a purchased code, this check is skipped entirely — unlocked mastering has no limit, and no IP address is involved at all.</li>
+        <li>If this server-side function is ever unreachable for any reason (an outage, a slow connection), the tool simply doesn't enforce the limit and processing proceeds — a failure on our end never blocks legitimate use.</li>
+      </ul>
     </section>
 
     <section class="block">
-      <h2>6. Cookies</h2>
-      <p>DZMASTER itself sets no cookies. The only local trace is the language preference in localStorage mentioned above, which technically isn't a cookie and is never sent to a server.</p>
+      <h2>6. Visit counter (GoatCounter)</h2>
+      <p>For a basic sense of how many people open this page, we use <a href="https://www.goatcounter.com/" rel="noopener">GoatCounter</a>, a privacy-focused analytics tool that doesn't use cookies, doesn't store your IP address against an individual visit, and doesn't build a profile of you or track you across other sites. We only see aggregate numbers (page view counts, broad device/browser type), never who specifically visited. Details are in <a href="https://www.goatcounter.com/help/privacy" rel="noopener">GoatCounter's own privacy policy</a>.</p>
     </section>
 
     <section class="block">
-      <h2>7. Your rights</h2>
-      <p>Because we effectively process no personal data about you through your use of DZMASTER, there is in practice nothing to correct, delete, or export. If you still have any question about privacy here, or something doesn't add up, reach out via the contact below.</p>
+      <h2>7. Hosting and technical data</h2>
+      <p>This site runs on GitHub Pages (GitHub, Inc., part of Microsoft). Like on any website, GitHub as the hosting provider may record standard server operation logs on its end — typically an IP address, browser type, and request timestamp. DZMASTER has no access to this data and does not perform any comparable logging of its own. The free-tier limit described in section 5 runs on Firebase (Google) — the same kind of standard infrastructure-provider operational logs may exist there too, again nothing we collect or review ourselves. Details are available in <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's own privacy statement</a> and <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase/Google's privacy policy</a>.</p>
     </section>
 
     <section class="block">
-      <h2>8. Changes to this policy</h2>
+      <h2>8. Cookies</h2>
+      <p>DZMASTER itself sets no cookies, and GoatCounter (section 6) is deliberately cookie-free by design. The only local trace is the localStorage entries mentioned above (language, unlock status) — technically not cookies, and never sent to a server.</p>
+    </section>
+
+    <section class="block">
+      <h2>9. Your rights</h2>
+      <p>Because we don't process your name, email, or any other directly identifying detail through your use of DZMASTER, there is in practice nothing to correct or export. The hashed IP record used for the free-tier limit (section 5) also deletes itself automatically after roughly 60 days. If you still have any question about privacy here, or something doesn't add up, reach out via the contact below.</p>
+    </section>
+
+    <section class="block">
+      <h2>10. Changes to this policy</h2>
       <p>If anything about how the tool works changes in a way that affects data processing, this page will be updated and the date at the top will change. Feel free to check back if you care about the details.</p>
     </section>
 
     <section class="block">
-      <h2>9. Contact</h2>
+      <h2>11. Contact</h2>
       <p>For questions about DZMASTER or this policy, you can reach out via <a href="https://synthlucida.com/index.html">SYNTHLUCIDA</a>.</p>
     </section>
   </div>
@@ -155,7 +173,6 @@
     <span class="fitem">DZMASTER is part of the SYNTHLUCIDA tools family.</span>
     <span class="fitem">· <a href="dzmaster-landing-en.html">About this tool</a></span>
     <span class="fitem">· <a href="https://synthlucida.com/index.html">SYNTHLUCIDA</a></span>
-    <span class="fitem donate">· <a href="https://uklidnito.gumroad.com/coffee" target="_blank" rel="noopener">☕ Support development</a></span>
   </div>
 </footer>
 

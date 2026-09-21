@@ -169,9 +169,37 @@
   }
   .preset:hover{border-color:var(--accent-1);}
   .preset.selected{border-color:var(--accent-2); background:linear-gradient(180deg,rgba(52,224,214,.14),rgba(124,108,255,.08)); box-shadow:0 0 0 1px var(--accent-2) inset;}
-  .preset .ptitle{font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:space-between;}
+  .preset .ptitle{font-weight:800;font-size:15px;display:flex;align-items:center;gap:8px;justify-content:space-between;}
   .preset .ptarget{font-size:11px;color:var(--accent-2);font-weight:700;background:rgba(52,224,214,.12);padding:2px 8px;border-radius:999px;}
   .preset .pdesc{color:var(--text-2);font-size:12.5px;margin-top:6px;}
+  .preset.locked{opacity:.62; cursor:pointer;}
+  .preset.locked:hover{opacity:.85;}
+  .preset .plock{font-size:13px;flex:none;}
+  .preset:not(.locked) .plock{display:none;}
+  .preset.locked.selected{border-color:var(--line); background:var(--bg-2); box-shadow:none;}
+
+  .unlock-box{margin-top:16px;background:rgba(124,108,255,.07);border:1px solid rgba(124,108,255,.25);border-radius:var(--radius-sm);padding:16px;}
+  .unlock-row{display:flex;gap:12px;align-items:flex-start;}
+  .unlock-icon{font-size:20px;flex:none;margin-top:1px;}
+  .unlock-body{flex:1;min-width:0;}
+  .unlock-title{font-weight:800;font-size:14px;margin-bottom:4px;}
+  .unlock-text{color:var(--text-1);font-size:13px;line-height:1.5;margin-bottom:10px;}
+  .unlock-gumroad{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));color:#0a0b14;font-weight:800;text-decoration:none;padding:8px 16px;border-radius:999px;font-size:13px;margin-bottom:12px;}
+  .unlock-gumroad:hover{filter:brightness(1.07);}
+  .unlock-form{display:flex;gap:8px;flex-wrap:wrap;}
+  .unlock-form input{flex:1;min-width:140px;background:var(--bg-1);border:1px solid var(--line);border-radius:8px;padding:9px 12px;color:var(--text-0);font-size:13px;font-family:inherit;}
+  .unlock-form input:focus{outline:none;border-color:var(--accent-1);}
+  .unlock-form button{background:var(--text-0);color:var(--bg-0);border:none;border-radius:8px;padding:9px 16px;font-weight:700;font-size:13px;cursor:pointer;font-family:inherit;}
+  .unlock-form button:hover{opacity:.9;}
+  .unlock-error{color:#ff9a9a;font-size:12.5px;margin-top:8px;}
+  .unlock-success{color:var(--ok);font-size:12.5px;margin-top:8px;font-weight:700;}
+  .unlock-box.is-unlocked .unlock-text, .unlock-box.is-unlocked .unlock-gumroad, .unlock-box.is-unlocked .unlock-form{display:none;}
+
+  .usage-limit-box{margin-top:14px;background:rgba(255,154,154,.08);border:1px solid rgba(255,154,154,.3);border-radius:var(--radius-sm);padding:14px 16px;}
+  .usage-limit-title{font-weight:800;font-size:13.5px;margin-bottom:4px;color:#ff9a9a;}
+  .usage-limit-text{color:var(--text-1);font-size:13px;line-height:1.5;margin-bottom:10px;}
+  .usage-limit-link{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));color:#0a0b14;font-weight:800;text-decoration:none;padding:8px 16px;border-radius:999px;font-size:13px;cursor:pointer;border:none;font-family:inherit;}
+  .usage-limit-link:hover{filter:brightness(1.07);}
 
   .bitdepth{display:flex;gap:10px;align-items:center;margin-top:16px;font-size:13px;color:var(--text-1);}
   .bitdepth label{display:flex;align-items:center;gap:6px;cursor:pointer;}
@@ -235,15 +263,6 @@
     padding:13px 22px;border-radius:12px;font-size:14.5px;
   }
 
-  .thanks-note{display:flex;gap:12px;align-items:center;background:rgba(124,108,255,.08);border:1px solid rgba(124,108,255,.25);padding:14px 16px;border-radius:12px;margin-top:18px;}
-  .thanks-note .thanks-icon{font-size:22px;flex:none;}
-  .thanks-note .thanks-body{flex:1;min-width:0;}
-  .thanks-note .thanks-body > div{color:var(--text-1);font-size:13.5px;margin-bottom:10px;line-height:1.5;}
-  .thanks-donate{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));color:#0a0b14;font-weight:800;text-decoration:none;padding:8px 16px;border-radius:999px;font-size:13px;}
-  .thanks-donate:hover{filter:brightness(1.07);}
-  @media (max-width:480px){
-    .thanks-note{flex-direction:column;align-items:flex-start;}
-  }
 
   details.tech{margin-top:16px;font-size:12.5px;color:var(--text-2);}
   details.tech summary{cursor:pointer;color:var(--text-1);}
@@ -274,7 +293,6 @@
   footer a{color:var(--text-2);text-decoration:underline;}
   footer .wrap{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 10px;}
   footer .fitem{white-space:nowrap;}
-  footer .fitem.donate a{color:#0a0b14;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));padding:4px 12px;border-radius:999px;font-weight:800;text-decoration:none;display:inline-block;}
 
   .privacy-note{display:flex;gap:10px;align-items:flex-start;background:rgba(75,227,164,.08);border:1px solid rgba(75,227,164,.25);padding:12px 14px;border-radius:12px;font-size:13px;color:var(--text-1);margin-top:16px;}
   .privacy-note svg{width:18px;height:18px;flex:none;color:var(--ok);margin-top:1px;}
@@ -336,7 +354,7 @@
         <ul>
           <li data-i18n="guide_prep_1">Exportujte z DAW jako WAV ve stejném sample rate jako projekt (44,1 nebo 48 kHz), ideálně 24-bit — zbytečné převzorkování nebo export do MP3 před masteringem jen ztrácí informace, které pak nejdou vrátit.</li>
           <li data-i18n="guide_prep_2">Nechte na master bus rezervu (headroom): špičky mixu by měly sahat zhruba do −6 až −3 dBFS, ne narvané na 0 dB. Pokud máte na masteru limiter nebo maximizer, před exportem ho vypněte nebo hodně povolte — mastering potřebuje prostor, se kterým může pracovat.</li>
-          <li data-i18n="guide_prep_3">Zkontrolujte a případně ořízněte ticho na začátku a konci — nebo to nechte na volbu „Oříznout ticho" v Pokročilém nastavení.</li>
+          <li data-i18n="guide_prep_3">Zkontrolujte a případně ořízněte ticho na začátku a konci — nebo to nechte na volbu „Oříznout ticho“ v Pokročilém nastavení.</li>
           <li data-i18n="guide_prep_4">Mastering doladí hlasitost a dynamiku, ale nespraví špatný mix. Konflikty mezi nástroji, přebušený bas, potichý vokál — tohle řešte zpátky v mixu, ne přes mastering.</li>
         </ul>
       </div>
@@ -361,7 +379,7 @@
         <h4 data-i18n="guide_mistakes_title">4. Časté chyby</h4>
         <ul>
           <li data-i18n="guide_mistake_1">Mastering ze souboru MP3/AAC místo WAV — komprimovaný formát informace nenávratně zahodil, mastering z něj je nemůže vrátit zpět.</li>
-          <li data-i18n="guide_mistake_2">Opakovaný mastering „na vrstvu" — mastrovat už jednou mastrovaný soubor znovu a znovu. Každý průchod přidá trochu zkreslení a ubere dynamiku.</li>
+          <li data-i18n="guide_mistake_2">Opakovaný mastering „na vrstvu“ — mastrovat už jednou mastrovaný soubor znovu a znovu. Každý průchod přidá trochu zkreslení a ubere dynamiku.</li>
           <li data-i18n="guide_mistake_3">Přehnaně nahlas nabušený master bus ještě před masteringem — limiter nebo maximizer na finálním mixu nechá masteringu pracovat jen s tím, co mu zbylo.</li>
           <li data-i18n="guide_mistake_4">Slepě věřit číslům (LUFS, true peak) bez poslechu — jsou to užitečné nástroje, ne náhrada uší.</li>
         </ul>
@@ -370,8 +388,8 @@
       <div class="guide-section">
         <h4 data-i18n="guide_after_title">5. Po masteringu</h4>
         <ul>
-          <li data-i18n="guide_after_1">Použijte přepínač Originál / Mastrováno a poslouchejte při stejné hlasitosti (loudness-matched) — hlasitější verze totiž skoro vždy zní „líp", i když objektivně lepší není. DZMASTER hlasitost obou verzí v přehrávači sám nesrovnává, takže na to při poslechu pamatujte.</li>
-          <li data-i18n="guide_after_2">Pokud track míří i tam, kde se hraje mono (starší rádia, některé kluby), zkontrolujte mono kompatibilitu — nebo rovnou zapněte „Basy do mono" v Pokročilém nastavení.</li>
+          <li data-i18n="guide_after_1">Použijte přepínač Originál / Mastrováno a poslouchejte při stejné hlasitosti (loudness-matched) — hlasitější verze totiž skoro vždy zní „líp“, i když objektivně lepší není. DZMASTER hlasitost obou verzí v přehrávači sám nesrovnává, takže na to při poslechu pamatujte.</li>
+          <li data-i18n="guide_after_2">Pokud track míří i tam, kde se hraje mono (starší rádia, některé kluby), zkontrolujte mono kompatibilitu — nebo rovnou zapněte „Basy do mono“ v Pokročilém nastavení.</li>
           <li data-i18n="guide_after_3">Než finální track schválíte, poslechněte si ho na víc než jednom zařízení — sluchátka, telefonní reproduktor, auto. Co zní skvěle na monitorech, nemusí sedět všude.</li>
         </ul>
       </div>
@@ -412,18 +430,59 @@
         <div class="ptitle"><span data-i18n="preset_smart_name">🧠 Smart Auto</span><span class="ptarget" data-i18n="preset_smart_target">auto</span></div>
         <div class="pdesc" data-i18n="preset_smart_desc">Software sám podle analýzy skladby vybere nejvhodnější cílovou hlasitost. Doporučeno, pokud si nejste jistí.</div>
       </button>
-      <button class="preset" data-preset="streaming">
-        <div class="ptitle"><span data-i18n="preset_streaming_name">🎧 Streaming</span><span class="ptarget">−14 LUFS</span></div>
+      <button class="preset locked" data-preset="streaming" data-locked="1">
+        <div class="ptitle"><span data-i18n="preset_streaming_name">🎧 Streaming</span><span class="ptarget">−14 LUFS</span><span class="plock" aria-hidden="true">🔒</span></div>
         <div class="pdesc" data-i18n="preset_streaming_desc">Spotify, YouTube a většina streamovacích služeb normalizuje na −14 LUFS. Univerzální bezpečná volba.</div>
       </button>
-      <button class="preset" data-preset="apple">
-        <div class="ptitle"><span data-i18n="preset_apple_name">🍎 Apple / Podcast</span><span class="ptarget">−16 LUFS</span></div>
+      <button class="preset locked" data-preset="apple" data-locked="1">
+        <div class="ptitle"><span data-i18n="preset_apple_name">🍎 Apple / Podcast</span><span class="ptarget">−16 LUFS</span><span class="plock" aria-hidden="true">🔒</span></div>
         <div class="pdesc" data-i18n="preset_apple_desc">Tišší, dynamičtější mastering pro Apple Music, mluvené slovo nebo akustické nahrávky.</div>
       </button>
-      <button class="preset" data-preset="club">
-        <div class="ptitle"><span data-i18n="preset_club_name">🔊 Club / EDM</span><span class="ptarget">−9 LUFS</span></div>
+      <button class="preset locked" data-preset="club" data-locked="1">
+        <div class="ptitle"><span data-i18n="preset_club_name">🔊 Club / EDM</span><span class="ptarget">−9 LUFS</span><span class="plock" aria-hidden="true">🔒</span></div>
         <div class="pdesc" data-i18n="preset_club_desc">Hlasitější, agresivnější limiting pro elektronickou hudbu a klubové sety.</div>
       </button>
+      <button class="preset locked" data-preset="broadcast" data-locked="1">
+        <div class="ptitle"><span data-i18n="preset_broadcast_name">📻 Broadcast (EBU R128)</span><span class="ptarget">−23 LUFS</span><span class="plock" aria-hidden="true">🔒</span></div>
+        <div class="pdesc" data-i18n="preset_broadcast_desc">Standard EBU R128 je povinný pro TV a rozhlas v EU. Vhodné pro vysílání a AV produkci.</div>
+      </button>
+      <button class="preset locked" data-preset="podcast" data-locked="1">
+        <div class="ptitle"><span data-i18n="preset_podcast_name">🎙️ Podcast / Audiokniha (ACX)</span><span class="ptarget">−19 LUFS</span><span class="plock" aria-hidden="true">🔒</span></div>
+        <div class="pdesc" data-i18n="preset_podcast_desc">V rozsahu doporučeném pro ACX audioknihy (−23 až −18 dB RMS) a běžné podcastové platformy.</div>
+      </button>
+      <button class="preset locked" data-preset="bandcamp" data-locked="1">
+        <div class="ptitle"><span data-i18n="preset_bandcamp_name">📀 Bandcamp / Přímé stažení</span><span class="ptarget">−11 LUFS</span><span class="plock" aria-hidden="true">🔒</span></div>
+        <div class="pdesc" data-i18n="preset_bandcamp_desc">Bandcamp na rozdíl od Spotify hlasitost při přehrávání dál nesrovnává — co nastavíte, to lidé uslyší.</div>
+      </button>
+      <button class="preset locked" data-preset="vinyl" data-locked="1">
+        <div class="ptitle"><span data-i18n="preset_vinyl_name">💿 Vinyl / Fyzické vydání</span><span class="ptarget">−14 LUFS</span><span class="plock" aria-hidden="true">🔒</span></div>
+        <div class="pdesc" data-i18n="preset_vinyl_desc">Nižší hlasitost a víc prostoru pro špičky usnadní řezání desky a sníží riziko přeskakování jehly.</div>
+      </button>
+      <button class="preset locked" data-preset="social" data-locked="1">
+        <div class="ptitle"><span data-i18n="preset_social_name">📱 TikTok / Reels / Shorts</span><span class="ptarget">−13 LUFS</span><span class="plock" aria-hidden="true">🔒</span></div>
+        <div class="pdesc" data-i18n="preset_social_desc">Blízko streamingu, ale o něco hlasitější pro krátká videa, která musí zaujmout hned na začátku.</div>
+      </button>
+      <button class="preset locked" data-preset="classical" data-locked="1">
+        <div class="ptitle"><span data-i18n="preset_classical_name">🎻 Klasika / Akustika</span><span class="ptarget">−18 LUFS</span><span class="plock" aria-hidden="true">🔒</span></div>
+        <div class="pdesc" data-i18n="preset_classical_desc">Nejtišší a nejdynamičtější volba ze všech — zachová co nejvíc rozdílu mezi tichými a hlasitými pasážemi.</div>
+      </button>
+    </div>
+
+    <div class="unlock-box" id="unlock-box">
+      <div class="unlock-row">
+        <span class="unlock-icon" aria-hidden="true">🔓</span>
+        <div class="unlock-body">
+          <div class="unlock-title" data-i18n="unlock_title">Odemkněte všechny předvolby</div>
+          <div class="unlock-text" data-i18n="unlock_text">Smart Auto je a zůstane zdarma. Kód pro odemknutí ostatních devíti předvoleb si stáhnete po zakoupení na Gumroad.</div>
+          <a class="unlock-gumroad" id="unlock-gumroad-link" href="https://uklidnito.gumroad.com/l/dzmaster" target="_blank" rel="noopener" data-i18n="unlock_gumroad_btn">🛒 Získat kód na Gumroad</a>
+          <form class="unlock-form" id="unlock-form">
+            <input type="password" id="unlock-input" autocomplete="off" data-i18n-placeholder="unlock_placeholder" placeholder="Zadejte kód">
+            <button type="submit" data-i18n="unlock_submit_btn">Odemknout</button>
+          </form>
+          <div class="unlock-error" id="unlock-error" data-i18n="unlock_error" hidden>Nesprávný kód. Zkuste to znovu.</div>
+          <div class="unlock-success" id="unlock-success" data-i18n="unlock_success" hidden>✅ Odemčeno! Všechny předvolby jsou teď dostupné.</div>
+        </div>
+      </div>
     </div>
 
     <div class="bitdepth">
@@ -508,6 +567,13 @@
       <button class="primary" id="process-btn" disabled data-i18n="process_btn">Zpracovat track</button>
       <span class="status-line" id="status-line" data-i18n="status_idle">Nejdřív nahrajte WAV soubor.</span>
     </div>
+
+    <div class="usage-limit-box" id="usage-limit-box" hidden>
+      <div class="usage-limit-title" data-i18n="usage_limit_title">Měsíční limit zdarma vyčerpán</div>
+      <div class="usage-limit-text" data-i18n="usage_limit_text">Smart Auto zdarma umožňuje 1 mastering měsíčně na IP adresu. Pro neomezený mastering všech předvoleb bez limitu si pořiďte trvalé odemčení přes Gumroad.</div>
+      <button type="button" class="usage-limit-link" id="usage-limit-unlock-btn" data-i18n="usage_limit_unlock_btn">🔓 Odemknout bez limitu</button>
+    </div>
+
     <div class="progress" id="progress"><div class="bar"></div></div>
 
     <div class="results" id="results">
@@ -551,14 +617,6 @@
         </a>
       </div>
 
-      <div class="thanks-note" id="thanks-note">
-        <span class="thanks-icon" aria-hidden="true">🙏</span>
-        <div class="thanks-body">
-          <div data-i18n="thanks_text">Díky, že používáte DZMASTER zdarma! Pokud vám nástroj pomohl, podpořte prosím jeho další vývoj a údržbu.</div>
-          <a class="thanks-donate" href="https://uklidnito.gumroad.com/coffee" target="_blank" rel="noopener" data-i18n="thanks_donate_btn">☕ Koupit mi kávu</a>
-        </div>
-      </div>
-
       <details class="tech">
         <summary data-i18n="tech_summary">Technické detaily zpracování</summary>
         <div id="tech-details" style="margin-top:8px;"></div>
@@ -593,7 +651,6 @@
     <span class="fitem">· <a href="https://synthreviews.github.io/dzmaster/dzmaster-landing.html" data-i18n="footer_more">O nástroji</a></span>
     <span class="fitem">· <a href="https://synthreviews.github.io/dzmaster/dzmaster-privacy.html" id="footer-privacy" data-i18n="footer_privacy">Ochrana soukromí</a></span>
     <span class="fitem">· <a href="https://synthlucida.com/index.html">SYNTHLUCIDA</a></span>
-    <span class="fitem donate">· <a href="https://uklidnito.gumroad.com/coffee" target="_blank" rel="noopener" data-i18n="footer_donate">☕ Podpořit vývoj</a></span>
   </div>
 </footer>
 
@@ -630,11 +687,26 @@
   // Sources (checked 2026-09): Spotify & YouTube normalize to -14 LUFS;
   // Apple Music targets -16 LUFS; -1 dBTP ceiling is the common safe
   // true-peak limit recommended across platforms to avoid inter-sample
-  // clipping after lossy encoding.
+  // clipping after lossy encoding. Broadcast target follows EBU R128
+  // (-23 LUFS, mandatory across EU television/radio). Podcast/audiobook
+  // target follows the ACX submission spec (RMS -23 to -18 dB, peak <=
+  // -3 dBTP) -- landing in the middle of that window. Bandcamp/direct-
+  // download is louder on purpose: unlike streaming platforms, Bandcamp
+  // does not renormalize playback, so extra loudness here is not thrown
+  // away. Vinyl leaves extra true-peak headroom for the cutting process.
+  // Social/short-form follows the same -14-ish family most short-video
+  // platforms normalize to. Classical/acoustic uses the widest-dynamics
+  // target of the set.
   var PRESETS = {
     streaming: { id: 'streaming', targetLUFS: -14, ceilingDbTP: -1.0 },
     apple: { id: 'apple', targetLUFS: -16, ceilingDbTP: -1.0 },
     club: { id: 'club', targetLUFS: -9, ceilingDbTP: -1.0 },
+    broadcast: { id: 'broadcast', targetLUFS: -23, ceilingDbTP: -1.0 },
+    podcast: { id: 'podcast', targetLUFS: -19, ceilingDbTP: -3.0 },
+    bandcamp: { id: 'bandcamp', targetLUFS: -11, ceilingDbTP: -1.0 },
+    vinyl: { id: 'vinyl', targetLUFS: -14, ceilingDbTP: -1.5 },
+    social: { id: 'social', targetLUFS: -13, ceilingDbTP: -1.0 },
+    classical: { id: 'classical', targetLUFS: -18, ceilingDbTP: -1.0 },
     // 'smart' has no fixed target -- resolved per-track by pickSmartTarget()
     smart: { id: 'smart', targetLUFS: null, ceilingDbTP: -1.0 }
   };
@@ -1686,6 +1758,28 @@
       preset_apple_desc: "Tišší, dynamičtější mastering pro Apple Music, mluvené slovo nebo akustické nahrávky.",
       preset_club_name: "🔊 Club / EDM",
       preset_club_desc: "Hlasitější, agresivnější limiting pro elektronickou hudbu a klubové sety.",
+      preset_broadcast_name: "📻 Broadcast (EBU R128)",
+      preset_broadcast_desc: "Standard EBU R128 je povinný pro TV a rozhlas v EU. Vhodné pro vysílání a AV produkci.",
+      preset_podcast_name: "🎙️ Podcast / Audiokniha (ACX)",
+      preset_podcast_desc: "V rozsahu doporučeném pro ACX audioknihy (−23 až −18 dB RMS) a běžné podcastové platformy.",
+      preset_bandcamp_name: "📀 Bandcamp / Přímé stažení",
+      preset_bandcamp_desc: "Bandcamp na rozdíl od Spotify hlasitost při přehrávání dál nesrovnává — co nastavíte, to lidé uslyší.",
+      preset_vinyl_name: "💿 Vinyl / Fyzické vydání",
+      preset_vinyl_desc: "Nižší hlasitost a víc prostoru pro špičky usnadní řezání desky a sníží riziko přeskakování jehly.",
+      preset_social_name: "📱 TikTok / Reels / Shorts",
+      preset_social_desc: "Blízko streamingu, ale o něco hlasitější pro krátká videa, která musí zaujmout hned na začátku.",
+      preset_classical_name: "🎻 Klasika / Akustika",
+      preset_classical_desc: "Nejtišší a nejdynamičtější volba ze všech — zachová co nejvíc rozdílu mezi tichými a hlasitými pasážemi.",
+      unlock_title: "Odemkněte všechny předvolby",
+      unlock_text: "Smart Auto je a zůstane zdarma. Kód pro odemknutí ostatních devíti předvoleb si stáhnete po zakoupení na Gumroad — jde o jednorázovou platbu, ne předplatné. Po zadání kódu je nástroj odemčený natrvalo, bez časového limitu nebo jakéhokoliv jiného omezení.",
+      unlock_gumroad_btn: "🛒 Získat kód na Gumroad",
+      unlock_placeholder: "Zadejte kód",
+      unlock_submit_btn: "Odemknout",
+      unlock_error: "Nesprávný kód. Zkuste to znovu.",
+      unlock_success: "✅ Odemčeno natrvalo! Všechny předvolby jsou teď dostupné, bez dalšího omezení.",
+      usage_limit_title: "Měsíční limit zdarma vyčerpán",
+      usage_limit_text: "Smart Auto zdarma umožňuje 1 mastering měsíčně na IP adresu. Pro neomezený mastering všech předvoleb bez limitu si pořiďte trvalé odemčení přes Gumroad.",
+      usage_limit_unlock_btn: "🔓 Odemknout bez limitu",
       bitdepth_label: "Výstup:", bitdepth_16: "16-bit (univerzální)", bitdepth_24: "24-bit (archivní kvalita)",
       adv_summary: "⚙️ Pokročilé nastavení (nepovinné)",
       adv_eq_title: "Tónová korekce (EQ)",
@@ -1714,8 +1808,6 @@
       wave_before: "Před", wave_after: "Po",
       ab_label: "Poslech:", ab_before: "🔈 Originál", ab_after: "✨ Mastrováno",
       download_btn: "Stáhnout mastrovaný WAV",
-      thanks_text: "Díky, že používáte DZMASTER zdarma! Pokud vám nástroj pomohl, podpořte prosím jeho další vývoj a údržbu.",
-      thanks_donate_btn: "☕ Koupit mi kávu",
       tech_summary: "Technické detaily zpracování",
       how_kicker: "Jak to funguje", how_title: "Co DZMASTER dělá s vaší stopou",
       how_q1: "1. Analýza", how_a1: "Nástroj změří integrovanou hlasitost (LUFS podle ITU‑R BS.1770), špičkovou úroveň a dynamiku skladby.",
@@ -1725,7 +1817,6 @@
       how_q5: "5. Export", how_a5: "Výsledek se rovnou v prohlížeči zabalí do WAV souboru ke stažení. Nic se nikam neposílá ani neukládá.",
       how_q6: "6. Volitelné pokročilé funkce", how_a6: 'V Pokročilém nastavení si navíc můžete zapnout: vícepásmovou kompresi (basy, středy a výšky se komprimují zvlášť, takže hlasitý bas "nestahuje" výšky dolů), basy do mono pod zvolenou frekvencí (bezpečnější přehrávání na mono systémech a vinylu) a jemnou saturaci pro harmonické zabarvení. Všechny jsou ve výchozím stavu vypnuté a na výsledek nemají žádný vliv, dokud je sami nezapnete.',
       footer_text: "DZMASTER je součástí rodiny nástrojů SYNTHLUCIDA.", footer_more: "O nástroji", footer_privacy: "Ochrana soukromí",
-      footer_donate: "☕ Podpořit vývoj",
       err_not_wav: "Tohle nevypadá jako WAV soubor (chybí RIFF/WAVE hlavička). Nahrajte prosím soubor ve formátu .wav.",
       err_too_big: "Soubor je větší než 600 MB — to už je pro zpracování v prohlížeči příliš mnoho. Zkuste kratší úsek nebo nižší bit depth.",
       err_read_fail: "Soubor se nepodařilo přečíst.",
@@ -1778,13 +1869,35 @@
       preset_apple_desc: "A quieter, more dynamic master for Apple Music, spoken word or acoustic recordings.",
       preset_club_name: "🔊 Club / EDM",
       preset_club_desc: "Louder, more aggressive limiting for electronic music and club sets.",
+      preset_broadcast_name: "📻 Broadcast (EBU R128)",
+      preset_broadcast_desc: "EU television and radio must meet the EBU R128 standard (−23 LUFS). Good for broadcast or AV production.",
+      preset_podcast_name: "🎙️ Podcast / Audiobook (ACX)",
+      preset_podcast_desc: "Falls inside the ACX audiobook submission range (−23 to −18 dB RMS) and works well for most podcast platforms.",
+      preset_bandcamp_name: "📀 Bandcamp / Direct Download",
+      preset_bandcamp_desc: "Unlike Spotify, Bandcamp doesn't renormalize playback — the loudness you set here is what listeners actually hear.",
+      preset_vinyl_name: "💿 Vinyl / Physical Release",
+      preset_vinyl_desc: "Lower loudness and extra peak headroom makes the cutting process easier and reduces the risk of the needle skipping.",
+      preset_social_name: "📱 TikTok / Reels / Shorts",
+      preset_social_desc: "Close to the streaming target, but a touch louder for short clips that need to grab attention immediately.",
+      preset_classical_name: "🎻 Classical / Acoustic",
+      preset_classical_desc: "The quietest, most dynamic option of the set — preserves as much of the gap between quiet and loud passages as possible.",
+      unlock_title: "Unlock all presets",
+      unlock_text: "Smart Auto is, and stays, free. The code to unlock the other nine presets comes with your purchase on Gumroad — it's a one-time payment, not a subscription. Once entered, the unlock is permanent: no time limit and no other restriction.",
+      unlock_gumroad_btn: "🛒 Get the code on Gumroad",
+      unlock_placeholder: "Enter code",
+      unlock_submit_btn: "Unlock",
+      unlock_error: "Wrong code. Try again.",
+      unlock_success: "✅ Unlocked for good! All presets are now available, with no further restrictions.",
+      usage_limit_title: "Free monthly limit reached",
+      usage_limit_text: "The free Smart Auto tier allows 1 mastering per month per IP address. For unlimited mastering across every preset with no limit, get the permanent unlock on Gumroad.",
+      usage_limit_unlock_btn: "🔓 Unlock without a limit",
       bitdepth_label: "Output:", bitdepth_16: "16-bit (universal)", bitdepth_24: "24-bit (archival quality)",
       adv_summary: "⚙️ Advanced settings (optional)",
       adv_eq_title: "Tonal EQ",
       adv_bass_label: "Bass · 120 Hz", adv_mid_label: "Mid · 1 kHz", adv_treble_label: "Treble · 8 kHz",
       adv_dynamics_title: "Dynamics",
       adv_multiband_label: "Multiband compression (bass, mid and treble handled separately)",
-      adv_multiband_hint: "A gentler result on dense mixes -- a loud bass hit no longer drags the highs down with it.",
+      adv_multiband_hint: "A gentler result on dense mixes — a loud bass hit no longer drags the highs down with it.",
       adv_width_title: "Stereo width", adv_width_label: "Width",
       adv_width_hint: "0% = mono, 100% = original, 200% = maximum width. Has no effect on mono files.",
       adv_bassmono_label: "Mono bass below 120 Hz",
@@ -1806,8 +1919,6 @@
       wave_before: "Before", wave_after: "After",
       ab_label: "Listen to:", ab_before: "🔈 Original", ab_after: "✨ Mastered",
       download_btn: "Download mastered WAV",
-      thanks_text: "Thanks for using DZMASTER for free! If the tool helped you out, please consider supporting its ongoing development and upkeep.",
-      thanks_donate_btn: "☕ Buy me a coffee",
       tech_summary: "Technical processing details",
       how_kicker: "How it works", how_title: "What DZMASTER does to your track",
       how_q1: "1. Analysis", how_a1: "Measures integrated loudness (LUFS per ITU‑R BS.1770), peak level and dynamic range.",
@@ -1817,7 +1928,6 @@
       how_q5: "5. Export", how_a5: "The result is packaged into a downloadable WAV file right in your browser. Nothing is ever uploaded or stored.",
       how_q6: "6. Optional advanced features", how_a6: "Advanced settings let you additionally turn on: multiband compression (bass, mid and treble compressed separately, so a loud bass hit no longer drags the highs down with it), mono bass below a chosen frequency (safer playback on mono systems and vinyl), and gentle saturation for harmonic coloration. All are off by default and have no effect on the result unless you turn them on.",
       footer_text: "DZMASTER is part of the SYNTHLUCIDA tools family.", footer_more: "About this tool", footer_privacy: "Privacy Policy",
-      footer_donate: "☕ Support development",
       err_not_wav: "This doesn't look like a WAV file (no RIFF/WAVE header found). Please upload a .wav file.",
       err_too_big: "This file is larger than 600 MB, which is too much to process in-browser. Try a shorter clip or lower bit depth.",
       err_read_fail: "Couldn't read the file.",
@@ -1834,6 +1944,10 @@
     document.querySelectorAll('[data-i18n]').forEach(function(el){
       var key = el.getAttribute('data-i18n');
       if (dict[key] != null) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-placeholder');
+      if (dict[key] != null) el.setAttribute('placeholder', dict[key]);
     });
     var titleEl = document.querySelector('title[data-i18n]');
     if (titleEl) document.title = dict.page_title;
@@ -2089,12 +2203,133 @@
   var presetButtons = Array.prototype.slice.call(document.querySelectorAll('.preset'));
   presetButtons.forEach(function(btn){
     btn.addEventListener('click', function(){
+      if (btn.classList.contains('locked')) {
+        var box = document.getElementById('unlock-box');
+        if (box) box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        var input = document.getElementById('unlock-input');
+        if (input) input.focus();
+        return;
+      }
       presetButtons.forEach(function(b){ b.classList.remove('selected'); });
       btn.classList.add('selected');
       selectedPreset = btn.getAttribute('data-preset');
     });
   });
   presetButtons[0].classList.add('selected'); // Smart Auto selected by default
+
+  // ---------------------------------------------------------------------
+  // Preset unlock: Smart Auto is free; the other nine presets unlock with
+  // a code purchased on Gumroad. The code is checked client-side (there is
+  // no server -- DZMASTER's whole design is that nothing leaves the
+  // browser) by comparing a SHA-256 hash, so the plaintext code never sits
+  // readable in the page source. This keeps casual users from just reading
+  // the code out of "view source", but it is NOT real access control: this
+  // is still 100% client-side code, so anyone who opens devtools can call
+  // unlockAllPresets() directly or edit the DOM to remove the .locked
+  // class, no code needed. It raises the bar for the vast majority of
+  // users without pretending to be a real paywall.
+  var UNLOCK_HASH = '5b77b13432dc12fc9f296d4ceff7ea110790be730bde2ac0c14fb367db8babd2';
+  var unlockBox = document.getElementById('unlock-box');
+  var unlockForm = document.getElementById('unlock-form');
+  var unlockInput = document.getElementById('unlock-input');
+  var unlockError = document.getElementById('unlock-error');
+  var unlockSuccess = document.getElementById('unlock-success');
+
+  function sha256Hex(str){
+    var bytes = new TextEncoder().encode(str);
+    return crypto.subtle.digest('SHA-256', bytes).then(function(buf){
+      var arr = Array.prototype.slice.call(new Uint8Array(buf));
+      return arr.map(function(b){ return b.toString(16).padStart(2, '0'); }).join('');
+    });
+  }
+
+  function unlockAllPresets(){
+    presetButtons.forEach(function(b){ b.classList.remove('locked'); b.removeAttribute('data-locked'); });
+    if (unlockBox) unlockBox.classList.add('is-unlocked');
+    if (unlockError) unlockError.hidden = true;
+    if (unlockSuccess) unlockSuccess.hidden = false;
+  }
+
+  try {
+    if (localStorage.getItem('dzmaster_unlocked') === '1') unlockAllPresets();
+  } catch(e){}
+
+  if (unlockForm) {
+    unlockForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var code = (unlockInput && unlockInput.value) || '';
+      if (!code) return;
+      sha256Hex(code).then(function(hex){
+        if (hex === UNLOCK_HASH) {
+          unlockAllPresets();
+          try { localStorage.setItem('dzmaster_unlocked', '1'); } catch(err){}
+        } else {
+          if (unlockError) unlockError.hidden = false;
+          if (unlockSuccess) unlockSuccess.hidden = true;
+        }
+      });
+    });
+  }
+
+  // ---------------------------------------------------------------------
+  // Free-tier usage limit: before unlocking, the free Smart Auto preset is
+  // capped at 1 mastering per calendar month per IP address. This is
+  // enforced by a small Firebase Cloud Function (see /firebase/functions)
+  // -- the ONLY server call this page ever makes, and it never receives or
+  // sees the audio file itself, just a yes/no usage check. The visitor's
+  // IP is hashed server-side and never stored in plain text (see the
+  // privacy policy). Once unlocked with a purchased code, this check is
+  // skipped entirely and mastering has no limit of any kind.
+  //
+  // USAGE_API_URL is filled in automatically by firebase/setup.sh after
+  // you deploy the function. Until it's a real URL, or if the request
+  // ever fails (offline, function not deployed yet, temporary outage),
+  // this fails OPEN -- processing proceeds anyway, so a backend hiccup
+  // never breaks the tool for a legitimate visitor.
+  // The window override below is a test-only hook (used by test/e2e.js to
+  // exercise this code path against a mocked endpoint) -- it is never set
+  // in production, so real visitors always get the URL setup.sh writes in.
+  var USAGE_API_URL = (typeof window !== 'undefined' && window.DZMASTER_USAGE_API_URL_OVERRIDE)
+    || 'https://REGION-PROJECT_ID.cloudfunctions.net/checkMasteringUsage';
+  var usageLimitBox = document.getElementById('usage-limit-box');
+  var usageLimitUnlockBtn = document.getElementById('usage-limit-unlock-btn');
+
+  function isUnlocked(){
+    try { return localStorage.getItem('dzmaster_unlocked') === '1'; } catch(e){ return false; }
+  }
+
+  function checkUsageAllowed(){
+    if (isUnlocked()) return Promise.resolve(true);
+    if (!USAGE_API_URL || USAGE_API_URL.indexOf('REGION-PROJECT_ID') !== -1) {
+      return Promise.resolve(true); // not deployed/configured yet -- fail open
+    }
+    var hasAbort = typeof AbortController !== 'undefined';
+    var controller = hasAbort ? new AbortController() : null;
+    var timeoutId = hasAbort ? setTimeout(function(){ controller.abort(); }, 6000) : null;
+    return fetch(USAGE_API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: '{}',
+      signal: hasAbort ? controller.signal : undefined
+    }).then(function(res){
+      if (timeoutId) clearTimeout(timeoutId);
+      if (!res.ok) return true; // fail open on server-side error
+      return res.json().then(function(data){
+        return !(data && data.allowed === false);
+      }, function(){ return true; }); // fail open on bad JSON
+    }).catch(function(err){
+      if (timeoutId) clearTimeout(timeoutId);
+      console.warn('DZMASTER usage check unavailable, proceeding:', err && err.message);
+      return true; // fail open on network error/timeout
+    });
+  }
+
+  if (usageLimitUnlockBtn) {
+    usageLimitUnlockBtn.addEventListener('click', function(){
+      if (unlockBox) unlockBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (unlockInput) unlockInput.focus();
+    });
+  }
 
   function updateProcessButton(){
     processBtn.disabled = !selectedFile;
@@ -2158,6 +2393,22 @@
   processBtn.addEventListener('click', function(){
     if (!selectedFile) return;
     processBtn.disabled = true;
+    if (usageLimitBox) usageLimitBox.hidden = true;
+
+    checkUsageAllowed().then(function(allowed){
+      if (!allowed) {
+        processBtn.disabled = false;
+        if (usageLimitBox) {
+          usageLimitBox.hidden = false;
+          usageLimitBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        return;
+      }
+      runProcessing();
+    });
+  });
+
+  function runProcessing(){
     progress.classList.add('show');
     results.classList.remove('show');
     refreshStatusLine();
@@ -2186,7 +2437,7 @@
           document.getElementById('stat-peak-after').textContent = fmtDb(msg.output.truePeakDb);
           document.getElementById('stat-gain').textContent = (msg.appliedGainDb >= 0 ? '+' : '') + msg.appliedGainDb.toFixed(1) + ' dB';
 
-          var presetLabel = {smart:'Smart Auto', streaming:'Streaming', apple:'Apple / Podcast', club:'Club / EDM'}[msg.preset.id] || msg.preset.id;
+          var presetLabel = {smart:'Smart Auto', streaming:'Streaming', apple:'Apple / Podcast', club:'Club / EDM', broadcast:'Broadcast (EBU R128)', podcast:'Podcast / Audiobook (ACX)', bandcamp:'Bandcamp / Direct Download', vinyl:'Vinyl / Physical Release', social:'TikTok / Reels / Shorts', classical:'Classical / Acoustic'}[msg.preset.id] || msg.preset.id;
           var presetText = presetLabel + (msg.preset.id === 'smart' ? ' (' + msg.preset.targetLUFS + ' LUFS)' : '');
           document.getElementById('stat-preset').textContent = presetText;
 
@@ -2241,7 +2492,7 @@
       processBtn.disabled = false;
       showError(err && err.message ? err.message : t('err_read_fail'));
     });
-  });
+  }
 
   // All DOM refs and handlers above are now wired up -- safe to paint the
   // initial language (this also calls refreshStatusLine(), which touches
