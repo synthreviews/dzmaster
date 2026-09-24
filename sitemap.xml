@@ -8,7 +8,17 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="cs" href="https://synthreviews.github.io/dzmaster/dzmaster.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://synthreviews.github.io/dzmaster/dzmaster.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://synthreviews.github.io/dzmaster/dzmaster-en.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://synthreviews.github.io/dzmaster/dzmaster.html"/>
+  </url>
+
+  <url>
+    <loc>https://synthreviews.github.io/dzmaster/dzmaster-en.html</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://synthreviews.github.io/dzmaster/dzmaster.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://synthreviews.github.io/dzmaster/dzmaster-en.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://synthreviews.github.io/dzmaster/dzmaster.html"/>
   </url>
 

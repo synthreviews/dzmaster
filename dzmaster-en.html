@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="en" data-page-lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title data-i18n="page_title">DZMASTER — Automatický online mastering hudby | SYNTHLUCIDA</title>
-<meta name="description" data-i18n="page_desc" content="Nahrajte WAV a DZMASTER během pár vteřin ve vašem prohlížeči udělá základní mastering — správná hlasitost a bezpečné špičky pro Spotify, YouTube i běžné přehrávače. Smart Auto zdarma, bez instalace, soubor se nikam neodesílá.">
+<title data-i18n="page_title">DZMASTER — Automatic Online Music Mastering | SYNTHLUCIDA</title>
+<meta name="description" data-i18n="page_desc" content="Upload a WAV file and DZMASTER masters it right in your browser in seconds — correct loudness and safe peaks for Spotify, YouTube and everyday players.">
 <meta name="author" content="DZMASTER">
 <meta name="robots" content="index, follow, max-image-preview:large">
-<link rel="canonical" href="https://synthreviews.github.io/dzmaster/dzmaster.html">
+<link rel="canonical" href="https://synthreviews.github.io/dzmaster/dzmaster-en.html">
 <link rel="alternate" hreflang="cs" href="https://synthreviews.github.io/dzmaster/dzmaster.html">
 <link rel="alternate" hreflang="en" href="https://synthreviews.github.io/dzmaster/dzmaster-en.html">
 <link rel="alternate" hreflang="x-default" href="https://synthreviews.github.io/dzmaster/dzmaster.html">
@@ -15,19 +15,19 @@
 <!-- ===== Open Graph ===== -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SYNTHLUCIDA">
-<meta property="og:title" data-i18n-attr="page_title" content="DZMASTER — Automatický online mastering hudby">
-<meta property="og:description" data-i18n-attr="page_desc" content="Nahrajte WAV, vyberte předvolbu, stáhněte mastrovanou stopu. Vše přímo v prohlížeči, Smart Auto zdarma.">
-<meta property="og:url" content="https://synthreviews.github.io/dzmaster/dzmaster.html">
+<meta property="og:title" data-i18n-attr="page_title" content="DZMASTER — Automatic Online Music Mastering">
+<meta property="og:description" data-i18n-attr="page_desc" content="Upload a WAV, pick a preset, download the mastered track. Everything runs in your browser, Smart Auto is free.">
+<meta property="og:url" content="https://synthreviews.github.io/dzmaster/dzmaster-en.html">
 <meta property="og:image" content="https://synthreviews.github.io/dzmaster/dzmaster-og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:locale" content="cs_CZ">
-<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="cs_CZ">
 
 <!-- ===== Twitter / X card ===== -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" data-i18n-attr="page_title" content="DZMASTER — Automatický online mastering hudby">
-<meta name="twitter:description" data-i18n-attr="page_desc" content="Nahrajte WAV, vyberte předvolbu, stáhněte mastrovanou stopu. Vše přímo v prohlížeči, Smart Auto zdarma.">
+<meta name="twitter:title" data-i18n-attr="page_title" content="DZMASTER — Automatic Online Music Mastering">
+<meta name="twitter:description" data-i18n-attr="page_desc" content="Upload a WAV, pick a preset, download the mastered track. Everything runs in your browser, Smart Auto is free.">
 <meta name="twitter:image" content="https://synthreviews.github.io/dzmaster/dzmaster-og.png">
 
 <meta name="theme-color" content="#0b0d17">
@@ -40,7 +40,7 @@
 <!-- ===== PWA manifest (no service worker on purpose -- this tool has no
      offline/cacheable state worth installing for, it's a one-shot
      upload-process-download flow) ===== -->
-<link rel="manifest" href="/dzmaster/manifest-dzmaster-cz.json">
+<link rel="manifest" href="/dzmaster/manifest-dzmaster-en.json">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="DZMASTER">
@@ -52,22 +52,36 @@
   "name": "DZMASTER",
   "applicationCategory": "MultimediaApplication",
   "operatingSystem": "Any (web browser)",
-  "url": "https://synthreviews.github.io/dzmaster/dzmaster.html",
-  "description": "Online nástroj pro automatický mastering hudby přímo v prohlížeči. Analyzuje WAV soubor a upraví hlasitost a špičky podle cílové platformy (Spotify, YouTube, Apple Music a dalších). Předvolba Smart Auto je zdarma, ostatní předvolby se odemykají kódem z Gumroadu.",
-  "inLanguage": "cs",
+  "url": "https://synthreviews.github.io/dzmaster/dzmaster-en.html",
+  "description": "Online tool for automatic music mastering right in your browser. It analyzes a WAV file and sets loudness and peaks for the target platform (Spotify, YouTube, Apple Music and more). The Smart Auto preset is free; the other presets unlock with a code from Gumroad.",
+  "inLanguage": "en",
   "offers": [
-    { "@type": "Offer", "name": "Smart Auto (zdarma, 1 mastering měsíčně)", "price": "0", "priceCurrency": "EUR" },
-    { "@type": "Offer", "name": "Trvalé odemčení všech předvoleb bez limitu + desktopová verze pro Windows (dobrovolná cena)", "price": "0", "priceCurrency": "EUR", "url": "https://uklidnito.gumroad.com/l/dzmaster" }
+    {
+      "@type": "Offer",
+      "name": "Smart Auto (free, 1 mastering per month)",
+      "price": "0",
+      "priceCurrency": "EUR"
+    },
+    {
+      "@type": "Offer",
+      "name": "Permanent unlock of all presets with no limit + Windows desktop version (pay what you want)",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "url": "https://uklidnito.gumroad.com/l/dzmaster"
+    }
   ],
   "featureList": [
-    "Měření integrované hlasitosti (LUFS) podle ITU-R BS.1770 a true peak (4× převzorkování)",
-    "9 předvoleb pro konkrétní platformy (Streaming, Apple/Podcast, Club/EDM, Broadcast EBU R128, Podcast/Audiokniha ACX, Bandcamp, Vinyl, TikTok/Reels/Shorts, Klasika) a Smart Auto",
-    "True-peak look-ahead limiter, který drží strop předvolby i pro inter-sample špičky",
-    "Export mastrovaného WAV (16 nebo 24-bit), při 16-bit s TPDF ditheringem",
-    "Pokročilé (nepovinné) nastavení: 3pásmový EQ, vícepásmová komprese, stereo šířka, basy do mono, sytost/teplo, oříznutí ticha s fade",
-    "Veškeré zpracování běží lokálně v prohlížeči, bez uploadu na server"
+    "Integrated loudness (LUFS) per ITU-R BS.1770 and true peak (4x oversampling)",
+    "9 platform presets (Streaming, Apple/Podcast, Club/EDM, Broadcast EBU R128, Podcast/Audiobook ACX, Bandcamp, Vinyl, TikTok/Reels/Shorts, Classical) plus Smart Auto",
+    "True-peak look-ahead limiter that holds the preset ceiling for inter-sample peaks too",
+    "Mastered WAV export (16 or 24-bit), TPDF dither at 16-bit",
+    "Optional advanced settings: 3-band EQ, multiband compression, stereo width, mono bass, saturation/warmth, silence trimming with fades",
+    "All processing runs locally in the browser, nothing is uploaded"
   ],
-  "publisher": { "@type": "Organization", "name": "SYNTHLUCIDA" }
+  "publisher": {
+    "@type": "Organization",
+    "name": "SYNTHLUCIDA"
+  }
 }
 </script>
 <style>
@@ -323,7 +337,7 @@
       <span>DZMASTER<small data-i18n="brand_sub">by SYNTHLUCIDA</small></span>
     </div>
     <div class="topbar-right">
-      <a href="https://synthreviews.github.io/dzmaster/dzmaster-landing.html" class="home-link" id="home-link" title="Domů" aria-label="Domů">
+      <a href="https://synthreviews.github.io/dzmaster/dzmaster-landing-en.html" class="home-link" id="home-link" title="Home" aria-label="Home">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
       </a>
       <div class="lang-toggle" role="group" aria-label="Language">
@@ -337,62 +351,62 @@
 <main class="wrap">
 
   <section class="hero">
-    <h1 data-i18n="hero_h1">Mastering na jedno kliknutí — <span class="grad">přímo v prohlížeči</span></h1>
-    <p data-i18n="hero_p">Nahrajte WAV, vyberte cílovou platformu a DZMASTER během pár vteřin doladí hlasitost a špičky, aby stopa hrála čistě a konzistentně na Spotify, YouTube i běžných přehrávačích.</p>
+    <h1 data-i18n="hero_h1">One-click mastering — <span class="grad">right in your browser</span></h1>
+    <p data-i18n="hero_p">Upload a WAV, pick a target platform, and DZMASTER tunes loudness and peaks in seconds so your track plays clean and consistent on Spotify, YouTube and everyday players.</p>
     <div class="trust-row">
-      <span class="pill" data-i18n="trust_1">🔒 Soubor se nikam neodesílá</span>
-      <span class="pill" data-i18n="trust_2">⚡ Zpracování v prohlížeči</span>
-      <span class="pill" data-i18n="trust_3">🆓 Smart Auto zdarma, bez registrace</span>
+      <span class="pill" data-i18n="trust_1">🔒 Your file never leaves your device</span>
+      <span class="pill" data-i18n="trust_2">⚡ Processed in your browser</span>
+      <span class="pill" data-i18n="trust_3">🆓 Smart Auto free, no sign-up</span>
     </div>
   </section>
 
 
   <details class="guide" id="guide-details">
-    <summary data-i18n="guide_summary">📖 Jak připravit track a co od masteringu čekat (průvodce)</summary>
+    <summary data-i18n="guide_summary">📖 How to prepare a track and what mastering can (and can't) do — a guide</summary>
     <div class="guide-body">
 
       <div class="guide-section">
-        <h4 data-i18n="guide_prep_title">1. Jak připravit track před masteringem</h4>
+        <h4 data-i18n="guide_prep_title">1. How to prepare a track before mastering</h4>
         <ul>
-          <li data-i18n="guide_prep_1">Exportujte z DAW jako WAV ve stejném sample rate jako projekt (44,1 nebo 48 kHz), ideálně 24-bit — zbytečné převzorkování nebo export do MP3 před masteringem jen ztrácí informace, které pak nejdou vrátit.</li>
-          <li data-i18n="guide_prep_2">Nechte na master bus rezervu (headroom): špičky mixu by měly sahat zhruba do −6 až −3 dBFS, ne narvané na 0 dB. Pokud máte na masteru limiter nebo maximizer, před exportem ho vypněte nebo hodně povolte — mastering potřebuje prostor, se kterým může pracovat.</li>
-          <li data-i18n="guide_prep_3">Zkontrolujte a případně ořízněte ticho na začátku a konci — nebo to nechte na volbu „Oříznout ticho“ v Pokročilém nastavení.</li>
-          <li data-i18n="guide_prep_4">Mastering doladí hlasitost a dynamiku, ale nespraví špatný mix. Konflikty mezi nástroji, přebušený bas, potichý vokál — tohle řešte zpátky v mixu, ne přes mastering.</li>
+          <li data-i18n="guide_prep_1">Export from your DAW as WAV at the same sample rate as your project (44.1 or 48 kHz), ideally 24-bit — unnecessary resampling or exporting to MP3 before mastering just throws away information you can't get back.</li>
+          <li data-i18n="guide_prep_2">Leave headroom on the master bus: mix peaks should sit around −6 to −3 dBFS, not slammed up to 0 dB. If you have a limiter or maximizer on the master, turn it off (or back it off a lot) before exporting — mastering needs room to actually do something.</li>
+          <li data-i18n="guide_prep_3">Check for, and trim, any silence at the start/end — or leave that to the "Trim silence" option in Advanced settings.</li>
+          <li data-i18n="guide_prep_4">Mastering fine-tunes loudness and dynamics, but it won't fix a bad mix. Instrument clashes, an overpowering bass, a vocal sitting too quiet — sort those out back in the mix, not through mastering.</li>
         </ul>
       </div>
 
       <div class="guide-section">
-        <h4 data-i18n="guide_honest_title">2. Co mastering dokáže a co ne (bez příkras)</h4>
-        <p data-i18n="guide_honest_can">Dokáže: sjednotit hlasitost na správný cíl pro danou platformu, jemně vyrovnat dynamiku, ochránit stopu před ořezáním špiček při přehrávání i po kompresi do MP3/AAC, a přidat jemné tónové doladění nebo teplo.</p>
-        <p data-i18n="guide_honest_cannot">Nedokáže: opravit rozladěný nástroj, špatně nahraný zpěv, nevyvážený mix, sykavky, dunění místnosti nebo šum z nahrávání. Tyhle věci patří do nahrávání a mixu — mastering je až poslední doladění navrch, ne záchranná brzda.</p>
+        <h4 data-i18n="guide_honest_title">2. What mastering can and can't do (no sugarcoating)</h4>
+        <p data-i18n="guide_honest_can">Can do: bring the loudness to the right target for a given platform, gently even out dynamics, protect the track from clipping on playback and after MP3/AAC encoding, and add a touch of tonal polish or warmth.</p>
+        <p data-i18n="guide_honest_cannot">Can't do: fix an out-of-tune instrument, a poorly recorded vocal, an unbalanced mix, harsh sibilance, room rumble, or recording noise. Those belong in recording and mixing — mastering is the last bit of polish on top, not a rescue.</p>
         <div class="guide-honest">
-          <strong data-i18n="guide_honest_note_label">Upřímně:</strong>
-          <span data-i18n="guide_honest_note">mastering je tak z 5–10 % zvuku celé skladby. Většinu práce odvede dobrý mix. Pokud track nezní dobře před masteringem, nebude znít dobře ani po něm — jen hlasitěji.</span>
+          <strong data-i18n="guide_honest_note_label">Honestly:</strong>
+          <span data-i18n="guide_honest_note">mastering is maybe 5-10% of how a track ends up sounding. A good mix does most of the work. If a track doesn't sound good before mastering, it won't sound good after it either — just louder.</span>
         </div>
       </div>
 
       <div class="guide-section">
-        <h4 data-i18n="guide_preset_title">3. Jak vybrat předvolbu</h4>
-        <p data-i18n="guide_preset_1">Smart Auto je rozumný výchozí bod, pokud si nejste jistí — cílovou hlasitost odvodí z crest factoru (poměru špička/RMS) vaší nahrávky, takže dynamický akustický track dostane jiné zacházení než hutný elektronický mix.</p>
-        <p data-i18n="guide_preset_2">Nemá smysl honit co nejvyšší hlasitost za každou cenu. Spotify, YouTube i většina dalších služeb track stejně přenormalizují na svůj vlastní cíl — extra hlasitost navíc tak jen ubírá dynamiku a stopa zní unaveně, aniž by v přehrávači byla o cokoliv hlasitější.</p>
+        <h4 data-i18n="guide_preset_title">3. How to pick a preset</h4>
+        <p data-i18n="guide_preset_1">Smart Auto is a sensible default if you're not sure — it derives a target loudness from your track's crest factor (peak-to-RMS ratio), so a dynamic acoustic track gets treated differently from a dense electronic mix.</p>
+        <p data-i18n="guide_preset_2">There's no point chasing the highest possible loudness for its own sake. Spotify, YouTube, and most other platforms renormalize your track to their own target anyway — extra loudness on top just eats into dynamics and makes the track sound tired, without it ending up any louder in the player.</p>
       </div>
 
       <div class="guide-section">
-        <h4 data-i18n="guide_mistakes_title">4. Časté chyby</h4>
+        <h4 data-i18n="guide_mistakes_title">4. Common mistakes</h4>
         <ul>
-          <li data-i18n="guide_mistake_1">Mastering ze souboru MP3/AAC místo WAV — komprimovaný formát informace nenávratně zahodil, mastering z něj je nemůže vrátit zpět.</li>
-          <li data-i18n="guide_mistake_2">Opakovaný mastering „na vrstvu“ — mastrovat už jednou mastrovaný soubor znovu a znovu. Každý průchod přidá trochu zkreslení a ubere dynamiku.</li>
-          <li data-i18n="guide_mistake_3">Přehnaně nahlas nabušený master bus ještě před masteringem — limiter nebo maximizer na finálním mixu nechá masteringu pracovat jen s tím, co mu zbylo.</li>
-          <li data-i18n="guide_mistake_4">Slepě věřit číslům (LUFS, true peak) bez poslechu — jsou to užitečné nástroje, ne náhrada uší.</li>
+          <li data-i18n="guide_mistake_1">Mastering from an MP3/AAC file instead of WAV — the compressed format has already thrown information away for good, and mastering can't bring it back.</li>
+          <li data-i18n="guide_mistake_2">Mastering "on top of" mastering — running an already-mastered file through mastering again and again. Each pass adds a bit of distortion and eats into dynamics.</li>
+          <li data-i18n="guide_mistake_3">A master bus already slammed loud before mastering — a limiter or maximizer left on the final mix only leaves mastering with whatever headroom is left over.</li>
+          <li data-i18n="guide_mistake_4">Trusting the numbers (LUFS, true peak) blindly without listening — they're useful tools, not a substitute for your ears.</li>
         </ul>
       </div>
 
       <div class="guide-section">
-        <h4 data-i18n="guide_after_title">5. Po masteringu</h4>
+        <h4 data-i18n="guide_after_title">5. After mastering</h4>
         <ul>
-          <li data-i18n="guide_after_1">Použijte přepínač Originál / Mastrováno a poslouchejte při stejné hlasitosti (loudness-matched) — hlasitější verze totiž skoro vždy zní „líp“, i když objektivně lepší není. DZMASTER hlasitost obou verzí v přehrávači sám nesrovnává, takže na to při poslechu pamatujte.</li>
-          <li data-i18n="guide_after_2">Pokud track míří i tam, kde se hraje mono (starší rádia, některé kluby), zkontrolujte mono kompatibilitu — nebo rovnou zapněte „Basy do mono“ v Pokročilém nastavení.</li>
-          <li data-i18n="guide_after_3">Než finální track schválíte, poslechněte si ho na víc než jednom zařízení — sluchátka, telefonní reproduktor, auto. Co zní skvěle na monitorech, nemusí sedět všude.</li>
+          <li data-i18n="guide_after_1">Use the Original / Mastered toggle and listen at matched loudness — a louder version will almost always sound "better" even when it objectively isn't. DZMASTER doesn't loudness-match the two versions for you in the player, so keep that in mind while listening.</li>
+          <li data-i18n="guide_after_2">If the track is also headed somewhere it'll play in mono (older radios, some clubs), check mono compatibility — or just turn on "Mono bass" in Advanced settings.</li>
+          <li data-i18n="guide_after_3">Before you sign off on the final track, listen to it on more than one device — headphones, a phone speaker, a car. What sounds great on studio monitors doesn't always hold up everywhere.</li>
         </ul>
       </div>
 
@@ -400,13 +414,13 @@
   </details>
 
   <section class="card" id="upload-card">
-    <h2 data-i18n="step1_kicker">Krok 1</h2>
-    <h3 data-i18n="step1_title">Nahrajte WAV soubor</h3>
+    <h2 data-i18n="step1_kicker">Step 1</h2>
+    <h3 data-i18n="step1_title">Upload a WAV file</h3>
 
-    <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Upload WAV file">
+    <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Upload a WAV file">
       <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3"/></svg>
-      <div><strong data-i18n="drop_title">Přetáhněte sem .wav soubor</strong></div>
-      <div class="sub" data-i18n="drop_sub">nebo klikněte pro výběr souboru · max. 600 MB</div>
+      <div><strong data-i18n="drop_title">Drop your .wav file here</strong></div>
+      <div class="sub" data-i18n="drop_sub">or click to choose a file · max 600 MB</div>
     </div>
     <input type="file" id="file-input" accept=".wav,audio/wav,audio/x-wav,audio/wave">
 
@@ -415,58 +429,58 @@
         <div class="fname" id="file-name"></div>
         <div class="fmeta" id="file-meta"></div>
       </div>
-      <button class="clear" id="file-clear" type="button" data-i18n="clear_btn">Odebrat</button>
+      <button class="clear" id="file-clear" type="button" data-i18n="clear_btn">Remove</button>
     </div>
 
     <div class="privacy-note">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l7 4v6c0 5-3.4 8.4-7 10-3.6-1.6-7-5-7-10V6l7-4z"/></svg>
-      <span data-i18n="privacy_note">Celý mastering (analýza, EQ, kompresor, limiter) běží lokálně ve vašem prohlížeči pomocí Web Audio / JavaScriptu. Váš track nikdy neopustí vaše zařízení a neprochází žádným serverem.</span>
+      <span data-i18n="privacy_note">The entire mastering chain (analysis, EQ, compressor, limiter) runs locally in your browser via JavaScript. Your track never leaves your device and never touches a server.</span>
     </div>
   </section>
 
   <section class="card" id="preset-card">
-    <h2 data-i18n="step2_kicker">Krok 2</h2>
-    <h3 data-i18n="step2_title">Vyberte předvolbu</h3>
+    <h2 data-i18n="step2_kicker">Step 2</h2>
+    <h3 data-i18n="step2_title">Choose a preset</h3>
     <div class="presets" id="presets">
       <button class="preset" data-preset="smart">
         <div class="ptitle"><span data-i18n="preset_smart_name">🧠 Smart Auto</span><span class="pmeta"><span class="ptarget" data-i18n="preset_smart_target">auto</span></span></div>
-        <div class="pdesc" data-i18n="preset_smart_desc">Software sám podle analýzy skladby vybere nejvhodnější cílovou hlasitost. Doporučeno, pokud si nejste jistí.</div>
+        <div class="pdesc" data-i18n="preset_smart_desc">The tool analyzes your track and picks the most fitting target loudness for you. Recommended if you're not sure.</div>
       </button>
       <button class="preset locked" data-preset="streaming" data-locked="1">
         <div class="ptitle"><span data-i18n="preset_streaming_name">🎧 Streaming</span><span class="pmeta"><span class="ptarget">−14 LUFS</span><span class="plock" aria-hidden="true">🔒</span></span></div>
-        <div class="pdesc" data-i18n="preset_streaming_desc">Spotify, YouTube a většina streamovacích služeb normalizuje na −14 LUFS. Univerzální bezpečná volba.</div>
+        <div class="pdesc" data-i18n="preset_streaming_desc">Spotify, YouTube and most streaming services normalize to −14 LUFS. A universal, safe choice.</div>
       </button>
       <button class="preset locked" data-preset="apple" data-locked="1">
         <div class="ptitle"><span data-i18n="preset_apple_name">🍎 Apple / Podcast</span><span class="pmeta"><span class="ptarget">−16 LUFS</span><span class="plock" aria-hidden="true">🔒</span></span></div>
-        <div class="pdesc" data-i18n="preset_apple_desc">Tišší, dynamičtější mastering pro Apple Music, mluvené slovo nebo akustické nahrávky.</div>
+        <div class="pdesc" data-i18n="preset_apple_desc">A quieter, more dynamic master for Apple Music, spoken word or acoustic recordings.</div>
       </button>
       <button class="preset locked" data-preset="club" data-locked="1">
         <div class="ptitle"><span data-i18n="preset_club_name">🔊 Club / EDM</span><span class="pmeta"><span class="ptarget">−9 LUFS</span><span class="plock" aria-hidden="true">🔒</span></span></div>
-        <div class="pdesc" data-i18n="preset_club_desc">Hlasitější, agresivnější limiting pro elektronickou hudbu a klubové sety.</div>
+        <div class="pdesc" data-i18n="preset_club_desc">Louder, more aggressive limiting for electronic music and club sets.</div>
       </button>
       <button class="preset locked" data-preset="broadcast" data-locked="1">
         <div class="ptitle"><span data-i18n="preset_broadcast_name">📻 Broadcast (EBU R128)</span><span class="pmeta"><span class="ptarget">−23 LUFS</span><span class="plock" aria-hidden="true">🔒</span></span></div>
-        <div class="pdesc" data-i18n="preset_broadcast_desc">Standard EBU R128 je povinný pro TV a rozhlas v EU. Vhodné pro vysílání a AV produkci.</div>
+        <div class="pdesc" data-i18n="preset_broadcast_desc">EU television and radio must meet the EBU R128 standard (−23 LUFS). Good for broadcast or AV production.</div>
       </button>
       <button class="preset locked" data-preset="podcast" data-locked="1">
-        <div class="ptitle"><span data-i18n="preset_podcast_name">🎙️ Podcast / Audiokniha (ACX)</span><span class="pmeta"><span class="ptarget">−19 LUFS</span><span class="plock" aria-hidden="true">🔒</span></span></div>
-        <div class="pdesc" data-i18n="preset_podcast_desc">V rozsahu doporučeném pro ACX audioknihy (−23 až −18 dB RMS) a běžné podcastové platformy.</div>
+        <div class="ptitle"><span data-i18n="preset_podcast_name">🎙️ Podcast / Audiobook (ACX)</span><span class="pmeta"><span class="ptarget">−19 LUFS</span><span class="plock" aria-hidden="true">🔒</span></span></div>
+        <div class="pdesc" data-i18n="preset_podcast_desc">Falls inside the ACX audiobook submission range (−23 to −18 dB RMS) and works well for most podcast platforms.</div>
       </button>
       <button class="preset locked" data-preset="bandcamp" data-locked="1">
-        <div class="ptitle"><span data-i18n="preset_bandcamp_name">📀 Bandcamp / Přímé stažení</span><span class="pmeta"><span class="ptarget">−11 LUFS</span><span class="plock" aria-hidden="true">🔒</span></span></div>
-        <div class="pdesc" data-i18n="preset_bandcamp_desc">Bandcamp na rozdíl od Spotify hlasitost při přehrávání dál nesrovnává — co nastavíte, to lidé uslyší.</div>
+        <div class="ptitle"><span data-i18n="preset_bandcamp_name">📀 Bandcamp / Direct Download</span><span class="pmeta"><span class="ptarget">−11 LUFS</span><span class="plock" aria-hidden="true">🔒</span></span></div>
+        <div class="pdesc" data-i18n="preset_bandcamp_desc">Unlike Spotify, Bandcamp doesn't renormalize playback — the loudness you set here is what listeners actually hear.</div>
       </button>
       <button class="preset locked" data-preset="vinyl" data-locked="1">
-        <div class="ptitle"><span data-i18n="preset_vinyl_name">💿 Vinyl / Fyzické vydání</span><span class="pmeta"><span class="ptarget">−14 LUFS</span><span class="plock" aria-hidden="true">🔒</span></span></div>
-        <div class="pdesc" data-i18n="preset_vinyl_desc">Nižší hlasitost a víc prostoru pro špičky usnadní řezání desky a sníží riziko přeskakování jehly.</div>
+        <div class="ptitle"><span data-i18n="preset_vinyl_name">💿 Vinyl / Physical Release</span><span class="pmeta"><span class="ptarget">−14 LUFS</span><span class="plock" aria-hidden="true">🔒</span></span></div>
+        <div class="pdesc" data-i18n="preset_vinyl_desc">Lower loudness and extra peak headroom makes the cutting process easier and reduces the risk of the needle skipping.</div>
       </button>
       <button class="preset locked" data-preset="social" data-locked="1">
         <div class="ptitle"><span data-i18n="preset_social_name">📱 TikTok / Reels / Shorts</span><span class="pmeta"><span class="ptarget">−13 LUFS</span><span class="plock" aria-hidden="true">🔒</span></span></div>
-        <div class="pdesc" data-i18n="preset_social_desc">Blízko streamingu, ale o něco hlasitější pro krátká videa, která musí zaujmout hned na začátku.</div>
+        <div class="pdesc" data-i18n="preset_social_desc">Close to the streaming target, but a touch louder for short clips that need to grab attention immediately.</div>
       </button>
       <button class="preset locked" data-preset="classical" data-locked="1">
-        <div class="ptitle"><span data-i18n="preset_classical_name">🎻 Klasika / Akustika</span><span class="pmeta"><span class="ptarget">−18 LUFS</span><span class="plock" aria-hidden="true">🔒</span></span></div>
-        <div class="pdesc" data-i18n="preset_classical_desc">Nejtišší a nejdynamičtější volba ze všech — zachová co nejvíc rozdílu mezi tichými a hlasitými pasážemi.</div>
+        <div class="ptitle"><span data-i18n="preset_classical_name">🎻 Classical / Acoustic</span><span class="pmeta"><span class="ptarget">−18 LUFS</span><span class="plock" aria-hidden="true">🔒</span></span></div>
+        <div class="pdesc" data-i18n="preset_classical_desc">The quietest, most dynamic option of the set — preserves as much of the gap between quiet and loud passages as possible.</div>
       </button>
     </div>
 
@@ -474,108 +488,108 @@
       <div class="unlock-row">
         <span class="unlock-icon" aria-hidden="true">🔓</span>
         <div class="unlock-body">
-          <div class="unlock-title" data-i18n="unlock_title">Odemkněte všechny předvolby</div>
-          <div class="unlock-text" data-i18n="unlock_text">Smart Auto je a zůstane zdarma. Kód pro odemknutí ostatních devíti předvoleb si stáhnete na Gumroadu. Po zadání kódu je nástroj odemčený natrvalo, bez časového limitu nebo jakéhokoliv jiného omezení.</div>
-          <a class="unlock-gumroad" id="unlock-gumroad-link" href="https://uklidnito.gumroad.com/l/dzmaster" target="_blank" rel="noopener" data-i18n="unlock_gumroad_btn">🛒 Získat kód na Gumroad</a>
+          <div class="unlock-title" data-i18n="unlock_title">Unlock all presets</div>
+          <div class="unlock-text" data-i18n="unlock_text">Smart Auto is, and stays, free. The code to unlock the other nine presets is yours to download on Gumroad. Once entered, the unlock is permanent: no time limit and no other restriction.</div>
+          <a class="unlock-gumroad" id="unlock-gumroad-link" href="https://uklidnito.gumroad.com/l/dzmaster" target="_blank" rel="noopener" data-i18n="unlock_gumroad_btn">🛒 Get the code on Gumroad</a>
           <form class="unlock-form" id="unlock-form">
-            <input type="password" id="unlock-input" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" data-i18n-placeholder="unlock_placeholder" placeholder="Zadejte kód">
-            <button type="submit" data-i18n="unlock_submit_btn">Odemknout</button>
+            <input type="password" id="unlock-input" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" data-i18n-placeholder="unlock_placeholder" placeholder="Enter code">
+            <button type="submit" data-i18n="unlock_submit_btn">Unlock</button>
           </form>
-          <div class="unlock-error" id="unlock-error" data-i18n="unlock_error" hidden>Nesprávný kód. Zkuste to znovu.</div>
-          <div class="unlock-success" id="unlock-success" data-i18n="unlock_success" hidden>✅ Odemčeno! Všechny předvolby jsou teď dostupné.</div>
+          <div class="unlock-error" id="unlock-error" data-i18n="unlock_error" hidden>Wrong code. Try again.</div>
+          <div class="unlock-success" id="unlock-success" data-i18n="unlock_success" hidden>✅ Unlocked for good! All presets are now available, with no further restrictions.</div>
         </div>
       </div>
     </div>
 
     <div class="bitdepth">
-      <span data-i18n="bitdepth_label">Výstup:</span>
-      <label><input type="radio" name="bitdepth" value="16" checked> <span data-i18n="bitdepth_16">16-bit (univerzální)</span></label>
-      <label><input type="radio" name="bitdepth" value="24"> <span data-i18n="bitdepth_24">24-bit (archivní kvalita)</span></label>
+      <span data-i18n="bitdepth_label">Output:</span>
+      <label><input type="radio" name="bitdepth" value="16" checked> <span data-i18n="bitdepth_16">16-bit (universal)</span></label>
+      <label><input type="radio" name="bitdepth" value="24"> <span data-i18n="bitdepth_24">24-bit (archival quality)</span></label>
     </div>
 
     <details class="advanced" id="advanced-details">
-      <summary data-i18n="adv_summary">⚙️ Pokročilé nastavení (nepovinné)</summary>
+      <summary data-i18n="adv_summary">⚙️ Advanced settings (optional)</summary>
       <div class="advanced-body">
         <div>
-          <div class="adv-group-title" data-i18n="adv_eq_title">Tónová korekce (EQ)</div>
+          <div class="adv-group-title" data-i18n="adv_eq_title">Tonal EQ</div>
           <div class="adv-slider-row">
-            <label for="adv-bass" data-i18n="adv_bass_label">Basy · 120 Hz</label>
+            <label for="adv-bass" data-i18n="adv_bass_label">Bass · 120 Hz</label>
             <input type="range" id="adv-bass" min="-12" max="12" step="0.5" value="0">
             <span class="adv-value" id="adv-bass-value">0 dB</span>
           </div>
           <div class="adv-slider-row">
-            <label for="adv-mid" data-i18n="adv_mid_label">Středy · 1 kHz</label>
+            <label for="adv-mid" data-i18n="adv_mid_label">Mid · 1 kHz</label>
             <input type="range" id="adv-mid" min="-12" max="12" step="0.5" value="0">
             <span class="adv-value" id="adv-mid-value">0 dB</span>
           </div>
           <div class="adv-slider-row">
-            <label for="adv-treble" data-i18n="adv_treble_label">Výšky · 8 kHz</label>
+            <label for="adv-treble" data-i18n="adv_treble_label">Treble · 8 kHz</label>
             <input type="range" id="adv-treble" min="-12" max="12" step="0.5" value="0">
             <span class="adv-value" id="adv-treble-value">0 dB</span>
           </div>
         </div>
 
         <div>
-          <div class="adv-group-title" data-i18n="adv_dynamics_title">Dynamika</div>
+          <div class="adv-group-title" data-i18n="adv_dynamics_title">Dynamics</div>
           <label class="adv-checkbox-row">
             <input type="checkbox" id="adv-multiband">
-            <span data-i18n="adv_multiband_label">Vícepásmová komprese (basy, středy a výšky zvlášť)</span>
+            <span data-i18n="adv_multiband_label">Multiband compression (bass, mid and treble handled separately)</span>
           </label>
-          <div class="adv-hint" data-i18n="adv_multiband_hint">Jemnější výsledek na hutném mixu — hlasitý bas už "nestahuje" výšky dolů.</div>
+          <div class="adv-hint" data-i18n="adv_multiband_hint">A gentler result on dense mixes — a loud bass hit no longer drags the highs down with it.</div>
         </div>
 
         <div>
-          <div class="adv-group-title" data-i18n="adv_width_title">Stereo šířka</div>
+          <div class="adv-group-title" data-i18n="adv_width_title">Stereo width</div>
           <div class="adv-slider-row">
-            <label for="adv-width" data-i18n="adv_width_label">Šířka</label>
+            <label for="adv-width" data-i18n="adv_width_label">Width</label>
             <input type="range" id="adv-width" min="0" max="200" step="5" value="100">
             <span class="adv-value" id="adv-width-value">100%</span>
           </div>
-          <div class="adv-hint" data-i18n="adv_width_hint">0 % = mono, 100 % = originál, 200 % = maximálně široké. Netýká se mono souborů.</div>
+          <div class="adv-hint" data-i18n="adv_width_hint">0% = mono, 100% = original, 200% = maximum width. Has no effect on mono files.</div>
           <label class="adv-checkbox-row">
             <input type="checkbox" id="adv-bassmono">
-            <span data-i18n="adv_bassmono_label">Basy do mono pod 120 Hz</span>
+            <span data-i18n="adv_bassmono_label">Mono bass below 120 Hz</span>
           </label>
-          <div class="adv-hint" data-i18n="adv_bassmono_hint">Bezpečnější přehrávání na mono systémech i na vinylu, výšky zůstávají stereo.</div>
+          <div class="adv-hint" data-i18n="adv_bassmono_hint">Safer playback on mono systems and vinyl, highs stay stereo.</div>
         </div>
 
         <div>
-          <div class="adv-group-title" data-i18n="adv_saturation_title">Sytost / teplo</div>
+          <div class="adv-group-title" data-i18n="adv_saturation_title">Saturation / warmth</div>
           <div class="adv-slider-row">
-            <label for="adv-saturation" data-i18n="adv_saturation_label">Sytost</label>
+            <label for="adv-saturation" data-i18n="adv_saturation_label">Saturation</label>
             <input type="range" id="adv-saturation" min="0" max="100" step="5" value="0">
             <span class="adv-value" id="adv-saturation-value">0%</span>
           </div>
-          <div class="adv-hint" data-i18n="adv_saturation_hint">0 % = beze změny, vyšší hodnoty přidají jemné harmonické zabarvení.</div>
+          <div class="adv-hint" data-i18n="adv_saturation_hint">0% = unchanged, higher values add gentle harmonic coloration.</div>
         </div>
 
         <div>
           <label class="adv-checkbox-row">
             <input type="checkbox" id="adv-trim">
-            <span data-i18n="adv_trim_label">Oříznout ticho na začátku/konci (s jemným fade in/out)</span>
+            <span data-i18n="adv_trim_label">Trim leading/trailing silence (with a gentle fade in/out)</span>
           </label>
         </div>
 
-        <button type="button" class="adv-reset" id="adv-reset" data-i18n="adv_reset_btn">Obnovit výchozí hodnoty</button>
+        <button type="button" class="adv-reset" id="adv-reset" data-i18n="adv_reset_btn">Reset to defaults</button>
       </div>
     </details>
   </section>
 
   <section class="card" id="process-card">
-    <h2 data-i18n="step3_kicker">Krok 3</h2>
-    <h3 data-i18n="step3_title">Zpracovat a stáhnout</h3>
+    <h2 data-i18n="step3_kicker">Step 3</h2>
+    <h3 data-i18n="step3_title">Process and download</h3>
 
     <div class="process-row">
-      <button class="primary" id="process-btn" disabled data-i18n="process_btn">Zpracovat track</button>
-      <span class="status-line" id="status-line" data-i18n="status_idle">Nejdřív nahrajte WAV soubor.</span>
+      <button class="primary" id="process-btn" disabled data-i18n="process_btn">Process track</button>
+      <span class="status-line" id="status-line" data-i18n="status_idle">Upload a WAV file to get started.</span>
     </div>
 
     <div class="usage-limit-box" id="usage-limit-box" hidden>
-      <div class="usage-limit-title" data-i18n="usage_limit_title">Měsíční limit zdarma vyčerpán</div>
-      <div class="usage-limit-text" data-i18n="usage_limit_text">Smart Auto zdarma umožňuje 1 mastering měsíčně na IP adresu. Pro neomezený mastering všech předvoleb bez limitu si pořiďte trvalé odemčení přes Gumroad.</div>
+      <div class="usage-limit-title" data-i18n="usage_limit_title">Free monthly limit reached</div>
+      <div class="usage-limit-text" data-i18n="usage_limit_text">The free Smart Auto tier allows 1 mastering per month per IP address. For unlimited mastering across every preset with no limit, get the permanent unlock on Gumroad.</div>
       <div class="usage-limit-actions">
-        <a class="usage-limit-link" id="usage-limit-buy-link" href="https://uklidnito.gumroad.com/l/dzmaster" target="_blank" rel="noopener" data-i18n="usage_limit_buy_btn">🛒 Získat kód bez limitu</a>
-        <button type="button" class="usage-limit-secondary" id="usage-limit-unlock-btn" data-i18n="usage_limit_unlock_btn">🔓 Už mám kód</button>
+        <a class="usage-limit-link" id="usage-limit-buy-link" href="https://uklidnito.gumroad.com/l/dzmaster" target="_blank" rel="noopener" data-i18n="usage_limit_buy_btn">🛒 Get the unlimited code</a>
+        <button type="button" class="usage-limit-secondary" id="usage-limit-unlock-btn" data-i18n="usage_limit_unlock_btn">🔓 I already have a code</button>
       </div>
     </div>
 
@@ -585,46 +599,46 @@
       <div class="result-note" id="result-note" hidden></div>
       <div class="stat-grid">
         <div class="stat">
-          <div class="label" data-i18n="stat_lufs">Hlasitost (LUFS)</div>
+          <div class="label" data-i18n="stat_lufs">Loudness (LUFS)</div>
           <div class="before" id="stat-lufs-before"></div>
           <div class="after good" id="stat-lufs-after"></div>
         </div>
         <div class="stat">
-          <div class="label" data-i18n="stat_peak">Špička (True Peak)</div>
+          <div class="label" data-i18n="stat_peak">Peak (True Peak)</div>
           <div class="before" id="stat-peak-before"></div>
           <div class="after good" id="stat-peak-after"></div>
         </div>
         <div class="stat">
-          <div class="label" data-i18n="stat_gain">Aplikovaný gain</div>
+          <div class="label" data-i18n="stat_gain">Gain applied</div>
           <div class="after" id="stat-gain"></div>
         </div>
         <div class="stat">
-          <div class="label" data-i18n="stat_preset">Předvolba</div>
+          <div class="label" data-i18n="stat_preset">Preset</div>
           <div class="after" id="stat-preset"></div>
         </div>
       </div>
 
-      <div class="wave-label" data-i18n="wave_before">Před</div>
+      <div class="wave-label" data-i18n="wave_before">Before</div>
       <canvas class="wave" id="wave-before"></canvas>
-      <div class="wave-label" data-i18n="wave_after">Po</div>
+      <div class="wave-label" data-i18n="wave_after">After</div>
       <canvas class="wave" id="wave-after"></canvas>
 
       <div class="ab-toggle" id="ab-toggle">
-        <span class="ab-label" data-i18n="ab_label">Poslech:</span>
-        <button type="button" class="ab-btn" id="ab-before" data-i18n="ab_before">🔈 Originál</button>
-        <button type="button" class="ab-btn selected" id="ab-after" data-i18n="ab_after">✨ Mastrováno</button>
+        <span class="ab-label" data-i18n="ab_label">Listen to:</span>
+        <button type="button" class="ab-btn" id="ab-before" data-i18n="ab_before">🔈 Original</button>
+        <button type="button" class="ab-btn selected" id="ab-after" data-i18n="ab_after">✨ Mastered</button>
       </div>
       <audio id="preview-audio" controls preload="metadata"></audio>
 
       <div>
         <a class="download-btn" id="download-link" download="mastered.wav">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 16V4M12 16l-4-4M12 16l4-4"/><path d="M4 20h16"/></svg>
-          <span data-i18n="download_btn">Stáhnout mastrovaný WAV</span>
+          <span data-i18n="download_btn">Download mastered WAV</span>
         </a>
       </div>
 
       <details class="tech">
-        <summary data-i18n="tech_summary">Technické detaily zpracování</summary>
+        <summary data-i18n="tech_summary">Technical processing details</summary>
         <div id="tech-details" style="margin-top:8px;"></div>
       </details>
     </div>
@@ -633,29 +647,29 @@
   <div class="promo-banner" id="promo-banner">
     <span class="promo-icon" aria-hidden="true">🎧</span>
     <div class="promo-body">
-      <div class="promo-tag" data-i18n="promo_tag">Tip od SYNTHLUCIDA</div>
-      <div class="promo-title" data-i18n="promo_title">RELAXPLAYER — hudební přehrávač pro klid a soustředění</div>
-      <div class="promo-text" data-i18n="promo_text">Až budete mít track mastrovaný, pusťte si ho (nebo cokoliv jiného) v RELAXPLAYERu — dalším nástroji z rodiny SYNTHLUCIDA.</div>
+      <div class="promo-tag" data-i18n="promo_tag">A tip from SYNTHLUCIDA</div>
+      <div class="promo-title" data-i18n="promo_title">RELAXPLAYER — a music player for calm and focus</div>
+      <div class="promo-text" data-i18n="promo_text">Once your track is mastered, give it a spin (or play anything else) on RELAXPLAYER — another tool from the SYNTHLUCIDA family.</div>
     </div>
-    <a class="promo-cta" href="https://relaxplayer.eu" target="_blank" rel="noopener" data-i18n="promo_cta">Vyzkoušet RELAXPLAYER →</a>
+    <a class="promo-cta" href="https://relaxplayer.eu" target="_blank" rel="noopener" data-i18n="promo_cta">Try RELAXPLAYER →</a>
   </div>
 
   <section class="card" id="how-card">
-    <h2 data-i18n="how_kicker">Jak to funguje</h2>
-    <h3 data-i18n="how_title">Co DZMASTER dělá s vaší stopou</h3>
+    <h2 data-i18n="how_kicker">How it works</h2>
+    <h3 data-i18n="how_title">What DZMASTER does to your track</h3>
     <div class="faq">
-      <div class="q" data-i18n="how_q1">1. Analýza</div>
-      <div class="a" data-i18n="how_a1">Nástroj změří integrovanou hlasitost (LUFS podle ITU‑R BS.1770), špičkovou úroveň a dynamiku skladby.</div>
-      <div class="q" data-i18n="how_q2">2. Čištění a jemná komprese</div>
-      <div class="a" data-i18n="how_a2">Odstraní se stejnosměrná složka a neslyšitelný rachot pod 20 Hz, poté jemný "glue" kompresor (ve výchozím nastavení jednopásmový) mírně vyrovná dynamiku.</div>
-      <div class="q" data-i18n="how_q3">3. Vyrovnání hlasitosti</div>
-      <div class="a" data-i18n="how_a3">Track se zesílí nebo zeslabí na přesnou cílovou hlasitost zvolené předvolby.</div>
-      <div class="q" data-i18n="how_q4">4. Bezpečný limiter</div>
-      <div class="a" data-i18n="how_a4">Look-ahead limiter zajistí, že špičky nikdy nepřekročí bezpečný strop zvolené předvolby (−1 dBTP u většiny předvoleb, −1.5 dBTP u Vinylu a −3 dBTP u Podcastu/Audioknihy) — nedojde tak k ořezání ("clippingu") při přehrávání na streamovacích službách ani po kompresi do MP3/AAC.</div>
+      <div class="q" data-i18n="how_q1">1. Analysis</div>
+      <div class="a" data-i18n="how_a1">Measures integrated loudness (LUFS per ITU‑R BS.1770), peak level and dynamic range.</div>
+      <div class="q" data-i18n="how_q2">2. Cleanup & gentle glue compression</div>
+      <div class="a" data-i18n="how_a2">Removes DC offset and inaudible sub-20Hz rumble, then a gentle glue compressor (single-band by default) slightly evens out dynamics.</div>
+      <div class="q" data-i18n="how_q3">3. Loudness matching</div>
+      <div class="a" data-i18n="how_a3">The track is turned up or down to hit the exact target loudness of the chosen preset.</div>
+      <div class="q" data-i18n="how_q4">4. Safe limiting</div>
+      <div class="a" data-i18n="how_a4">A look-ahead limiter guarantees peaks never exceed the chosen preset's safe ceiling (−1 dBTP for most presets, −1.5 dBTP for Vinyl, and −3 dBTP for Podcast/Audiobook) — preventing clipping during streaming playback or lossy (MP3/AAC) encoding.</div>
       <div class="q" data-i18n="how_q5">5. Export</div>
-      <div class="a" data-i18n="how_a5">Výsledek se rovnou v prohlížeči zabalí do WAV souboru ke stažení. Nic se nikam neposílá ani neukládá.</div>
-      <div class="q" data-i18n="how_q6">6. Volitelné pokročilé funkce</div>
-      <div class="a" data-i18n="how_a6">V Pokročilém nastavení si navíc můžete zapnout: 3pásmový EQ (basy/středy/výšky), stereo šířku, vícepásmovou kompresi (basy, středy a výšky se komprimují zvlášť, takže hlasitý bas "nestahuje" výšky dolů), basy do mono pod zvolenou frekvencí (bezpečnější přehrávání na mono systémech a vinylu), jemnou saturaci pro harmonické zabarvení a oříznutí ticha na začátku/konci s jemným fade. Všechny jsou ve výchozím stavu vypnuté nebo neutrální a na výsledek nemají žádný vliv, dokud je sami nezapnete. (Při exportu do 16-bit se navíc automaticky použije jemný dithering, který sníží slyšitelné zkreslení od zaokrouhlování.)</div>
+      <div class="a" data-i18n="how_a5">The result is packaged into a downloadable WAV file right in your browser. Nothing is ever uploaded or stored.</div>
+      <div class="q" data-i18n="how_q6">6. Optional advanced features</div>
+      <div class="a" data-i18n="how_a6">Advanced settings also let you turn on: 3-band EQ (bass/mid/treble), stereo width, multiband compression (bass, mid and treble compressed separately, so a loud bass hit no longer drags the highs down with it), mono bass below a chosen frequency (safer playback on mono systems and vinyl), gentle saturation for harmonic coloration, and trimming silence from the start/end with a gentle fade. All are off by default (or neutral) and have no effect on the result unless you turn them on. (16-bit exports also get gentle dithering automatically, reducing audible rounding distortion.)</div>
     </div>
   </section>
 
@@ -663,9 +677,9 @@
 
 <footer>
   <div class="wrap">
-    <span class="fitem"><span data-i18n="footer_text">DZMASTER je součástí rodiny nástrojů SYNTHLUCIDA.</span></span>
-    <span class="fitem">· <a href="https://synthreviews.github.io/dzmaster/dzmaster-landing.html" id="footer-more" data-i18n="footer_more">O nástroji</a></span>
-    <span class="fitem">· <a href="https://synthreviews.github.io/dzmaster/dzmaster-privacy.html" id="footer-privacy" data-i18n="footer_privacy">Ochrana soukromí</a></span>
+    <span class="fitem"><span data-i18n="footer_text">DZMASTER is part of the SYNTHLUCIDA tools family.</span></span>
+    <span class="fitem">· <a href="https://synthreviews.github.io/dzmaster/dzmaster-landing-en.html" id="footer-more" data-i18n="footer_more">About this tool</a></span>
+    <span class="fitem">· <a href="https://synthreviews.github.io/dzmaster/dzmaster-privacy-en.html" id="footer-privacy" data-i18n="footer_privacy">Privacy Policy</a></span>
     <span class="fitem">· <a href="https://synthlucida.com/index.html">SYNTHLUCIDA</a></span>
   </div>
 </footer>
