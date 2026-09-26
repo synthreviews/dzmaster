@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ochrana soukromí | DZMASTER</title>
-<meta name="description" content="Zásady ochrany soukromí DZMASTER: jasně a konkrétně popisujeme, co se skutečně děje s vaším zvukovým souborem, jaká minimální data se sbírají (anonymní počítadlo návštěv) a proč.">
+<meta name="description" content="Zásady ochrany soukromí DZMASTER: jasně a konkrétně popisujeme, co se skutečně děje s vaším zvukovým souborem, jaká minimální data se sbírají (anonymní počítadlo návštěv, kontrola IP adresy kvůli měsíčnímu limitu zdarma) a proč.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://synthreviews.github.io/dzmaster/dzmaster-privacy.html">
 <link rel="alternate" hreflang="cs" href="https://synthreviews.github.io/dzmaster/dzmaster-privacy.html">
@@ -92,7 +92,7 @@
     <span class="eyebrow">Zásady ochrany soukromí</span>
     <h1>Co se skutečně děje s vaším souborem</h1>
     <div class="updated">Poslední aktualizace: 26. září 2026</div>
-    <p class="intro">Tahle stránka nemá být právnický text plný obecných frází — má vám dát konkrétní a pravdivou odpověď na otázku „co DZMASTER dělá s mým hudebním souborem a jaká data o mně sbírá“. Krátká verze: váš soubor nikam neodchází a osobní údaje o vás nesbíráme — kromě jedné úzce vymezené výjimky popsané níže (anonymní počítadlo návštěv). Delší verze je níže.</p>
+    <p class="intro">Tahle stránka nemá být právnický text plný obecných frází — má vám dát konkrétní a pravdivou odpověď na otázku „co DZMASTER dělá s mým hudebním souborem a jaká data o mně sbírá“. Krátká verze: váš soubor nikam neodchází a osobní údaje o vás nesbíráme — kromě dvou úzce vymezených výjimek popsaných níže (anonymní počítadlo návštěv a krátká kontrola IP adresy kvůli měsíčnímu limitu zdarma). Delší verze je níže.</p>
 
     <section class="block">
       <h2>1. Kdo stránku provozuje</h2>
@@ -107,7 +107,15 @@
     </section>
 
     <section class="block">
-      <h2>3. Jaká osobní data neshromažďujeme</h2>
+      <h2>3. Měsíční limit zdarma a kontrola podle IP adresy</h2>
+      <p>Zdarma předvolba Smart Auto je omezená na 1 mastering za kalendářní měsíc na IP adresu. Toto omezení hlídá malá serverová funkce (Google Cloud / Firebase Cloud Function) — je to jediný síťový požadavek na server, který DZMASTER před zadáním odemykacího kódu vůbec dělá. Posílá se jí jen prázdný dotaz typu „smí se, nebo ne“; váš zvukový soubor se jí neposílá nikdy a nikam jinam se z prohlížeče žádná zvuková data neodesílají.</p>
+      <p>Dotaz na tuto funkci se typicky odešle, až když je mastrovaný výsledek skutečně hotový — teprve tehdy se vaše měsíční použití „spotřebuje“, takže o něj nepřijdete kvůli chybě, pádu nebo tichému/prázdnému souboru. Pokud si váš prohlížeč z minula pamatuje (přes localStorage), že limit pro tento měsíc už byl vyčerpán, zeptá se rovnou na začátku, abyste nečekali zbytečně na celé zpracování. Pokud je funkce nedostupná, nereaguje nebo selže, DZMASTER limit neuplatní a mastering proběhne bez omezení. Po zadání platného odemykacího kódu se tato kontrola přestane volat úplně — a to i pro Smart Auto.</p>
+      <p>Aby šlo omezení „1× měsíčně na IP adresu“ vůbec vynutit, funkce si vede krátkou historii IP adres, které si v aktuálním kalendářním měsíci již svůj 1 mastering zdarma vyčerpaly, a s touto historií porovnává každý nově příchozí dotaz. IP adresa se tedy nutně objeví v tomto seznamu — stejně jako to dělá úplně každý server na internetu u každého požadavku, který na něj pošlete — a použije se jen k vyhodnocení a započítání tohoto měsíčního limitu (1 povolený mastering na IP adresu za kalendářní měsíc).</p>
+      <div class="callout"><strong>Doba uchování:</strong> Záznam o využití měsíčního limitu k dané IP adrese se na straně Cloud Function po 60 dnech automaticky maže.</div>
+    </section>
+
+    <section class="block">
+      <h2>4. Jaká osobní data neshromažďujeme</h2>
       <ul>
         <li>Žádnou registraci ani uživatelský účet</li>
         <li>Žádné jméno, e-mail ani jiné kontaktní údaje</li>
@@ -115,41 +123,41 @@
         <li>Žádné sledování napříč weby ani vytváření profilu o vás</li>
         <li>Žádné sdílení dat s třetími stranami — protože žádná data, která by šlo sdílet, od vás nezískáváme</li>
       </ul>
-      <p>Jedna úzká výjimka — anonymní počítadlo návštěv — je popsaná v sekci 5.</p>
+      <p>Dvě úzké výjimky jsou popsané výše a níže: krátká kontrola IP adresy kvůli měsíčnímu limitu zdarma (sekce 3) a anonymní počítadlo návštěv (sekce 6).</p>
     </section>
 
     <section class="block">
-      <h2>4. Co se ukládá lokálně ve vašem prohlížeči</h2>
-      <p>DZMASTER si do <em>localStorage</em> přímo ve vašem prohlížeči ukládá dvě věci, žádná se nikam neodesílá: vaši jazykovou volbu (čeština/angličtina), aby vám stránka příště naskočila ve stejném jazyce, a informaci, že jste nástroj odemkli zadáním zakoupeného kódu, aby po vás příště nechtěl kód znovu. Obojí kdykoliv smažete v nastavení prohlížeče (vymazání dat webu).</p>
+      <h2>5. Co se ukládá lokálně ve vašem prohlížeči</h2>
+      <p>DZMASTER si do <em>localStorage</em> přímo ve vašem prohlížeči ukládá tři věci, žádná se sama o sobě nikam neodesílá: vaši jazykovou volbu (čeština/angličtina), aby vám stránka příště naskočila ve stejném jazyce; informaci, že jste nástroj odemkli zadáním zakoupeného kódu, aby po vás příště nechtěl kód znovu; a poznámku, že jste v aktuálním kalendářním měsíci už vyčerpali zdarma mastering, aby vás nástroj na to mohl rovnou upozornit (viz sekce 3). Všechny tři kdykoliv smažete v nastavení prohlížeče (vymazání dat webu).</p>
     </section>
 
     <section class="block">
-      <h2>5. Počítadlo návštěv (GoatCounter)</h2>
+      <h2>6. Počítadlo návštěv (GoatCounter)</h2>
       <p>Pro základní přehled o návštěvnosti (kolik lidí stránku otevřelo) používáme <a href="https://www.goatcounter.com/" rel="noopener">GoatCounter</a> — analytiku zaměřenou na soukromí, která nepoužívá cookies, neukládá IP adresu u jednotlivé návštěvy a nevytváří profil konkrétního návštěvníka ani ho nesleduje mezi weby. Vidíme jen souhrnná čísla (počet zobrazení stránky, hrubý typ zařízení/prohlížeče), ne kdo konkrétně stránku navštívil. Podrobnosti v <a href="https://www.goatcounter.com/help/privacy" rel="noopener">zásadách ochrany soukromí GoatCounteru</a>.</p>
     </section>
 
     <section class="block">
-      <h2>6. Hosting a technická data</h2>
-      <p>Web běží na GitHub Pages (GitHub, Inc., součást Microsoftu). Jako u úplně každého webu na internetu tak GitHub jako poskytovatel hostingu může ze své strany zaznamenávat standardní provozní logy nutné k chodu serveru — typicky IP adresu, typ prohlížeče a čas požadavku. DZMASTER k těmto datům nemá přístup a sám žádné podobné logování neprovádí. Podrobnosti najdete v <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">zásadách ochrany soukromí GitHubu</a>.</p>
+      <h2>7. Hosting a technická data</h2>
+      <p>Web běží na GitHub Pages (GitHub, Inc., součást Microsoftu). Jako u úplně každého webu na internetu tak GitHub jako poskytovatel hostingu může ze své strany zaznamenávat standardní provozní logy nutné k chodu serveru — typicky IP adresu, typ prohlížeče a čas požadavku. DZMASTER k těmto datům nemá přístup a sám žádné podobné logování neprovádí. Podrobnosti najdete v <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">zásadách ochrany soukromí GitHubu</a>. Serverová funkce popsaná v sekci 3 běží samostatně na infrastruktuře Google Cloud / Firebase, ne na GitHub Pages, a řídí se <a href="https://cloud.google.com/terms/cloud-privacy-notice" rel="noopener">zásadami ochrany soukromí Google Cloud</a>.</p>
     </section>
 
     <section class="block">
-      <h2>7. Cookies</h2>
-      <p>DZMASTER sám žádné cookies nenastavuje a GoatCounter (sekce 5) je záměrně navržený bez cookies. Jedinou lokální stopou jsou výše zmíněné záznamy v localStorage (jazyk, stav odemčení) — technicky cookie nejsou a na server se neposílají.</p>
+      <h2>8. Cookies</h2>
+      <p>DZMASTER sám žádné cookies nenastavuje a GoatCounter (sekce 6) je záměrně navržený bez cookies. Jedinou lokální stopou jsou výše zmíněné záznamy v localStorage (jazyk, stav odemčení, vyčerpání měsíčního limitu) — technicky cookie nejsou a na server se neposílají.</p>
     </section>
 
     <section class="block">
-      <h2>8. Vaše práva</h2>
+      <h2>9. Vaše práva</h2>
       <p>Protože o vás v souvislosti s používáním DZMASTERu nezpracováváme jméno, e-mail ani žádný jiný přímo identifikující údaj, není zde v praxi co opravovat ani exportovat. Pokud přesto máte jakýkoliv dotaz ohledně soukromí nebo vám něco nesedí, ozvěte se přes kontakt níže.</p>
     </section>
 
     <section class="block">
-      <h2>9. Změny těchto zásad</h2>
+      <h2>10. Změny těchto zásad</h2>
       <p>Pokud se něco na fungování nástroje změní způsobem, který ovlivní zpracování dat, tato stránka bude aktualizována a datum nahoře se změní. Doporučujeme ji čas od času zkontrolovat, pokud vás to zajímá do detailu.</p>
     </section>
 
     <section class="block">
-      <h2>10. Kontakt</h2>
+      <h2>11. Kontakt</h2>
       <p>S dotazy ohledně DZMASTERu nebo těchto zásad se můžete obrátit přes <a href="https://synthlucida.com/index.html">SYNTHLUCIDA</a>.</p>
     </section>
   </div>

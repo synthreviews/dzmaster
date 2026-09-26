@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Privacy Policy | DZMASTER</title>
-<meta name="description" content="DZMASTER's privacy policy: a clear, specific explanation of what actually happens to your audio file, the minimal data collected (an anonymous visit count), and why.">
+<meta name="description" content="DZMASTER's privacy policy: a clear, specific explanation of what actually happens to your audio file, the minimal data collected (an anonymous visit count, an IP check for the free monthly limit), and why.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://synthreviews.github.io/dzmaster/dzmaster-privacy-en.html">
 <link rel="alternate" hreflang="cs" href="https://synthreviews.github.io/dzmaster/dzmaster-privacy.html">
@@ -92,7 +92,7 @@
     <span class="eyebrow">Privacy Policy</span>
     <h1>What actually happens to your file</h1>
     <div class="updated">Last updated: September 26, 2026</div>
-    <p class="intro">This page isn't meant to be generic legal boilerplate — it's meant to give you a specific, honest answer to "what does DZMASTER do with my music file, and what data does it collect about me?" Short version: your file never leaves your device, and we collect no personal data about you — apart from one narrowly scoped exception described below (an anonymous visit counter). The longer version is below.</p>
+    <p class="intro">This page isn't meant to be generic legal boilerplate — it's meant to give you a specific, honest answer to "what does DZMASTER do with my music file, and what data does it collect about me?" Short version: your file never leaves your device, and we collect no personal data about you — apart from two narrowly scoped exceptions described below (an anonymous visit counter, and a short IP check for the free monthly limit). The longer version is below.</p>
 
     <section class="block">
       <h2>1. Who runs this site</h2>
@@ -107,7 +107,15 @@
     </section>
 
     <section class="block">
-      <h2>3. Personal data we do not collect</h2>
+      <h2>3. The free monthly limit and its IP check</h2>
+      <p>The free Smart Auto preset is capped at 1 mastering per calendar month per IP address. This limit is enforced by a small server-side function (a Google Cloud / Firebase Cloud Function) — the only server request DZMASTER ever makes before you enter an unlock code. That request is a plain allow/deny check; your audio file is never sent to it, and no audio data ever leaves your browser for any other reason either.</p>
+      <p>This check is normally made only once a mastered result actually exists — that's the point at which your monthly use is "spent," so a crash, an error, or a silent/empty file never costs you your free month. Exception: if your browser already remembers, via localStorage, that this month's free use was already spent, it asks right away instead of making you wait through the whole processing first. If the function is unreachable, doesn't respond, or fails, DZMASTER does not enforce the limit and processing proceeds normally. Once you enter a valid unlock code, this check stops being called at all — including for Smart Auto.</p>
+      <p>For the "1 per calendar month per IP address" restriction to be enforceable at all, the function keeps a short history of IP addresses that have already used their 1 free mastering in the current calendar month, and checks every incoming request against that history. Your IP address therefore necessarily shows up on that list — the same way any server on the internet sees the IP address of any request sent to it — and is used only to evaluate and count this monthly limit (1 allowed mastering per IP address per calendar month).</p>
+      <div class="callout"><strong>Retention period:</strong> The record of a used monthly limit for a given IP address is automatically deleted from the Cloud Function's side after 60 days.</div>
+    </section>
+
+    <section class="block">
+      <h2>4. Personal data we do not collect</h2>
       <ul>
         <li>No account or sign-up of any kind</li>
         <li>No name, email, or other contact details</li>
@@ -115,41 +123,41 @@
         <li>No cross-site tracking and no profile built about you</li>
         <li>No sharing of data with third parties — because we never receive any data from you worth sharing</li>
       </ul>
-      <p>One narrow exception — an anonymous visit counter — is described in section 5.</p>
+      <p>Two narrow exceptions are described above and below: the short IP check for the free monthly limit (section 3), and an anonymous visit counter (section 6).</p>
     </section>
 
     <section class="block">
-      <h2>4. What is stored locally in your browser</h2>
-      <p>DZMASTER keeps two things in your browser's <em>localStorage</em>, neither ever sent anywhere: your language choice (Czech/English), so the page opens in the same language next time, and whether you've unlocked the tool with a purchased code, so it doesn't ask you for the code again. You can clear either any time via your browser's site-data settings.</p>
+      <h2>5. What is stored locally in your browser</h2>
+      <p>DZMASTER keeps three things in your browser's <em>localStorage</em>, none of which is inherently sent anywhere on its own: your language choice (Czech/English), so the page opens in the same language next time; whether you've unlocked the tool with a purchased code, so it doesn't ask you for the code again; and a note that you've already used this calendar month's free mastering, so the tool can tell you upfront (see section 3). You can clear all three any time via your browser's site-data settings.</p>
     </section>
 
     <section class="block">
-      <h2>5. Visit counter (GoatCounter)</h2>
+      <h2>6. Visit counter (GoatCounter)</h2>
       <p>For a basic sense of how many people open this page, we use <a href="https://www.goatcounter.com/" rel="noopener">GoatCounter</a>, a privacy-focused analytics tool that doesn't use cookies, doesn't store your IP address against an individual visit, and doesn't build a profile of you or track you across other sites. We only see aggregate numbers (page view counts, broad device/browser type), never who specifically visited. Details are in <a href="https://www.goatcounter.com/help/privacy" rel="noopener">GoatCounter's own privacy policy</a>.</p>
     </section>
 
     <section class="block">
-      <h2>6. Hosting and technical data</h2>
-      <p>This site runs on GitHub Pages (GitHub, Inc., part of Microsoft). Like on any website, GitHub as the hosting provider may record standard server operation logs on its end — typically an IP address, browser type, and request timestamp. DZMASTER has no access to this data and does not perform any comparable logging of its own. Details are available in <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's own privacy statement</a>.</p>
+      <h2>7. Hosting and technical data</h2>
+      <p>This site runs on GitHub Pages (GitHub, Inc., part of Microsoft). Like on any website, GitHub as the hosting provider may record standard server operation logs on its end — typically an IP address, browser type, and request timestamp. DZMASTER has no access to this data and does not perform any comparable logging of its own. Details are available in <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's own privacy statement</a>. The server-side function described in section 3 runs separately, on Google Cloud / Firebase infrastructure rather than GitHub Pages, and follows <a href="https://cloud.google.com/terms/cloud-privacy-notice" rel="noopener">Google Cloud's privacy notice</a>.</p>
     </section>
 
     <section class="block">
-      <h2>7. Cookies</h2>
-      <p>DZMASTER itself sets no cookies, and GoatCounter (section 5) is deliberately cookie-free by design. The only local trace is the localStorage entries mentioned above (language, unlock status) — technically not cookies, and never sent to a server.</p>
+      <h2>8. Cookies</h2>
+      <p>DZMASTER itself sets no cookies, and GoatCounter (section 6) is deliberately cookie-free by design. The only local trace is the localStorage entries mentioned above (language, unlock status, monthly limit used) — technically not cookies, and never sent to a server.</p>
     </section>
 
     <section class="block">
-      <h2>8. Your rights</h2>
+      <h2>9. Your rights</h2>
       <p>Because we don't process your name, email, or any other directly identifying detail through your use of DZMASTER, there is in practice nothing to correct or export. If you still have any question about privacy here, or something doesn't add up, reach out via the contact below.</p>
     </section>
 
     <section class="block">
-      <h2>9. Changes to this policy</h2>
+      <h2>10. Changes to this policy</h2>
       <p>If anything about how the tool works changes in a way that affects data processing, this page will be updated and the date at the top will change. Feel free to check back if you care about the details.</p>
     </section>
 
     <section class="block">
-      <h2>10. Contact</h2>
+      <h2>11. Contact</h2>
       <p>For questions about DZMASTER or this policy, you can reach out via <a href="https://synthlucida.com/index.html">SYNTHLUCIDA</a>.</p>
     </section>
   </div>
